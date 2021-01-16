@@ -3,8 +3,11 @@
   "description": "Gets data on Sports records for all NFL, NHL, CFB, and NCAA basketball and is invoked by Sports_Records_Main.",
   "main": "Main.xaml",
   "dependencies": {
+    "Datatable.Activities.UiPath": "[1.0.1]",
+    "DataTablePlugins.Activities": "[1.1.5]",
+    "DataTablePlus": "[3.0.3]",
     "UiPath.Excel.Activities": "[2.9.3]",
-    "UiPath.Mail.Activities": "[1.9.3]",
+    "UiPath.Mail.Activities": "[1.10.0-preview]",
     "UiPath.System.Activities": "[20.10.1]",
     "UiPath.UIAutomation.Activities": "[20.10.6]"
   },

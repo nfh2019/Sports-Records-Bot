@@ -1,9 +1,8 @@
-﻿{
+{
   "name": "Sports_Records_Main",
   "description": "Implements Data gathering workflow and calculations workflow",
   "main": "Main.xaml",
   "dependencies": {
-    "CustomInputHTMLPageGenerator.Activities": "[1.0.2]",
     "UiPath.Excel.Activities": "[2.9.3]",
     "UiPath.Form.Activities": "[1.2.1-preview]",
     "UiPath.Mail.Activities": "[1.10.0-preview]",
