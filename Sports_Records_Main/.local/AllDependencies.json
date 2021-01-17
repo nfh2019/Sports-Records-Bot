@@ -828,7 +828,7 @@
           "build/_._": {}
         }
       },
-      "UiPath.Excel.Activities/2.9.3": {
+      "UiPath.Excel.Activities/2.10.0-preview": {
         "type": "package",
         "dependencies": {
           "ClosedXML": "0.87.1",
@@ -838,6 +838,15 @@
           "NPOI": "2.4.1",
           "SharpZipLib": "1.0.0"
         },
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "System.Activities",
+          "System.Activities.Presentation",
+          "System.ComponentModel.DataAnnotations",
+          "System.ServiceModel",
+          "System.ServiceModel.Activities",
+          "System.Windows.Forms"
+        ],
         "compile": {
           "lib/net461/_._": {}
         },
@@ -1464,7 +1473,7 @@
           "lib/net461/UiPath.OCR.Contracts.dll": {}
         }
       },
-      "UiPath.Persistence.Activities/1.1.8": {
+      "UiPath.Persistence.Activities/1.1.9": {
         "type": "package",
         "dependencies": {
           "Microsoft.Rest.ClientRuntime": "2.3.20",
@@ -1564,7 +1573,7 @@
           "lib/net461/UiPath.Platform.dll": {}
         }
       },
-      "UiPath.System.Activities/20.10.1": {
+      "UiPath.System.Activities/20.10.3": {
         "type": "package",
         "dependencies": {
           "CsvHelper": "2.13.5",
@@ -3520,10 +3529,10 @@
         "uipath.cefsharpbundle.nuspec"
       ]
     },
-    "UiPath.Excel.Activities/2.9.3": {
-      "sha512": "rYWg1JGpheTGtJpNVMOhzIeEcdlejTKRduaBKRKu51VWUcEEdAGtTFRa+/tCT4/bsxQ1d/Iad068sd0NJxOhGQ==",
+    "UiPath.Excel.Activities/2.10.0-preview": {
+      "sha512": "5TXm19eCTc+lailo08iikxv7PzmsZuUJspn6clGbDYGz9PzPvgV/dTybSoiWEoFMzpZi43Qx14D4vZYbNY1BXw==",
       "type": "package",
-      "path": "uipath.excel.activities/2.9.3",
+      "path": "uipath.excel.activities/2.10.0-preview",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -3563,7 +3572,7 @@
         "lib/net461/zh-CN/UiPath.Excel.Activities.Design.resources.dll",
         "lib/net461/zh-CN/UiPath.Excel.Activities.resources.dll",
         "lib/net461/zh-CN/UiPath.Excel.resources.dll",
-        "uipath.excel.activities.2.9.3.nupkg.sha512",
+        "uipath.excel.activities.2.10.0-preview.nupkg.sha512",
         "uipath.excel.activities.nuspec"
       ]
     },
@@ -3925,10 +3934,10 @@
         "uipath.ocr.contracts.nuspec"
       ]
     },
-    "UiPath.Persistence.Activities/1.1.8": {
-      "sha512": "e2/4qSQhty7u/HjmO4yzU90y/tqZjQUniwqmsIcRLKFIjJ1PH4kf1Uby1aQ/DTRJN1vHwKl8D7h7ZJjtUtDTZg==",
+    "UiPath.Persistence.Activities/1.1.9": {
+      "sha512": "SdEzqLna9zpyIl7E+fLI0pI5rjcQqFUGHy/CPmBq9uoFZLpUPAnCUNqwMNF1XaYB/yGUZ6xppvq+Zf9GpWYSmw==",
       "type": "package",
-      "path": "uipath.persistence.activities/1.1.8",
+      "path": "uipath.persistence.activities/1.1.9",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -3959,7 +3968,7 @@
         "lib/net461/tr/UiPath.Persistence.Activities.resources.dll",
         "lib/net461/zh-CN/UiPath.Persistence.Activities.Design.resources.dll",
         "lib/net461/zh-CN/UiPath.Persistence.Activities.resources.dll",
-        "uipath.persistence.activities.1.1.8.nupkg.sha512",
+        "uipath.persistence.activities.1.1.9.nupkg.sha512",
         "uipath.persistence.activities.nuspec"
       ]
     },
@@ -3975,10 +3984,10 @@
         "uipath.platform.nuspec"
       ]
     },
-    "UiPath.System.Activities/20.10.1": {
-      "sha512": "Ho9XHfnlPXpXxPkCc9wQt5kffIuWKPSiS0TCr2yYrWs1V8cp6XKjZwv2znsB/VRMiHrQdE7ucBnvs3bpQEUouQ==",
+    "UiPath.System.Activities/20.10.3": {
+      "sha512": "TivmsA09tbv+wG9abR93owdCavHXXdB0pOUAPtp9u9LACpQJBcdAOZdp+wwlFNwGnNyq1lKYaUPFbfKepNVmwg==",
       "type": "package",
-      "path": "uipath.system.activities/20.10.1",
+      "path": "uipath.system.activities/20.10.3",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -4017,7 +4026,7 @@
         "lib/net461/tr/UiPath.System.Activities.resources.dll",
         "lib/net461/zh-CN/UiPath.System.Activities.Design.resources.dll",
         "lib/net461/zh-CN/UiPath.System.Activities.resources.dll",
-        "uipath.system.activities.20.10.1.nupkg.sha512",
+        "uipath.system.activities.20.10.3.nupkg.sha512",
         "uipath.system.activities.nuspec"
       ]
     },
@@ -4314,11 +4323,11 @@
   "projectFileDependencyGroups": {
     "": [],
     ".NETFramework,Version=v4.6.1": [
-      "UiPath.Excel.Activities >= 2.9.3 <= 2.9.3",
+      "UiPath.Excel.Activities >= 2.10.0-preview <= 2.10.0-preview",
       "UiPath.Form.Activities >= 1.2.1-preview <= 1.2.1-preview",
       "UiPath.Mail.Activities >= 1.10.0-preview <= 1.10.0-preview",
-      "UiPath.Persistence.Activities >= 1.1.8 <= 1.1.8",
-      "UiPath.System.Activities >= 20.10.1 <= 20.10.1",
+      "UiPath.Persistence.Activities >= 1.1.9 <= 1.1.9",
+      "UiPath.System.Activities >= 20.10.3 <= 20.10.3",
       "UiPath.UIAutomation.Activities >= 20.12.0-preview <= 20.12.0-preview"
     ]
   },
@@ -4339,7 +4348,7 @@
           "UiPath.Excel.Activities": {
             "include": "Runtime",
             "target": "Package",
-            "version": "[2.9.3, 2.9.3]"
+            "version": "[2.10.0-preview, 2.10.0-preview]"
           },
           "UiPath.Form.Activities": {
             "include": "Runtime",
@@ -4354,12 +4363,12 @@
           "UiPath.Persistence.Activities": {
             "include": "Runtime",
             "target": "Package",
-            "version": "[1.1.8, 1.1.8]"
+            "version": "[1.1.9, 1.1.9]"
           },
           "UiPath.System.Activities": {
             "include": "Runtime",
             "target": "Package",
-            "version": "[20.10.1, 20.10.1]"
+            "version": "[20.10.3, 20.10.3]"
           },
           "UiPath.UIAutomation.Activities": {
             "include": "Runtime",

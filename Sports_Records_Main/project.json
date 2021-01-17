@@ -1,13 +1,13 @@
 {
-  "name": "Sports_Records_Main",
+  "name": "SportsRecordsMain",
   "description": "Implements Data gathering workflow and calculations workflow",
   "main": "Main.xaml",
   "dependencies": {
-    "UiPath.Excel.Activities": "[2.9.3]",
+    "UiPath.Excel.Activities": "[2.10.0-preview]",
     "UiPath.Form.Activities": "[1.2.1-preview]",
     "UiPath.Mail.Activities": "[1.10.0-preview]",
-    "UiPath.Persistence.Activities": "[1.1.8]",
-    "UiPath.System.Activities": "[20.10.1]",
+    "UiPath.Persistence.Activities": "[1.1.9]",
+    "UiPath.System.Activities": "[20.10.3]",
     "UiPath.UIAutomation.Activities": "[20.12.0-preview]"
   },
   "webServices": [],
