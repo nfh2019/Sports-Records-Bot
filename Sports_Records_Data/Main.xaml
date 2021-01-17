@@ -5,10 +5,10 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>390,526.666666666667</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>807.333333333333,526.666666666667</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
-    <scg:List x:TypeArguments="x:String" Capacity="62">
+    <scg:List x:TypeArguments="x:String" Capacity="33">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -74,6 +74,7 @@
   <Sequence sap2010:Annotation.AnnotationText="Gets all data from sports-reference website and stores in datatable arguments.&#xA;out_CFB_Data" sap:VirtualizedContainerService.HintSize="376,422" sap2010:WorkflowViewState.IdRef="Sequence_4">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="Sports_Data" />
+      <Variable x:TypeArguments="sd:DataTable" Name="Sports_DataByCoach" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -83,12 +84,19 @@
     </sap:WorkflowViewStateService.ViewState>
     <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke College Football Get Records workflow" sap:VirtualizedContainerService.HintSize="334,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Get Sports Records.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_CFB_Data">[Sports_Data]</OutArgument>
+        <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_Sport_Data">
+          <mva:VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="Sports_Data" />
+        </OutArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
     <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Gets Coaches workflow" sap:VirtualizedContainerService.HintSize="334,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Gets Coaches.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <InOutArgument x:TypeArguments="sd:DataTable" x:Key="io_CFB_Data">[Sports_Data]</InOutArgument>
+        <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_SportsData_ByCoach">
+          <mva:VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="Sports_DataByCoach" />
+        </OutArgument>
+        <InArgument x:TypeArguments="sd:DataTable" x:Key="in_Sport_Data">
+          <mva:VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="Sports_Data" />
+        </InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
   </Sequence>
