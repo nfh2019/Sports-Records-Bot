@@ -4336,8 +4336,8 @@
   },
   "project": {
     "restore": {
-      "projectUniqueName": "Sports_Records_Main",
-      "projectName": "Sports_Records_Main",
+      "projectUniqueName": "SportsRecordsMain",
+      "projectName": "SportsRecordsMain",
       "projectPath": "C:\\Users\\nfh22\\OneDrive\\Desktop\\Sports Records Bot\\Sports_Records_Main\\.local",
       "packagesPath": "C:\\Users\\nfh22\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\nfh22\\OneDrive\\Desktop\\Sports Records Bot\\Sports_Records_Main\\.local"

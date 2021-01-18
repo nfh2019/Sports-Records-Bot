@@ -2950,8 +2950,8 @@
   },
   "project": {
     "restore": {
-      "projectUniqueName": "Sports_Data_Compiling",
-      "projectName": "Sports_Data_Compiling",
+      "projectUniqueName": "SportsDataCompiler",
+      "projectName": "SportsDataCompiler",
       "projectPath": "C:\\Users\\nfh22\\OneDrive\\Desktop\\Sports Records Bot\\Sports_Data_Compiler\\.local",
       "packagesPath": "C:\\Users\\nfh22\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\nfh22\\OneDrive\\Desktop\\Sports Records Bot\\Sports_Data_Compiler\\.local"
