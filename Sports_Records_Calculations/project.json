@@ -1,5 +1,5 @@
 {
-  "name": "Sports_Records_Calculations",
+  "name": "SportsRecordsCalculations",
   "description": "Reads excel file output by Sports_Records_Data workflow and is invoked in Sports_Records_Main Orchestration Process.",
   "main": "Main.xaml",
   "dependencies": {

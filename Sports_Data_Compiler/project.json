@@ -1,13 +1,9 @@
 {
-  "name": "Sports_Records_Data",
-  "description": "Gets data on Sports records for all NFL, NHL, CFB, and NCAA basketball and is invoked by Sports_Records_Main.",
+  "name": "SportsDataCompiler",
+  "description": "Gathers historical records for league specified by user. Then gathers coaching history for the teams. Finally merges datatables",
   "main": "Main.xaml",
   "dependencies": {
-    "Datatable.Activities.UiPath": "[1.0.1]",
-    "DataTablePlugins.Activities": "[1.1.5]",
-    "DataTablePlus": "[3.0.3]",
     "UiPath.Excel.Activities": "[2.9.3]",
-    "UiPath.Mail.Activities": "[1.10.0-preview]",
     "UiPath.System.Activities": "[20.10.1]",
     "UiPath.UIAutomation.Activities": "[20.10.6]"
   },
@@ -46,7 +42,7 @@
   "entryPoints": [
     {
       "filePath": "Main.xaml",
-      "uniqueId": "a963a16e-705c-47bf-99cd-9d8f493d7718",
+      "uniqueId": "b4ba0fca-f644-4d95-b603-f96ab62395eb",
       "input": [],
       "output": []
     }
