@@ -1,14 +1,13 @@
 <Activity mc:Ignorable="sap sap2010" x:Class="Process" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
-    <x:Property sap2010:Annotation.AnnotationText="Transaction item to be processed." Name="in_TransactionItem" Type="InArgument(sd:DataRow)" />
     <x:Property sap2010:Annotation.AnnotationText="Dictionary structure to store configuration data of the process (settings, constants and assets)." Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
     <x:Property Name="in_League" Type="InArgument(x:String)" />
     <x:Property Name="in_Sheet" Type="InArgument(s:String[])" />
     <x:Property Name="in_SpecificCoach" Type="InArgument(x:String)" />
     <x:Property Name="in_SpecificTeam" Type="InArgument(x:String)" />
-    <x:Property Name="out_SportsWithCoach" Type="InArgument(sd:DataTable)" />
     <x:Property Name="in_Sheets" Type="InArgument(x:String)" />
-    <x:Property Name="in_TransactionData" Type="InArgument(sd:DataTable)" />
+    <x:Property Name="in_LeagueData" Type="InArgument(sd:DataTable)" />
+    <x:Property Name="out_LeagueFullData" Type="OutArgument(sd:DataTable)" />
   </x:Members>
   <this:Process.in_Sheet>
     <InArgument x:TypeArguments="s:String[]" />
@@ -19,16 +18,13 @@
   <this:Process.in_SpecificTeam>
     <InArgument x:TypeArguments="x:String" />
   </this:Process.in_SpecificTeam>
-  <this:Process.out_SportsWithCoach>
+  <this:Process.in_LeagueData>
     <InArgument x:TypeArguments="sd:DataTable" />
-  </this:Process.out_SportsWithCoach>
-  <this:Process.in_TransactionData>
-    <InArgument x:TypeArguments="sd:DataTable" />
-  </this:Process.in_TransactionData>
+  </this:Process.in_LeagueData>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>807.333333333333,667.333333333333</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>538.666666666667,667.333333333333</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ProcessTransaction_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="28">
@@ -96,6 +92,7 @@
   <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="538.666666666667,562.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="s:String[]" Name="sheet" />
+      <Variable x:TypeArguments="sd:DataTable" Name="tempData" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -104,26 +101,23 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[in_League]" sap:VirtualizedContainerService.HintSize="496.666666666667,375.333333333333" sap2010:WorkflowViewState.IdRef="Switch`1_1">
-      <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" x:Key="cfb" DisplayName="Invoke CFBGetRelevantData workflow" sap:VirtualizedContainerService.HintSize="334,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="CFB\CFBGetsSheetData.xaml">
+      <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" x:Key="cfb" DisplayName="Invoke GetSheetData workflow" sap:VirtualizedContainerService.HintSize="334,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="CFB\GetSheetData.xaml">
         <ui:InvokeWorkflowFile.Arguments>
-          <InArgument x:TypeArguments="sd:DataRow" x:Key="in_TransactionItem">
-            <mva:VisualBasicValue x:TypeArguments="sd:DataRow" ExpressionText="in_TransactionItem" />
-          </InArgument>
-          <InArgument x:TypeArguments="x:String" x:Key="in_Sheet">
-            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Sheets" />
+          <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_CFBData">
+            <mva:VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="out_LeagueFullData" />
+          </OutArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="in_SpecificTeam">
+            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_SpecificTeam" />
           </InArgument>
           <InArgument x:TypeArguments="x:String" x:Key="in_SpecificCoach">
             <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_SpecificCoach" />
           </InArgument>
-          <InArgument x:TypeArguments="x:String" x:Key="in_SpecificTeam">
-            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_SpecificTeam" />
+          <InArgument x:TypeArguments="sd:DataTable" x:Key="in_LeagueData">
+            <mva:VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="in_LeagueData" />
           </InArgument>
-          <InArgument x:TypeArguments="sd:DataTable" x:Key="in_TransactionData">
-            <mva:VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="in_TransactionData" />
+          <InArgument x:TypeArguments="x:String" x:Key="in_Sheet">
+            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Sheets" />
           </InArgument>
-          <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_SportsWithCoach">
-            <mva:VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="out_SportsWithCoach" />
-          </OutArgument>
         </ui:InvokeWorkflowFile.Arguments>
       </ui:InvokeWorkflowFile>
       <x:Null x:Key="ncaa" />
