@@ -98,14 +98,14 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <Flowchart.StartNode>
-      <x:Reference>__ReferenceID4</x:Reference>
+      <x:Reference>__ReferenceID7</x:Reference>
     </Flowchart.StartNode>
-    <FlowStep x:Name="__ReferenceID4" sap2010:WorkflowViewState.IdRef="FlowStep_1">
+    <FlowStep x:Name="__ReferenceID7" sap2010:WorkflowViewState.IdRef="FlowStep_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <av:Point x:Key="ShapeLocation">260,124.5</av:Point>
           <av:Size x:Key="ShapeSize">200,164.666666666667</av:Size>
-          <av:PointCollection x:Key="ConnectorLocation">360,289.166666666667 360,319.166666666667 380,319.166666666667 380,334</av:PointCollection>
+          <av:PointCollection x:Key="ConnectorLocation">360,289.166666666667 360,324</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <Sequence sap2010:Annotation.AnnotationText="Takes in data from form user fills out and sends each league and sheet combination to Orchestrator Queue." DisplayName="Data Input" sap:VirtualizedContainerService.HintSize="200,164.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_1">
@@ -119,7 +119,7 @@
             <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <ufa:FormActivity Dismissed="{x:Null}" FormFieldsInputData="{x:Null}" FormTitle="{x:Null}" SelectedButton="{x:Null}" TimeoutInSeconds="{x:Null}" WindowPositionLeft="{x:Null}" WindowPositionTop="{x:Null}" DisableMaximizeButton="False" DisableMinimizeButton="False" DisplayName="Create Form" FormFieldsOutputData="[response]" FormHeight="517" FormSchema="%[{&quot;label&quot;:&quot;What email would you like the data sent to?&quot;,&quot;spellcheck&quot;:true,&quot;tableView&quot;:true,&quot;key&quot;:&quot;out_Email&quot;,&quot;type&quot;:&quot;textfield&quot;,&quot;input&quot;:true,&quot;calculateServer&quot;:false},{&quot;label&quot;:&quot;What league(s) would you like data for?&quot;,&quot;inline&quot;:true,&quot;tableView&quot;:false,&quot;defaultValue&quot;:{&quot;ncaafCfb&quot;:false,&quot;nhl&quot;:false,&quot;nfl&quot;:false,&quot;ncaa&quot;:false},&quot;values&quot;:[{&quot;label&quot;:&quot;NCAAF/CFB&quot;,&quot;value&quot;:&quot;ncaafCfb&quot;,&quot;shortcut&quot;:&quot;&quot;},{&quot;label&quot;:&quot;NHL&quot;,&quot;value&quot;:&quot;nhl&quot;,&quot;shortcut&quot;:&quot;&quot;},{&quot;label&quot;:&quot;NFL&quot;,&quot;value&quot;:&quot;nfl&quot;,&quot;shortcut&quot;:&quot;&quot;},{&quot;label&quot;:&quot;NCAA Men's basketball&quot;,&quot;value&quot;:&quot;ncaa&quot;,&quot;shortcut&quot;:&quot;&quot;}],&quot;key&quot;:&quot;out_Leagues&quot;,&quot;type&quot;:&quot;selectboxes&quot;,&quot;input&quot;:true,&quot;inputType&quot;:&quot;checkbox&quot;,&quot;calculateServer&quot;:false},{&quot;label&quot;:&quot;Which Excel sheet(s) would you like to see?&quot;,&quot;inline&quot;:true,&quot;tableView&quot;:false,&quot;defaultValue&quot;:{&quot;&quot;:false,&quot;league&quot;:false,&quot;team&quot;:false,&quot;coach&quot;:false,&quot;leaguePage&quot;:false},&quot;values&quot;:[{&quot;label&quot;:&quot;League Page&quot;,&quot;value&quot;:&quot;leaguePage&quot;,&quot;shortcut&quot;:&quot;&quot;},{&quot;label&quot;:&quot;Team Page&quot;,&quot;value&quot;:&quot;team&quot;,&quot;shortcut&quot;:&quot;&quot;},{&quot;label&quot;:&quot;Coach Page&quot;,&quot;value&quot;:&quot;coach&quot;,&quot;shortcut&quot;:&quot;&quot;}],&quot;key&quot;:&quot;out_Sheets&quot;,&quot;type&quot;:&quot;selectboxes&quot;,&quot;input&quot;:true,&quot;inputType&quot;:&quot;checkbox&quot;,&quot;calculateServer&quot;:false},{&quot;label&quot;:&quot;What team would you like data for?&quot;,&quot;spellcheck&quot;:true,&quot;tableView&quot;:true,&quot;key&quot;:&quot;out_SpecificTeam&quot;,&quot;type&quot;:&quot;textfield&quot;,&quot;input&quot;:true,&quot;calculateServer&quot;:false,&quot;hideOnChildrenHidden&quot;:false},{&quot;label&quot;:&quot;What coach would you like to see data for?&quot;,&quot;spellcheck&quot;:true,&quot;tableView&quot;:true,&quot;key&quot;:&quot;out_SpecificCoach&quot;,&quot;type&quot;:&quot;textfield&quot;,&quot;input&quot;:true,&quot;calculateServer&quot;:false,&quot;hideOnChildrenHidden&quot;:false},{&quot;label&quot;:&quot;How would you like this/these sheet sorted&quot;,&quot;optionsLabelPosition&quot;:&quot;right&quot;,&quot;inline&quot;:true,&quot;tableView&quot;:false,&quot;values&quot;:[{&quot;label&quot;:&quot;Wins per Year&quot;,&quot;value&quot;:&quot;winsPerYear&quot;,&quot;shortcut&quot;:&quot;&quot;},{&quot;label&quot;:&quot;Wins per Games&quot;,&quot;value&quot;:&quot;winsPerGames&quot;,&quot;shortcut&quot;:&quot;&quot;},{&quot;label&quot;:&quot;Postseason Wins per Year&quot;,&quot;value&quot;:&quot;postseasonWinsPerYear&quot;,&quot;shortcut&quot;:&quot;&quot;},{&quot;label&quot;:&quot;Postseason Wins per Postseason Games&quot;,&quot;value&quot;:&quot;postSeasonWinsPerPostseasonGames&quot;,&quot;shortcut&quot;:&quot;&quot;},{&quot;label&quot;:&quot;National Championships&quot;,&quot;value&quot;:&quot;nationalChampionships&quot;,&quot;shortcut&quot;:&quot;&quot;}],&quot;key&quot;:&quot;out_SortBy&quot;,&quot;type&quot;:&quot;radio&quot;,&quot;input&quot;:true,&quot;calculateServer&quot;:false},{&quot;type&quot;:&quot;button&quot;,&quot;label&quot;:&quot;Submit&quot;,&quot;key&quot;:&quot;submit&quot;,&quot;disableOnInvalid&quot;:true,&quot;input&quot;:true,&quot;alwaysEnabled&quot;:true,&quot;tableView&quot;:true,&quot;calculateServer&quot;:false}]" FormTheme="{}{&quot;Activities&quot;:[&quot;FORMS&quot;],&quot;Id&quot;:&quot;1607613962475&quot;,&quot;Name&quot;:&quot;TAMU maroon&quot;,&quot;BaseCss&quot;:&quot;../../assets/css/themes/superhero.bootstrap.min.css&quot;,&quot;ImageSrc&quot;:&quot;../../assets/themeicons/superhero.png&quot;,&quot;OverrideCssUrl&quot;:&quot;&quot;,&quot;UserStyleOverrides&quot;:&quot;body , h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {\n                      font-family : Georgia !important;\n                    }table, .btn, .form-control {\n                      font-size : 15px !important;\n                     }h1 {\n                      font-size : 37px !important;\n                    }h2 {\n                      font-size : 31px !important;\n                    }h3 {\n                      font-size : 25px !important;\n                    }h4 {\n                      font-size : 19px !important;\n                    }h5 {\n                      font-size : 15px !important;\n                    }h6 {\n                      font-size : 13px !important;\n                    }body {\n      background:  #500000 !important;\n      font-size : 15px !important;\n      font-family : Georgia !important;\n      color : #ebebeb !important\n    } .panel-default {\n                        background:   !important;\n                        border-color :   !important;\n                      }\n                 .panel-default &gt; .panel-heading {\n                        background-color:  !important;\n                        color : #ebebeb !important\n                      }.btn-primary {\n                          background:  #ffffff !important;\n                          border-color:  #fbfbfb !important;\n                          color:  #500000 !important;\n                      } .btn-primary:hover {\n                          background:  #ffffff !important;\n                          color:  #500000 !important;\n                      } .btn-default {\n                        background:   !important;\n                        border-color:   !important;\n                        color:   !important;\n                      } .btn-default:hover {\n                        background:   !important;\n                        color:   !important;\n                      } &quot;,&quot;Properties&quot;:&quot;&quot;,&quot;IsCustomTheme&quot;:true,&quot;Version&quot;:1,&quot;ThemeVersion&quot;:1}" FormWidth="584" GenerateInputFields="True" sap:VirtualizedContainerService.HintSize="1178,372.666666666667" sap2010:WorkflowViewState.IdRef="FormActivity_1" IsReadOnly="False" MaxColumnsForSchemaGeneration="6" RunDoBlockFirst="False" RunInIsolatedMode="False">
+        <ufa:FormActivity Dismissed="{x:Null}" FormFieldsInputData="{x:Null}" FormTitle="{x:Null}" SelectedButton="{x:Null}" TimeoutInSeconds="{x:Null}" WindowPositionLeft="{x:Null}" WindowPositionTop="{x:Null}" DisableMaximizeButton="False" DisableMinimizeButton="False" DisplayName="Create Form" FormFieldsOutputData="[response]" FormHeight="517" FormSchema="%[{&quot;label&quot;:&quot;What email would you like the data sent to?&quot;,&quot;spellcheck&quot;:true,&quot;tableView&quot;:true,&quot;key&quot;:&quot;out_Email&quot;,&quot;type&quot;:&quot;textfield&quot;,&quot;input&quot;:true,&quot;calculateServer&quot;:false},{&quot;label&quot;:&quot;What league(s) would you like data for?&quot;,&quot;inline&quot;:true,&quot;tableView&quot;:false,&quot;defaultValue&quot;:{&quot;ncaafCfb&quot;:false,&quot;nhl&quot;:false,&quot;nfl&quot;:false,&quot;ncaa&quot;:false},&quot;values&quot;:[{&quot;label&quot;:&quot;NCAAF/CFB&quot;,&quot;value&quot;:&quot;ncaafCfb&quot;,&quot;shortcut&quot;:&quot;&quot;},{&quot;label&quot;:&quot;NHL&quot;,&quot;value&quot;:&quot;nhl&quot;,&quot;shortcut&quot;:&quot;&quot;},{&quot;label&quot;:&quot;NFL&quot;,&quot;value&quot;:&quot;nfl&quot;,&quot;shortcut&quot;:&quot;&quot;},{&quot;label&quot;:&quot;NCAA Men's basketball&quot;,&quot;value&quot;:&quot;ncaa&quot;,&quot;shortcut&quot;:&quot;&quot;}],&quot;key&quot;:&quot;out_Leagues&quot;,&quot;type&quot;:&quot;selectboxes&quot;,&quot;input&quot;:true,&quot;inputType&quot;:&quot;checkbox&quot;,&quot;calculateServer&quot;:false},{&quot;label&quot;:&quot;Which Excel sheet(s) would you like to see?&quot;,&quot;inline&quot;:true,&quot;tableView&quot;:false,&quot;defaultValue&quot;:{&quot;&quot;:false,&quot;league&quot;:false,&quot;team&quot;:false,&quot;coach&quot;:false,&quot;leaguePage&quot;:false},&quot;values&quot;:[{&quot;label&quot;:&quot;League Page&quot;,&quot;value&quot;:&quot;leaguePage&quot;,&quot;shortcut&quot;:&quot;&quot;},{&quot;label&quot;:&quot;Team Page&quot;,&quot;value&quot;:&quot;team&quot;,&quot;shortcut&quot;:&quot;&quot;},{&quot;label&quot;:&quot;Coach Page&quot;,&quot;value&quot;:&quot;coach&quot;,&quot;shortcut&quot;:&quot;&quot;}],&quot;key&quot;:&quot;out_Sheets&quot;,&quot;type&quot;:&quot;selectboxes&quot;,&quot;input&quot;:true,&quot;inputType&quot;:&quot;checkbox&quot;,&quot;calculateServer&quot;:false},{&quot;label&quot;:&quot;What team would you like data for?&quot;,&quot;spellcheck&quot;:true,&quot;tableView&quot;:true,&quot;key&quot;:&quot;out_SpecificTeam&quot;,&quot;type&quot;:&quot;textfield&quot;,&quot;input&quot;:true,&quot;calculateServer&quot;:false,&quot;hideOnChildrenHidden&quot;:false},{&quot;label&quot;:&quot;What coach would you like to see data for?&quot;,&quot;spellcheck&quot;:true,&quot;tableView&quot;:true,&quot;key&quot;:&quot;out_SpecificCoach&quot;,&quot;type&quot;:&quot;textfield&quot;,&quot;input&quot;:true,&quot;calculateServer&quot;:false,&quot;hideOnChildrenHidden&quot;:false},{&quot;label&quot;:&quot;How would you like this/these sheet sorted&quot;,&quot;optionsLabelPosition&quot;:&quot;right&quot;,&quot;inline&quot;:true,&quot;tableView&quot;:false,&quot;values&quot;:[{&quot;label&quot;:&quot;Wins per Year&quot;,&quot;value&quot;:&quot;winsPerYear&quot;,&quot;shortcut&quot;:&quot;&quot;},{&quot;label&quot;:&quot;Wins per Games&quot;,&quot;value&quot;:&quot;winsPerGames&quot;,&quot;shortcut&quot;:&quot;&quot;},{&quot;label&quot;:&quot;Postseason Wins per Year&quot;,&quot;value&quot;:&quot;postseasonWinsPerYear&quot;,&quot;shortcut&quot;:&quot;&quot;},{&quot;label&quot;:&quot;Postseason Wins per Postseason Games&quot;,&quot;value&quot;:&quot;postSeasonWinsPerPostseasonGames&quot;,&quot;shortcut&quot;:&quot;&quot;},{&quot;label&quot;:&quot;National Championships&quot;,&quot;value&quot;:&quot;nationalChampionships&quot;,&quot;shortcut&quot;:&quot;&quot;}],&quot;key&quot;:&quot;out_SortBy&quot;,&quot;type&quot;:&quot;radio&quot;,&quot;input&quot;:true,&quot;calculateServer&quot;:false},{&quot;type&quot;:&quot;button&quot;,&quot;label&quot;:&quot;Submit&quot;,&quot;key&quot;:&quot;submit&quot;,&quot;disableOnInvalid&quot;:true,&quot;input&quot;:true,&quot;alwaysEnabled&quot;:true,&quot;tableView&quot;:true,&quot;calculateServer&quot;:false}]" FormTheme="{}{&quot;Activities&quot;:[&quot;FORMS&quot;],&quot;Id&quot;:&quot;1607613962475&quot;,&quot;Name&quot;:&quot;TAMU maroon&quot;,&quot;BaseCss&quot;:&quot;../../assets/css/themes/superhero.bootstrap.min.css&quot;,&quot;ImageSrc&quot;:&quot;../../assets/themeicons/superhero.png&quot;,&quot;OverrideCssUrl&quot;:&quot;&quot;,&quot;UserStyleOverrides&quot;:&quot;body , h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {\n                      font-family : Georgia !important;\n                    }table, .btn, .form-control {\n                      font-size : 15px !important;\n                     }h1 {\n                      font-size : 37px !important;\n                    }h2 {\n                      font-size : 31px !important;\n                    }h3 {\n                      font-size : 25px !important;\n                    }h4 {\n                      font-size : 19px !important;\n                    }h5 {\n                      font-size : 15px !important;\n                    }h6 {\n                      font-size : 13px !important;\n                    }body {\n      background:  #500000 !important;\n      font-size : 15px !important;\n      font-family : Georgia !important;\n      color : #ebebeb !important\n    } .panel-default {\n                        background:   !important;\n                        border-color :   !important;\n                      }\n                 .panel-default &gt; .panel-heading {\n                        background-color:  !important;\n                        color : #ebebeb !important\n                      }.btn-primary {\n                          background:  #ffffff !important;\n                          border-color:  #fbfbfb !important;\n                          color:  #500000 !important;\n                      } .btn-primary:hover {\n                          background:  #ffffff !important;\n                          color:  #500000 !important;\n                      } .btn-default {\n                        background:   !important;\n                        border-color:   !important;\n                        color:   !important;\n                      } .btn-default:hover {\n                        background:   !important;\n                        color:   !important;\n                      } &quot;,&quot;Properties&quot;:&quot;&quot;,&quot;IsCustomTheme&quot;:true,&quot;Version&quot;:1,&quot;ThemeVersion&quot;:1}" FormWidth="584" GenerateInputFields="True" sap:VirtualizedContainerService.HintSize="414,372.666666666667" sap2010:WorkflowViewState.IdRef="FormActivity_1" IsReadOnly="False" MaxColumnsForSchemaGeneration="6" RunDoBlockFirst="False" RunInIsolatedMode="False">
           <ufa:FormActivity.Body>
             <ActivityAction x:TypeArguments="scg:Dictionary(x:String, x:Object)">
               <Sequence DisplayName="Retrieving values from form response" sap:VirtualizedContainerService.HintSize="376,246.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_25">
@@ -260,26 +260,10 @@
             <OutArgument x:TypeArguments="x:String" x:Key="out_SortBy">[sortBy]</OutArgument>
           </ufa:FormActivity.FormFieldsCollection>
         </ufa:FormActivity>
-        <ParallelForEach x:TypeArguments="x:String" DisplayName="Parallel For Each" sap:VirtualizedContainerService.HintSize="1178,215.333333333333" sap2010:WorkflowViewState.IdRef="ParallelForEach`1_14" Values="[pickedLeague]">
-          <ActivityAction x:TypeArguments="x:String">
-            <ActivityAction.Argument>
-              <DelegateInArgument x:TypeArguments="x:String" Name="item" />
-            </ActivityAction.Argument>
-            <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="229.333333333333,62.6666666666667" sap2010:WorkflowViewState.IdRef="WriteLine_27" Text="[&quot;league: &quot;+item]" />
-          </ActivityAction>
-        </ParallelForEach>
-        <ParallelForEach x:TypeArguments="x:String" DisplayName="Parallel For Each" sap:VirtualizedContainerService.HintSize="1178,215.333333333333" sap2010:WorkflowViewState.IdRef="ParallelForEach`1_15" Values="[pickedSheet]">
-          <ActivityAction x:TypeArguments="x:String">
-            <ActivityAction.Argument>
-              <DelegateInArgument x:TypeArguments="x:String" Name="item" />
-            </ActivityAction.Argument>
-            <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="229.333333333333,62.6666666666667" sap2010:WorkflowViewState.IdRef="WriteLine_28" Text="[&quot;sheet: &quot;+ item]" />
-          </ActivityAction>
-        </ParallelForEach>
-        <If Condition="[pickedLeague.Count&lt;0 and pickedSheet.Count&lt;0]" DisplayName="If only sheet or league input" sap:VirtualizedContainerService.HintSize="1178,556.666666666667" sap2010:WorkflowViewState.IdRef="If_11">
+        <If Condition="[pickedLeague.Count&lt;0 and pickedSheet.Count&lt;0]" DisplayName="If only sheet or league input" sap:VirtualizedContainerService.HintSize="414,52.6666666666667" sap2010:WorkflowViewState.IdRef="If_11">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
@@ -313,12 +297,12 @@
             </If>
           </If.Else>
         </If>
-        <ParallelForEach x:TypeArguments="x:String" DisplayName="Parallel For Each league picked" sap:VirtualizedContainerService.HintSize="1178,521.333333333333" sap2010:WorkflowViewState.IdRef="ParallelForEach`1_13" Values="[pickedLeague]">
+        <ParallelForEach x:TypeArguments="x:String" DisplayName="Parallel For Each league picked" sap:VirtualizedContainerService.HintSize="414,521.333333333333" sap2010:WorkflowViewState.IdRef="ParallelForEach`1_13" Values="[pickedLeague]">
           <ActivityAction x:TypeArguments="x:String">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="x:String" Name="league" />
             </ActivityAction.Argument>
-            <ParallelForEach x:TypeArguments="x:String" DisplayName="Parallel For Each" sap:VirtualizedContainerService.HintSize="354.666666666667,368.666666666667" sap2010:WorkflowViewState.IdRef="ParallelForEach`1_12" Values="[pickedSheet]">
+            <ParallelForEach x:TypeArguments="x:String" DisplayName="Parallel For Each sheet user picked" sap:VirtualizedContainerService.HintSize="354.666666666667,368.666666666667" sap2010:WorkflowViewState.IdRef="ParallelForEach`1_12" Values="[pickedSheet]">
               <ActivityAction x:TypeArguments="x:String">
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="x:String" Name="sheet" />
@@ -354,31 +338,35 @@
         </ParallelForEach>
       </Sequence>
       <FlowStep.Next>
-        <FlowDecision x:Name="__ReferenceID5" sap2010:Annotation.AnnotationText="Check if there is a new transaction" Condition="[NewTransaction]" DisplayName="Have input?" sap:VirtualizedContainerService.HintSize="158.666666666667,132" sap2010:WorkflowViewState.IdRef="FlowDecision_1">
+        <FlowDecision x:Name="__ReferenceID4" sap2010:Annotation.AnnotationText="Check if there is a new transaction" Condition="[NewTransaction]" DisplayName="Have input?" sap:VirtualizedContainerService.HintSize="158.666666666667,132" sap2010:WorkflowViewState.IdRef="FlowDecision_1">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-              <av:Point x:Key="ShapeLocation">300.666666666667,334</av:Point>
+              <av:Point x:Key="ShapeLocation">280.666666666667,324</av:Point>
               <av:Size x:Key="ShapeSize">158.666666666667,132</av:Size>
-              <av:PointCollection x:Key="TrueConnector">300.666666666667,400 110,400 110,523.666666666667</av:PointCollection>
-              <av:PointCollection x:Key="FalseConnector">459.333333333333,400 489.333333333333,400 489.333333333333,520 500,520</av:PointCollection>
+              <av:PointCollection x:Key="TrueConnector">280.666666666667,390 130,390 130,453.666666666667</av:PointCollection>
+              <av:PointCollection x:Key="FalseConnector">439.333333333333,390 469.333333333333,390 469.333333333333,490 500,490</av:PointCollection>
               <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <FlowDecision.True>
-            <FlowStep x:Name="__ReferenceID7" sap2010:WorkflowViewState.IdRef="FlowStep_5">
+            <FlowStep x:Name="__ReferenceID6" sap2010:WorkflowViewState.IdRef="FlowStep_5">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <av:Point x:Key="ShapeLocation">10,523.666666666667</av:Point>
+                  <av:Point x:Key="ShapeLocation">30,453.666666666667</av:Point>
                   <av:Size x:Key="ShapeSize">200,52.6666666666667</av:Size>
-                  <av:PointCollection x:Key="ConnectorLocation">110,523.666666666667 110,206.833333333333 260,206.833333333333</av:PointCollection>
+                  <av:PointCollection x:Key="ConnectorLocation">230,480 360,480 360,456</av:PointCollection>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <Flowchart DisplayName="Transaction Processing" sap:VirtualizedContainerService.HintSize="644,636" sap2010:WorkflowViewState.IdRef="Flowchart_2">
+              <Flowchart DisplayName="Transaction Processing" sap:VirtualizedContainerService.HintSize="200,52.6666666666667" sap2010:WorkflowViewState.IdRef="Flowchart_2">
                 <Flowchart.Variables>
                   <Variable x:TypeArguments="x:String" Name="team" />
                   <Variable x:TypeArguments="sd:DataTable" Name="tempData" />
-                  <Variable x:TypeArguments="sd:DataTable" Name="fullRecordsDT" />
+                  <Variable x:TypeArguments="sd:DataTable" Name="fullRecordsDT">
+                    <Variable.Default>
+                      <mva:VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="new System.Data.DataTable" />
+                    </Variable.Default>
+                  </Variable>
                 </Flowchart.Variables>
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -386,7 +374,8 @@
                     <av:Point x:Key="ShapeLocation">270,2.5</av:Point>
                     <av:Size x:Key="ShapeSize">60,74.6666666666667</av:Size>
                     <av:PointCollection x:Key="ConnectorLocation">300,77.1666666666667 300,99</av:PointCollection>
-                    <x:Double x:Key="Width">610</x:Double>
+                    <x:Double x:Key="Width">616.66666666666652</x:Double>
+                    <x:Double x:Key="Height">680.66666666666652</x:Double>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
                 <Flowchart.StartNode>
@@ -397,7 +386,7 @@
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <av:Point x:Key="ShapeLocation">200,156</av:Point>
                       <av:Size x:Key="ShapeSize">200,148</av:Size>
-                      <av:PointCollection x:Key="ConnectorLocation">300,304 300,334 290,334 290,433.666666666667</av:PointCollection>
+                      <av:PointCollection x:Key="ConnectorLocation">300,304 300,343.666666666667</av:PointCollection>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                   <Sequence sap2010:Annotation.AnnotationText="Sets team and coach values. Will be used in sequence to determine what data to take after switch." DisplayName="Checks for team and coach" sap:VirtualizedContainerService.HintSize="200,148" sap2010:WorkflowViewState.IdRef="Sequence_9">
@@ -458,12 +447,12 @@
                     <FlowStep x:Name="__ReferenceID1">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <av:Point x:Key="ShapeLocation">190,433.666666666667</av:Point>
+                          <av:Point x:Key="ShapeLocation">200,343.666666666667</av:Point>
                           <av:Size x:Key="ShapeSize">200,52.6666666666667</av:Size>
-                          <av:PointCollection x:Key="ConnectorLocation">290,486.333333333333 290,513.666666666667</av:PointCollection>
+                          <av:PointCollection x:Key="ConnectorLocation">300,396.333333333333 300,433.666666666667</av:PointCollection>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <ui:InvokeProcess ContinueOnError="{x:Null}" DisplayName="Invoke Compiler" sap:VirtualizedContainerService.HintSize="334,168" sap2010:WorkflowViewState.IdRef="InvokeProcess_1" ProcessName="SportsDataCompiler">
+                      <ui:InvokeProcess ContinueOnError="{x:Null}" DisplayName="Invoke Compiler" sap:VirtualizedContainerService.HintSize="200,52.6666666666667" sap2010:WorkflowViewState.IdRef="InvokeProcess_1" ProcessName="SportsDataCompiler">
                         <ui:InvokeProcess.Arguments>
                           <InArgument x:TypeArguments="x:String" x:Key="in_SpecificTeam">
                             <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="specificTeam" />
@@ -491,14 +480,18 @@
                         <FlowStep x:Name="__ReferenceID2">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <av:Point x:Key="ShapeLocation">190,513.666666666667</av:Point>
+                              <av:Point x:Key="ShapeLocation">200,433.666666666667</av:Point>
                               <av:Size x:Key="ShapeSize">200,52.6666666666667</av:Size>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                           <ui:InvokeProcess ContinueOnError="{x:Null}" DisplayName="Invoke Calculations" sap:VirtualizedContainerService.HintSize="200,52.6666666666667" sap2010:WorkflowViewState.IdRef="InvokeProcess_2" ProcessName="SportsRecordsCalculations">
                             <ui:InvokeProcess.Arguments>
-                              <InArgument x:TypeArguments="sd:DataTable" x:Key="in_SportsData">[tempData]</InArgument>
-                              <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_SportsRecords">[fullRecordsDT]</OutArgument>
+                              <InArgument x:TypeArguments="sd:DataTable" x:Key="in_SportsData">
+                                <mva:VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="tempData" />
+                              </InArgument>
+                              <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_SportsRecords">
+                                <mva:VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="fullRecordsDT" />
+                              </OutArgument>
                             </ui:InvokeProcess.Arguments>
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -539,14 +532,14 @@
             </FlowStep>
           </FlowDecision.True>
           <FlowDecision.False>
-            <FlowStep x:Name="__ReferenceID6" sap2010:WorkflowViewState.IdRef="FlowStep_3">
+            <FlowStep x:Name="__ReferenceID5" sap2010:WorkflowViewState.IdRef="FlowStep_3">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <av:Point x:Key="ShapeLocation">500,485.333333333333</av:Point>
+                  <av:Point x:Key="ShapeLocation">500,455.333333333333</av:Point>
                   <av:Size x:Key="ShapeSize">200,69.3333333333333</av:Size>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <Sequence DisplayName="End Process" sap:VirtualizedContainerService.HintSize="200,69.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_3">
+              <Sequence DisplayName="End Process" sap:VirtualizedContainerService.HintSize="376,241.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_3">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -555,7 +548,9 @@
                 <ui:SendOutlookMail Bcc="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" TimeoutMS="{x:Null}" Account="nfh.22.2019@gmail.com" Body="[&quot;Here is the excel file with all college football teams sorted by &quot;+sortBy]" DisplayName="Send email with excel book" sap:VirtualizedContainerService.HintSize="334,149.333333333333" sap2010:WorkflowViewState.IdRef="SendOutlookMail_1" IsBodyHtml="False" IsDraft="False" Subject="Sorted sports records" To="[email.ToString]">
                   <ui:SendOutlookMail.Files>
                     <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4">
-                      <InArgument x:TypeArguments="x:String">C:\Users\nfh22\OneDrive\Desktop\CFB\Data.xlsx</InArgument>
+                      <InArgument x:TypeArguments="x:String">
+                        <Literal x:TypeArguments="x:String">C:\Users\nfh22\OneDrive\Desktop\CFB\Data.xlsx</Literal>
+                      </InArgument>
                     </scg:List>
                   </ui:SendOutlookMail.Files>
                   <sap:WorkflowViewStateService.ViewState>
@@ -570,8 +565,8 @@
         </FlowDecision>
       </FlowStep.Next>
     </FlowStep>
+    <x:Reference>__ReferenceID4</x:Reference>
     <x:Reference>__ReferenceID5</x:Reference>
     <x:Reference>__ReferenceID6</x:Reference>
-    <x:Reference>__ReferenceID7</x:Reference>
   </Flowchart>
 </Activity>
