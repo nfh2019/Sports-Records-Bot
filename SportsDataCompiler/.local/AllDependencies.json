@@ -2952,9 +2952,9 @@
     "restore": {
       "projectUniqueName": "SportsDataCompiler",
       "projectName": "SportsDataCompiler",
-      "projectPath": "C:\\Users\\nfh22\\OneDrive\\Desktop\\Sports Records Bot\\Sports_Data_Compiler\\.local",
+      "projectPath": "C:\\Users\\nfh22\\OneDrive\\Desktop\\Sports Records Bot\\SportsDataCompiler\\.local",
       "packagesPath": "C:\\Users\\nfh22\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\nfh22\\OneDrive\\Desktop\\Sports Records Bot\\Sports_Data_Compiler\\.local"
+      "outputPath": "C:\\Users\\nfh22\\OneDrive\\Desktop\\Sports Records Bot\\SportsDataCompiler\\.local"
     },
     "frameworks": {
       "net461": {

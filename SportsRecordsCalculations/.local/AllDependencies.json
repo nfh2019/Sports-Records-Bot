@@ -2555,9 +2555,9 @@
     "restore": {
       "projectUniqueName": "SportsRecordsCalculations",
       "projectName": "SportsRecordsCalculations",
-      "projectPath": "C:\\Users\\nfh22\\OneDrive\\Desktop\\Sports Records Bot\\Sports_Records_Calculations\\.local",
+      "projectPath": "C:\\Users\\nfh22\\OneDrive\\Desktop\\Sports Records Bot\\SportsRecordsCalculations\\.local",
       "packagesPath": "C:\\Users\\nfh22\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\nfh22\\OneDrive\\Desktop\\Sports Records Bot\\Sports_Records_Calculations\\.local"
+      "outputPath": "C:\\Users\\nfh22\\OneDrive\\Desktop\\Sports Records Bot\\SportsRecordsCalculations\\.local"
     },
     "frameworks": {
       "net461": {

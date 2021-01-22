@@ -1,33 +1,22 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Process" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Process" this:Process.in_League="cfb" this:Process.in_Sheet="league" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
-    <x:Property sap2010:Annotation.AnnotationText="Dictionary structure to store configuration data of the process (settings, constants and assets)." Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
     <x:Property Name="in_League" Type="InArgument(x:String)" />
-    <x:Property Name="in_Sheet" Type="InArgument(s:String[])" />
+    <x:Property Name="in_Sheet" Type="InArgument(x:String)" />
     <x:Property Name="in_SpecificCoach" Type="InArgument(x:String)" />
     <x:Property Name="in_SpecificTeam" Type="InArgument(x:String)" />
-    <x:Property Name="in_Sheets" Type="InArgument(x:String)" />
     <x:Property Name="in_LeagueData" Type="InArgument(sd:DataTable)" />
     <x:Property Name="out_LeagueFullData" Type="OutArgument(sd:DataTable)" />
   </x:Members>
-  <this:Process.in_Sheet>
-    <InArgument x:TypeArguments="s:String[]" />
-  </this:Process.in_Sheet>
-  <this:Process.in_SpecificCoach>
-    <InArgument x:TypeArguments="x:String" />
-  </this:Process.in_SpecificCoach>
-  <this:Process.in_SpecificTeam>
-    <InArgument x:TypeArguments="x:String" />
-  </this:Process.in_SpecificTeam>
   <this:Process.in_LeagueData>
     <InArgument x:TypeArguments="sd:DataTable" />
   </this:Process.in_LeagueData>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>538.666666666667,667.333333333333</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>528.666666666667,794</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ProcessTransaction_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
-    <scg:List x:TypeArguments="x:String" Capacity="28">
+    <scg:List x:TypeArguments="x:String" Capacity="56">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -56,10 +45,12 @@
       <x:String>System.Xml.Serialization</x:String>
       <x:String>System.ComponentModel</x:String>
       <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="27">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="54">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -86,6 +77,7 @@
       <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
       <AssemblyReference>UiPath.Excel</AssemblyReference>
       <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
@@ -100,7 +92,7 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[in_League]" sap:VirtualizedContainerService.HintSize="496.666666666667,375.333333333333" sap2010:WorkflowViewState.IdRef="Switch`1_1">
+    <Switch x:TypeArguments="x:String" DisplayName="Different implementations based on league" Expression="[in_League]" sap:VirtualizedContainerService.HintSize="496.666666666667,375.333333333333" sap2010:WorkflowViewState.IdRef="Switch`1_1">
       <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" x:Key="cfb" DisplayName="Invoke GetSheetData workflow" sap:VirtualizedContainerService.HintSize="334,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="CFB\GetSheetData.xaml">
         <ui:InvokeWorkflowFile.Arguments>
           <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_CFBData">
@@ -116,7 +108,10 @@
             <mva:VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="in_LeagueData" />
           </InArgument>
           <InArgument x:TypeArguments="x:String" x:Key="in_Sheet">
-            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Sheets" />
+            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Sheet" />
+          </InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="in_League">
+            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_League" />
           </InArgument>
         </ui:InvokeWorkflowFile.Arguments>
       </ui:InvokeWorkflowFile>
