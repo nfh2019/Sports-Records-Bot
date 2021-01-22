@@ -136,7 +136,7 @@
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ParallelForEach x:TypeArguments="njl:JToken" DisplayName="Grabbing sheet responses" sap:VirtualizedContainerService.HintSize="426.666666666667,396" sap2010:WorkflowViewState.IdRef="ParallelForEach`1_11" Values="[responseObject(&quot;out_Sheets&quot;)]">
+                  <ParallelForEach x:TypeArguments="njl:JToken" DisplayName="Grabbing sheet responses" sap:VirtualizedContainerService.HintSize="200,52.6666666666667" sap2010:WorkflowViewState.IdRef="ParallelForEach`1_11" Values="[responseObject(&quot;out_Sheets&quot;)]">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -190,7 +190,7 @@
                       </Sequence>
                     </ActivityAction>
                   </ParallelForEach>
-                  <ParallelForEach x:TypeArguments="njl:JToken" DisplayName="Grabbing league responses" sap:VirtualizedContainerService.HintSize="200,52.6666666666667" sap2010:WorkflowViewState.IdRef="ParallelForEach`1_9" Values="[responseObject(&quot;out_Leagues&quot;)]">
+                  <ParallelForEach x:TypeArguments="njl:JToken" DisplayName="Grabbing league responses" sap:VirtualizedContainerService.HintSize="426.666666666667,396" sap2010:WorkflowViewState.IdRef="ParallelForEach`1_9" Values="[responseObject(&quot;out_Leagues&quot;)]">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -211,7 +211,7 @@
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                         <ui:IsMatch BuilderPattern=": true$" DisplayName="Checks for yes response" sap:VirtualizedContainerService.HintSize="334,58.6666666666667" sap2010:WorkflowViewState.IdRef="IsMatch_1" Input="[item.ToString]" IsBuilderTabModified="True" Model="[{&quot;Index&quot;:0,&quot;OperationID&quot;:&quot;LIT&quot;,&quot;OperationName&quot;:&quot;Literal&quot;,&quot;OperationValue&quot;:&quot;: true&quot;,&quot;QuantifierFirstValue&quot;:&quot;1&quot;,&quot;QuantifierID&quot;:&quot;EXT&quot;,&quot;QuantifierName&quot;:&quot;Exactly&quot;,&quot;QuantifierSecondValue&quot;:null},{&quot;Index&quot;:1,&quot;OperationID&quot;:&quot;END&quot;,&quot;OperationName&quot;:&quot;Ends with&quot;,&quot;OperationValue&quot;:&quot;$&quot;,&quot;QuantifierFirstValue&quot;:&quot;1&quot;,&quot;QuantifierID&quot;:&quot;EXT&quot;,&quot;QuantifierName&quot;:&quot;Exactly&quot;,&quot;QuantifierSecondValue&quot;:null}]" Pattern=": true$" RegexOption="IgnoreCase" Result="[checkTrue]" />
-                        <If Condition="[checkTrue]" DisplayName="if response is yes" sap:VirtualizedContainerService.HintSize="334,52.6666666666667" sap2010:WorkflowViewState.IdRef="If_8">
+                        <If Condition="[checkTrue]" DisplayName="if response is yes" sap:VirtualizedContainerService.HintSize="484,223.333333333333" sap2010:WorkflowViewState.IdRef="If_8">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -219,7 +219,7 @@
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                           <If.Then>
-                            <Sequence DisplayName="Assining value for league" sap:VirtualizedContainerService.HintSize="200,69.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_28">
+                            <Sequence DisplayName="Assining value for league" sap:VirtualizedContainerService.HintSize="304,216" sap2010:WorkflowViewState.IdRef="Sequence_28">
                               <Sequence.Variables>
                                 <Variable x:TypeArguments="x:String" Name="checkLeague" />
                               </Sequence.Variables>
@@ -374,7 +374,7 @@
                   <av:PointCollection x:Key="ConnectorLocation">110,523.666666666667 110,206.833333333333 260,206.833333333333</av:PointCollection>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <Flowchart DisplayName="Transaction Processing" sap:VirtualizedContainerService.HintSize="200,52.6666666666667" sap2010:WorkflowViewState.IdRef="Flowchart_2">
+              <Flowchart DisplayName="Transaction Processing" sap:VirtualizedContainerService.HintSize="644,636" sap2010:WorkflowViewState.IdRef="Flowchart_2">
                 <Flowchart.Variables>
                   <Variable x:TypeArguments="x:String" Name="team" />
                   <Variable x:TypeArguments="sd:DataTable" Name="tempData" />
@@ -397,7 +397,7 @@
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <av:Point x:Key="ShapeLocation">200,156</av:Point>
                       <av:Size x:Key="ShapeSize">200,148</av:Size>
-                      <av:PointCollection x:Key="ConnectorLocation">300,304 300,333.666666666667</av:PointCollection>
+                      <av:PointCollection x:Key="ConnectorLocation">300,304 300,334 290,334 290,433.666666666667</av:PointCollection>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                   <Sequence sap2010:Annotation.AnnotationText="Sets team and coach values. Will be used in sequence to determine what data to take after switch." DisplayName="Checks for team and coach" sap:VirtualizedContainerService.HintSize="200,148" sap2010:WorkflowViewState.IdRef="Sequence_9">
@@ -458,18 +458,28 @@
                     <FlowStep x:Name="__ReferenceID1">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <av:Point x:Key="ShapeLocation">200,333.666666666667</av:Point>
+                          <av:Point x:Key="ShapeLocation">190,433.666666666667</av:Point>
                           <av:Size x:Key="ShapeSize">200,52.6666666666667</av:Size>
-                          <av:PointCollection x:Key="ConnectorLocation">300,386.333333333333 300,423.666666666667</av:PointCollection>
+                          <av:PointCollection x:Key="ConnectorLocation">290,486.333333333333 290,513.666666666667</av:PointCollection>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <ui:InvokeProcess ContinueOnError="{x:Null}" DisplayName="Invoke Compiler" sap:VirtualizedContainerService.HintSize="200,52.6666666666667" sap2010:WorkflowViewState.IdRef="InvokeProcess_1" ProcessName="SportsDataCompiler">
+                      <ui:InvokeProcess ContinueOnError="{x:Null}" DisplayName="Invoke Compiler" sap:VirtualizedContainerService.HintSize="334,168" sap2010:WorkflowViewState.IdRef="InvokeProcess_1" ProcessName="SportsDataCompiler">
                         <ui:InvokeProcess.Arguments>
-                          <InArgument x:TypeArguments="x:String" x:Key="in_SpecificTeam">[specificTeam]</InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="in_League">[league]</InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="in_SpecificCoach">[specificCoach]</InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="in_Sheet">[sheet]</InArgument>
-                          <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_RecordsData">[tempData]</OutArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_SpecificTeam">
+                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="specificTeam" />
+                          </InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_League">
+                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="league" />
+                          </InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_SpecificCoach">
+                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="specificCoach" />
+                          </InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_Sheet">
+                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="sheet" />
+                          </InArgument>
+                          <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_RecordsData">
+                            <mva:VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="tempData" />
+                          </OutArgument>
                         </ui:InvokeProcess.Arguments>
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -481,7 +491,7 @@
                         <FlowStep x:Name="__ReferenceID2">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <av:Point x:Key="ShapeLocation">200,423.666666666667</av:Point>
+                              <av:Point x:Key="ShapeLocation">190,513.666666666667</av:Point>
                               <av:Size x:Key="ShapeSize">200,52.6666666666667</av:Size>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>

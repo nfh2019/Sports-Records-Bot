@@ -13,7 +13,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>781.333333333333,774.666666666667</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>750.666666666667,774.666666666667</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>GetSheetData_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -152,9 +152,7 @@
                 </ui:InvokeWorkflowFile>
                 <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke AddNationalChampionships workflow" sap:VirtualizedContainerService.HintSize="334,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="CFB\AddNationalChampionships.xaml">
                   <ui:InvokeWorkflowFile.Arguments>
-                    <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_ChampionsSameName">
-                      <mva:VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="CFBDataChampions" />
-                    </OutArgument>
+                    <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_ChampionsSameName">[CFBDataChampions]</OutArgument>
                   </ui:InvokeWorkflowFile.Arguments>
                 </ui:InvokeWorkflowFile>
                 <Sequence DisplayName="Join tables and remove duplicate columns" sap:VirtualizedContainerService.HintSize="334,69.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_3">
@@ -245,9 +243,7 @@
         </ui:InvokeWorkflowFile>
         <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke AddNationalChampionships workflow" sap:VirtualizedContainerService.HintSize="334,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="CFB\AddNationalChampionships.xaml">
           <ui:InvokeWorkflowFile.Arguments>
-            <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_ChampionsSameName">
-              <mva:VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="CFBDataChampions" />
-            </OutArgument>
+            <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_ChampionsSameName">[CFBDataChampions]</OutArgument>
           </ui:InvokeWorkflowFile.Arguments>
         </ui:InvokeWorkflowFile>
         <TryCatch DisplayName="National championship table?" sap:VirtualizedContainerService.HintSize="334,52.6666666666667" sap2010:WorkflowViewState.IdRef="TryCatch_3">
@@ -320,7 +316,7 @@
           <av:Size x:Key="ShapeSize">200,69.3333333333333</av:Size>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Sequence DisplayName="Get coach data" sap:VirtualizedContainerService.HintSize="618.666666666667,1576" sap2010:WorkflowViewState.IdRef="Sequence_9">
+      <Sequence DisplayName="Get coach data" sap:VirtualizedContainerService.HintSize="618.666666666667,2005.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_9">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -346,13 +342,13 @@
           <ui:WriteCell Cell="J1" DisplayName="Write bowl games" sap:VirtualizedContainerService.HintSize="334,114.666666666667" sap2010:WorkflowViewState.IdRef="WriteCell_43" SheetName="[in_SpecificCoach]" Text="Bowl Games" WorkbookPath="C:\Users\nfh22\OneDrive\Desktop\Sports Records Bot\Data.xlsx" />
           <ui:WriteCell Cell="K1" DisplayName="Write national championships" sap:VirtualizedContainerService.HintSize="334,114.666666666667" sap2010:WorkflowViewState.IdRef="WriteCell_44" SheetName="[in_SpecificCoach]" Text="National Championships" WorkbookPath="C:\Users\nfh22\OneDrive\Desktop\Sports Records Bot\Data.xlsx" />
         </Sequence>
-        <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[in_LeagueData]" DisplayName="For Each Row In Input Table" sap:VirtualizedContainerService.HintSize="576.666666666667,1105.33333333333" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
+        <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[in_LeagueData]" DisplayName="For Each Row In Input Table" sap:VirtualizedContainerService.HintSize="576.666666666667,1534.66666666667" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
           <ui:ForEachRow.Body>
             <ActivityAction x:TypeArguments="sd:DataRow">
               <ActivityAction.Argument>
                 <DelegateInArgument x:TypeArguments="sd:DataRow" Name="item" />
               </ActivityAction.Argument>
-              <Sequence sap:VirtualizedContainerService.HintSize="526,952.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_8">
+              <Sequence sap:VirtualizedContainerService.HintSize="526,1382" sap2010:WorkflowViewState.IdRef="Sequence_8">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -367,15 +363,13 @@
                 </ui:InvokeWorkflowFile>
                 <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke AddNationalChampionships workflow" sap:VirtualizedContainerService.HintSize="484,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" UnSafe="False" WorkflowFileName="CFB\AddNationalChampionships.xaml">
                   <ui:InvokeWorkflowFile.Arguments>
-                    <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_ChampionsSameName">
-                      <mva:VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="CFBDataChampions" />
-                    </OutArgument>
+                    <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_ChampionsSameName">[CFBDataChampions]</OutArgument>
                   </ui:InvokeWorkflowFile.Arguments>
                 </ui:InvokeWorkflowFile>
-                <TryCatch DisplayName="National championship table?" sap:VirtualizedContainerService.HintSize="484,52.6666666666667" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+                <TryCatch DisplayName="National championship table?" sap:VirtualizedContainerService.HintSize="484,574.666666666667" sap2010:WorkflowViewState.IdRef="TryCatch_1">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
@@ -450,33 +444,6 @@
                     </scg:List>
                   </ui:FilterDataTable.SelectColumns>
                 </ui:FilterDataTable>
-                <TryCatch DisplayName="column already filtered out" sap:VirtualizedContainerService.HintSize="484,52.6666666666667" sap2010:WorkflowViewState.IdRef="TryCatch_2">
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                  <TryCatch.Try>
-                    <ui:RemoveDataColumn Column="{x:Null}" ColumnIndex="{x:Null}" ColumnName="Head Coach" DataTable="[out_CFBData]" DisplayName="Remove Data Column" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="RemoveDataColumn_9" />
-                  </TryCatch.Try>
-                  <TryCatch.Catches>
-                    <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404.666666666667,22" sap2010:WorkflowViewState.IdRef="Catch`1_2">
-                      <sap:WorkflowViewStateService.ViewState>
-                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                        </scg:Dictionary>
-                      </sap:WorkflowViewStateService.ViewState>
-                      <ActivityAction x:TypeArguments="s:Exception">
-                        <ActivityAction.Argument>
-                          <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
-                        </ActivityAction.Argument>
-                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Error" Message="[&quot;column does not exist&quot;]" />
-                      </ActivityAction>
-                    </Catch>
-                  </TryCatch.Catches>
-                </TryCatch>
                 <If Condition="[out_CFBData is Nothing]" DisplayName="If datatable not empty" sap:VirtualizedContainerService.HintSize="484,268.666666666667" sap2010:WorkflowViewState.IdRef="If_1">
                   <If.Else>
                     <ui:AppendRange DataTable="[out_CFBData]" DisplayName="write to excel sheet" sap:VirtualizedContainerService.HintSize="334,114.666666666667" sap2010:WorkflowViewState.IdRef="AppendRange_2" SheetName="[in_SpecificCoach]" WorkbookPath="C:\Users\nfh22\OneDrive\Desktop\Sports Records Bot\Data.xlsx" />
