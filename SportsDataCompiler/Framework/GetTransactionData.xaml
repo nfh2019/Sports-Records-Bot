@@ -84,12 +84,20 @@
     <Switch x:TypeArguments="x:String" DisplayName="Different implementations based on league" Expression="[in_league]" sap:VirtualizedContainerService.HintSize="496.666666666667,375.333333333333" sap2010:WorkflowViewState.IdRef="Switch`1_1">
       <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" x:Key="ncaafCfb" DisplayName="Invoke GetTransactionData workflow" sap:VirtualizedContainerService.HintSize="334,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="CFB\GetTransactionData.xaml">
         <ui:InvokeWorkflowFile.Arguments>
-          <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_CFBData">[io_TransactionData]</OutArgument>
+          <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_CFBData">
+            <mva:VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="io_TransactionData" />
+          </OutArgument>
         </ui:InvokeWorkflowFile.Arguments>
       </ui:InvokeWorkflowFile>
       <x:Null x:Key="ncaa" />
       <x:Null x:Key="nfl" />
-      <x:Null x:Key="nhl" />
+      <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" x:Key="nhl" DisplayName="Invoke GetTransactionData workflow" sap:VirtualizedContainerService.HintSize="334,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="NHL\GetTransactionData.xaml">
+        <ui:InvokeWorkflowFile.Arguments>
+          <InArgument x:TypeArguments="sd:DataTable" x:Key="out_NHLData">
+            <mva:VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="io_TransactionData" />
+          </InArgument>
+        </ui:InvokeWorkflowFile.Arguments>
+      </ui:InvokeWorkflowFile>
     </Switch>
   </Sequence>
 </Activity>

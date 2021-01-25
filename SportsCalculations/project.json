@@ -1,20 +1,18 @@
 {
-  "name": "SportsRecords",
-  "description": "Executes main program by invoking other workflow files made with different templates using transactional template.",
+  "name": "SportsCalculations",
+  "description": "Regular Process to do calculations",
   "main": "Main.xaml",
   "dependencies": {
-    "UiPath.Excel.Activities": "[2.9.3]",
-    "UiPath.Form.Activities": "[1.2.1-preview]",
-    "UiPath.Mail.Activities": "[1.9.3]",
-    "UiPath.System.Activities": "[20.10.1]",
-    "UiPath.UIAutomation.Activities": "[20.10.6]",
-    "UiPath.WebAPI.Activities": "[1.6.0]"
+    "UiPath.Excel.Activities": "[2.9.5]",
+    "UiPath.Mail.Activities": "[1.9.5]",
+    "UiPath.System.Activities": "[20.10.3]",
+    "UiPath.UIAutomation.Activities": "[20.10.8]"
   },
   "webServices": [],
   "entitiesStores": [],
   "schemaVersion": "4.0",
-  "studioVersion": "20.10.2.0",
-  "projectVersion": "1.0.5",
+  "studioVersion": "20.10.3.0",
+  "projectVersion": "1.0.1",
   "runtimeOptions": {
     "autoDispose": false,
     "isPausable": true,
@@ -45,7 +43,7 @@
   "entryPoints": [
     {
       "filePath": "Main.xaml",
-      "uniqueId": "035036f0-2b16-4db7-b38b-ae0752ce5c51",
+      "uniqueId": "7bc8f5a1-0637-485f-8dae-2bdbdabc459d",
       "input": [],
       "output": []
     }

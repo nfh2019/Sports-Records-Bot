@@ -98,9 +98,9 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <Flowchart.StartNode>
-      <x:Reference>__ReferenceID7</x:Reference>
+      <x:Reference>__ReferenceID6</x:Reference>
     </Flowchart.StartNode>
-    <FlowStep x:Name="__ReferenceID7" sap2010:WorkflowViewState.IdRef="FlowStep_1">
+    <FlowStep x:Name="__ReferenceID6" sap2010:WorkflowViewState.IdRef="FlowStep_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <av:Point x:Key="ShapeLocation">260,124.5</av:Point>
@@ -157,7 +157,7 @@
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                         <ui:IsMatch BuilderPattern=": true$" DisplayName="Checks for yes response" sap:VirtualizedContainerService.HintSize="334,58.6666666666667" sap2010:WorkflowViewState.IdRef="IsMatch_2" Input="[item.ToString]" IsBuilderTabModified="True" Model="[{&quot;Index&quot;:0,&quot;OperationID&quot;:&quot;LIT&quot;,&quot;OperationName&quot;:&quot;Literal&quot;,&quot;OperationValue&quot;:&quot;: true&quot;,&quot;QuantifierFirstValue&quot;:&quot;1&quot;,&quot;QuantifierID&quot;:&quot;EXT&quot;,&quot;QuantifierName&quot;:&quot;Exactly&quot;,&quot;QuantifierSecondValue&quot;:null},{&quot;Index&quot;:1,&quot;OperationID&quot;:&quot;END&quot;,&quot;OperationName&quot;:&quot;Ends with&quot;,&quot;OperationValue&quot;:&quot;$&quot;,&quot;QuantifierFirstValue&quot;:&quot;1&quot;,&quot;QuantifierID&quot;:&quot;EXT&quot;,&quot;QuantifierName&quot;:&quot;Exactly&quot;,&quot;QuantifierSecondValue&quot;:null}]" Pattern=": true$" RegexOption="IgnoreCase" Result="[checkTrue]" />
-                        <If Condition="[checkTrue]" DisplayName="if response is yes" sap:VirtualizedContainerService.HintSize="484,370" sap2010:WorkflowViewState.IdRef="If_9">
+                        <If Condition="[checkTrue]" DisplayName="if response is yes" sap:VirtualizedContainerService.HintSize="334,52.6666666666667" sap2010:WorkflowViewState.IdRef="If_9">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -190,7 +190,7 @@
                       </Sequence>
                     </ActivityAction>
                   </ParallelForEach>
-                  <ParallelForEach x:TypeArguments="njl:JToken" DisplayName="Grabbing league responses" sap:VirtualizedContainerService.HintSize="426.666666666667,396" sap2010:WorkflowViewState.IdRef="ParallelForEach`1_9" Values="[responseObject(&quot;out_Leagues&quot;)]">
+                  <ParallelForEach x:TypeArguments="njl:JToken" DisplayName="Grabbing league responses" sap:VirtualizedContainerService.HintSize="200,52.6666666666667" sap2010:WorkflowViewState.IdRef="ParallelForEach`1_9" Values="[responseObject(&quot;out_Leagues&quot;)]">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -211,7 +211,7 @@
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                         <ui:IsMatch BuilderPattern=": true$" DisplayName="Checks for yes response" sap:VirtualizedContainerService.HintSize="334,58.6666666666667" sap2010:WorkflowViewState.IdRef="IsMatch_1" Input="[item.ToString]" IsBuilderTabModified="True" Model="[{&quot;Index&quot;:0,&quot;OperationID&quot;:&quot;LIT&quot;,&quot;OperationName&quot;:&quot;Literal&quot;,&quot;OperationValue&quot;:&quot;: true&quot;,&quot;QuantifierFirstValue&quot;:&quot;1&quot;,&quot;QuantifierID&quot;:&quot;EXT&quot;,&quot;QuantifierName&quot;:&quot;Exactly&quot;,&quot;QuantifierSecondValue&quot;:null},{&quot;Index&quot;:1,&quot;OperationID&quot;:&quot;END&quot;,&quot;OperationName&quot;:&quot;Ends with&quot;,&quot;OperationValue&quot;:&quot;$&quot;,&quot;QuantifierFirstValue&quot;:&quot;1&quot;,&quot;QuantifierID&quot;:&quot;EXT&quot;,&quot;QuantifierName&quot;:&quot;Exactly&quot;,&quot;QuantifierSecondValue&quot;:null}]" Pattern=": true$" RegexOption="IgnoreCase" Result="[checkTrue]" />
-                        <If Condition="[checkTrue]" DisplayName="if response is yes" sap:VirtualizedContainerService.HintSize="484,223.333333333333" sap2010:WorkflowViewState.IdRef="If_8">
+                        <If Condition="[checkTrue]" DisplayName="if response is yes" sap:VirtualizedContainerService.HintSize="334,52.6666666666667" sap2010:WorkflowViewState.IdRef="If_8">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -315,12 +315,24 @@
                   </sap:WorkflowViewStateService.ViewState>
                   <ui:AddQueueItem ServiceBaseAddress="{x:Null}" TimeoutMS="{x:Null}" ContinueOnError="True" DisplayName="Add Queue Item" sap:VirtualizedContainerService.HintSize="262,22" sap2010:WorkflowViewState.IdRef="AddQueueItem_1" Priority="Normal" QueueType="SportsRecords">
                     <ui:AddQueueItem.ItemInformation>
-                      <InArgument x:TypeArguments="x:String" x:Key="Email">[email]</InArgument>
-                      <InArgument x:TypeArguments="x:String" x:Key="Specific Team">[specificTeam]</InArgument>
-                      <InArgument x:TypeArguments="x:String" x:Key="Specific Coach">[specificCoach]</InArgument>
-                      <InArgument x:TypeArguments="x:String" x:Key="Sheet">[sheet]</InArgument>
-                      <InArgument x:TypeArguments="x:String" x:Key="League">[league]</InArgument>
-                      <InArgument x:TypeArguments="x:String" x:Key="Sorting Method">[sortBy]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="Email">
+                        <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="email" />
+                      </InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="Specific Team">
+                        <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="specificTeam" />
+                      </InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="Specific Coach">
+                        <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="specificCoach" />
+                      </InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="Sheet">
+                        <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="sheet" />
+                      </InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="League">
+                        <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="league" />
+                      </InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="Sorting Method">
+                        <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="sortBy" />
+                      </InArgument>
                     </ui:AddQueueItem.ItemInformation>
                   </ui:AddQueueItem>
                   <Assign DisplayName="Assign new transaction" sap:VirtualizedContainerService.HintSize="262,62" sap2010:WorkflowViewState.IdRef="Assign_18">
@@ -338,7 +350,10 @@
         </ParallelForEach>
       </Sequence>
       <FlowStep.Next>
-        <FlowDecision x:Name="__ReferenceID4" sap2010:Annotation.AnnotationText="Check if there is a new transaction" Condition="[NewTransaction]" DisplayName="Have input?" sap:VirtualizedContainerService.HintSize="158.666666666667,132" sap2010:WorkflowViewState.IdRef="FlowDecision_1">
+        <FlowDecision x:Name="__ReferenceID3" sap2010:Annotation.AnnotationText="Check if there is a new transaction" DisplayName="Have input?" sap:VirtualizedContainerService.HintSize="158.666666666667,132" sap2010:WorkflowViewState.IdRef="FlowDecision_1">
+          <FlowDecision.Condition>
+            <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="NewTransaction" />
+          </FlowDecision.Condition>
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -350,7 +365,7 @@
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <FlowDecision.True>
-            <FlowStep x:Name="__ReferenceID6" sap2010:WorkflowViewState.IdRef="FlowStep_5">
+            <FlowStep x:Name="__ReferenceID5" sap2010:WorkflowViewState.IdRef="FlowStep_5">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <av:Point x:Key="ShapeLocation">30,453.666666666667</av:Point>
@@ -358,7 +373,7 @@
                   <av:PointCollection x:Key="ConnectorLocation">230,480 360,480 360,456</av:PointCollection>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <Flowchart DisplayName="Transaction Processing" sap:VirtualizedContainerService.HintSize="200,52.6666666666667" sap2010:WorkflowViewState.IdRef="Flowchart_2">
+              <Flowchart DisplayName="Transaction Processing" sap:VirtualizedContainerService.HintSize="650.666666666667,716.666666666667" sap2010:WorkflowViewState.IdRef="Flowchart_2">
                 <Flowchart.Variables>
                   <Variable x:TypeArguments="x:String" Name="team" />
                   <Variable x:TypeArguments="sd:DataTable" Name="tempData" />
@@ -367,6 +382,7 @@
                       <mva:VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="new System.Data.DataTable" />
                     </Variable.Default>
                   </Variable>
+                  <Variable x:TypeArguments="scg:IEnumerable(ui:QueueItem)" Name="items" />
                 </Flowchart.Variables>
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -379,140 +395,17 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
                 <Flowchart.StartNode>
-                  <x:Reference>__ReferenceID3</x:Reference>
+                  <x:Reference>__ReferenceID2</x:Reference>
                 </Flowchart.StartNode>
-                <FlowStep x:Name="__ReferenceID0">
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <av:Point x:Key="ShapeLocation">200,156</av:Point>
-                      <av:Size x:Key="ShapeSize">200,148</av:Size>
-                      <av:PointCollection x:Key="ConnectorLocation">300,304 300,343.666666666667</av:PointCollection>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                  <Sequence sap2010:Annotation.AnnotationText="Sets team and coach values. Will be used in sequence to determine what data to take after switch." DisplayName="Checks for team and coach" sap:VirtualizedContainerService.HintSize="200,148" sap2010:WorkflowViewState.IdRef="Sequence_9">
-                    <Sequence.Variables>
-                      <Variable x:TypeArguments="x:String" Name="coach" />
-                    </Sequence.Variables>
-                    <sap:WorkflowViewStateService.ViewState>
-                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                      </scg:Dictionary>
-                    </sap:WorkflowViewStateService.ViewState>
-                    <If sap2010:Annotation.AnnotationText="Sets team value. Will be used in sequence to determine what data to take after switch." Condition="[team is nothing]" DisplayName="If team was specified" sap:VirtualizedContainerService.HintSize="537.333333333333,247.333333333333" sap2010:WorkflowViewState.IdRef="If_2">
-                      <sap:WorkflowViewStateService.ViewState>
-                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                        </scg:Dictionary>
-                      </sap:WorkflowViewStateService.ViewState>
-                      <If.Then>
-                        <WriteLine DisplayName="write no team" sap:VirtualizedContainerService.HintSize="229.333333333333,62.6666666666667" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="no team input" />
-                      </If.Then>
-                      <If.Else>
-                        <Assign DisplayName="Assign team to user choice" sap:VirtualizedContainerService.HintSize="262,62" sap2010:WorkflowViewState.IdRef="Assign_7">
-                          <Assign.To>
-                            <OutArgument x:TypeArguments="x:String">[team]</OutArgument>
-                          </Assign.To>
-                          <Assign.Value>
-                            <InArgument x:TypeArguments="x:String">[team]</InArgument>
-                          </Assign.Value>
-                        </Assign>
-                      </If.Else>
-                    </If>
-                    <If sap2010:Annotation.AnnotationText="Sets coach value. Will be used in sequence to determine what data to take after switch." Condition="[coach is Nothing]" DisplayName="If coach was specified" sap:VirtualizedContainerService.HintSize="537.333333333333,247.333333333333" sap2010:WorkflowViewState.IdRef="If_3">
-                      <sap:WorkflowViewStateService.ViewState>
-                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                        </scg:Dictionary>
-                      </sap:WorkflowViewStateService.ViewState>
-                      <If.Then>
-                        <WriteLine DisplayName="Write no coach" sap:VirtualizedContainerService.HintSize="229.333333333333,62.6666666666667" sap2010:WorkflowViewState.IdRef="WriteLine_2" Text="no coach selected" />
-                      </If.Then>
-                      <If.Else>
-                        <Assign DisplayName="Assign coach to user choice" sap:VirtualizedContainerService.HintSize="262,62" sap2010:WorkflowViewState.IdRef="Assign_8">
-                          <Assign.To>
-                            <OutArgument x:TypeArguments="x:String">[coach]</OutArgument>
-                          </Assign.To>
-                          <Assign.Value>
-                            <InArgument x:TypeArguments="x:String">[coach]</InArgument>
-                          </Assign.Value>
-                        </Assign>
-                      </If.Else>
-                    </If>
-                  </Sequence>
-                  <FlowStep.Next>
-                    <FlowStep x:Name="__ReferenceID1">
-                      <sap:WorkflowViewStateService.ViewState>
-                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <av:Point x:Key="ShapeLocation">200,343.666666666667</av:Point>
-                          <av:Size x:Key="ShapeSize">200,52.6666666666667</av:Size>
-                          <av:PointCollection x:Key="ConnectorLocation">300,396.333333333333 300,433.666666666667</av:PointCollection>
-                        </scg:Dictionary>
-                      </sap:WorkflowViewStateService.ViewState>
-                      <ui:InvokeProcess ContinueOnError="{x:Null}" DisplayName="Invoke Compiler" sap:VirtualizedContainerService.HintSize="200,52.6666666666667" sap2010:WorkflowViewState.IdRef="InvokeProcess_1" ProcessName="SportsDataCompiler">
-                        <ui:InvokeProcess.Arguments>
-                          <InArgument x:TypeArguments="x:String" x:Key="in_SpecificTeam">
-                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="specificTeam" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="in_League">
-                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="league" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="in_SpecificCoach">
-                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="specificCoach" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="in_Sheet">
-                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="sheet" />
-                          </InArgument>
-                          <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_RecordsData">
-                            <mva:VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="tempData" />
-                          </OutArgument>
-                        </ui:InvokeProcess.Arguments>
-                        <sap:WorkflowViewStateService.ViewState>
-                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                          </scg:Dictionary>
-                        </sap:WorkflowViewStateService.ViewState>
-                      </ui:InvokeProcess>
-                      <FlowStep.Next>
-                        <FlowStep x:Name="__ReferenceID2">
-                          <sap:WorkflowViewStateService.ViewState>
-                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <av:Point x:Key="ShapeLocation">200,433.666666666667</av:Point>
-                              <av:Size x:Key="ShapeSize">200,52.6666666666667</av:Size>
-                            </scg:Dictionary>
-                          </sap:WorkflowViewStateService.ViewState>
-                          <ui:InvokeProcess ContinueOnError="{x:Null}" DisplayName="Invoke Calculations" sap:VirtualizedContainerService.HintSize="200,52.6666666666667" sap2010:WorkflowViewState.IdRef="InvokeProcess_2" ProcessName="SportsRecordsCalculations">
-                            <ui:InvokeProcess.Arguments>
-                              <InArgument x:TypeArguments="sd:DataTable" x:Key="in_SportsData">
-                                <mva:VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="tempData" />
-                              </InArgument>
-                              <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_SportsRecords">
-                                <mva:VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="fullRecordsDT" />
-                              </OutArgument>
-                            </ui:InvokeProcess.Arguments>
-                            <sap:WorkflowViewStateService.ViewState>
-                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                              </scg:Dictionary>
-                            </sap:WorkflowViewStateService.ViewState>
-                          </ui:InvokeProcess>
-                        </FlowStep>
-                      </FlowStep.Next>
-                    </FlowStep>
-                  </FlowStep.Next>
-                </FlowStep>
-                <FlowStep x:Name="__ReferenceID3">
+                <FlowStep x:Name="__ReferenceID2">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <av:Point x:Key="ShapeLocation">200,99</av:Point>
                       <av:Size x:Key="ShapeSize">200,22</av:Size>
-                      <av:PointCollection x:Key="ConnectorLocation">300,121 300,156</av:PointCollection>
+                      <av:PointCollection x:Key="ConnectorLocation">300,121 300,173.666666666667</av:PointCollection>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:GetQueueItems Duration="{x:Null}" From="{x:Null}" Priority="{x:Null}" Reference="{x:Null}" Skip="{x:Null}" TimeoutMS="{x:Null}" To="{x:Null}" Top="{x:Null}" DisplayName="Get Items From Orchestrator" FilterStrategy="StartsWith" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="GetQueueItems_1" QueueItemStates="All" QueueName="SportsRecords">
+                  <ui:GetQueueItems Duration="{x:Null}" From="{x:Null}" Priority="{x:Null}" Reference="{x:Null}" Skip="{x:Null}" TimeoutMS="{x:Null}" To="{x:Null}" Top="{x:Null}" DisplayName="Get Items From Orchestrator" FilterStrategy="StartsWith" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="GetQueueItems_1" QueueItemStates="All" QueueName="SportsRecords" Result="[items]">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -520,19 +413,249 @@
                     </sap:WorkflowViewStateService.ViewState>
                   </ui:GetQueueItems>
                   <FlowStep.Next>
-                    <x:Reference>__ReferenceID0</x:Reference>
+                    <FlowStep x:Name="__ReferenceID1">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <av:Point x:Key="ShapeLocation">200,173.666666666667</av:Point>
+                          <av:Size x:Key="ShapeSize">200,52.6666666666667</av:Size>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ParallelForEach x:TypeArguments="ui:QueueItem" DisplayName="Parallel For Each" sap:VirtualizedContainerService.HintSize="304.666666666667,547.333333333333" sap2010:WorkflowViewState.IdRef="ParallelForEach`1_16" Values="[items]">
+                        <ActivityAction x:TypeArguments="ui:QueueItem">
+                          <ActivityAction.Argument>
+                            <DelegateInArgument x:TypeArguments="ui:QueueItem" Name="item" />
+                          </ActivityAction.Argument>
+                          <Sequence sap:VirtualizedContainerService.HintSize="242,394.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_37">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <Sequence sap2010:Annotation.AnnotationText="Sets team and coach values. Will be used in sequence to determine what data to take after switch." DisplayName="Checks for team and coach" sap:VirtualizedContainerService.HintSize="200,148" sap2010:WorkflowViewState.IdRef="Sequence_36">
+                              <Sequence.Variables>
+                                <Variable x:TypeArguments="x:String" Name="coach" />
+                              </Sequence.Variables>
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <If sap2010:Annotation.AnnotationText="Sets team value. Will be used in sequence to determine what data to take after switch." Condition="[team is nothing]" DisplayName="If team was specified" sap:VirtualizedContainerService.HintSize="537.333333333333,247.333333333333" sap2010:WorkflowViewState.IdRef="If_12">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <If.Then>
+                                  <WriteLine DisplayName="write no team" sap:VirtualizedContainerService.HintSize="229.333333333333,62.6666666666667" sap2010:WorkflowViewState.IdRef="WriteLine_29" Text="no team input" />
+                                </If.Then>
+                                <If.Else>
+                                  <Assign DisplayName="Assign team to user choice" sap:VirtualizedContainerService.HintSize="262,62" sap2010:WorkflowViewState.IdRef="Assign_19">
+                                    <Assign.To>
+                                      <OutArgument x:TypeArguments="x:String">[team]</OutArgument>
+                                    </Assign.To>
+                                    <Assign.Value>
+                                      <InArgument x:TypeArguments="x:String">[team]</InArgument>
+                                    </Assign.Value>
+                                  </Assign>
+                                </If.Else>
+                              </If>
+                              <If sap2010:Annotation.AnnotationText="Sets coach value. Will be used in sequence to determine what data to take after switch." Condition="[coach is Nothing]" DisplayName="If coach was specified" sap:VirtualizedContainerService.HintSize="537.333333333333,247.333333333333" sap2010:WorkflowViewState.IdRef="If_13">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <If.Then>
+                                  <WriteLine DisplayName="Write no coach" sap:VirtualizedContainerService.HintSize="229.333333333333,62.6666666666667" sap2010:WorkflowViewState.IdRef="WriteLine_30" Text="no coach selected" />
+                                </If.Then>
+                                <If.Else>
+                                  <Assign DisplayName="Assign coach to user choice" sap:VirtualizedContainerService.HintSize="262,62" sap2010:WorkflowViewState.IdRef="Assign_20">
+                                    <Assign.To>
+                                      <OutArgument x:TypeArguments="x:String">[coach]</OutArgument>
+                                    </Assign.To>
+                                    <Assign.Value>
+                                      <InArgument x:TypeArguments="x:String">[coach]</InArgument>
+                                    </Assign.Value>
+                                  </Assign>
+                                </If.Else>
+                              </If>
+                            </Sequence>
+                            <ui:InvokeProcess ContinueOnError="{x:Null}" DisplayName="Invoke Compiler" sap:VirtualizedContainerService.HintSize="200,52.6666666666667" sap2010:WorkflowViewState.IdRef="InvokeProcess_3" ProcessName="SportsDataCompiler">
+                              <ui:InvokeProcess.Arguments>
+                                <InArgument x:TypeArguments="x:String" x:Key="in_SpecificTeam">[specificTeam]</InArgument>
+                                <InArgument x:TypeArguments="x:String" x:Key="in_League">[league]</InArgument>
+                                <InArgument x:TypeArguments="x:String" x:Key="in_SpecificCoach">[specificCoach]</InArgument>
+                                <InArgument x:TypeArguments="x:String" x:Key="in_Sheet">[sheet]</InArgument>
+                                <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_RecordsData">[tempData]</OutArgument>
+                              </ui:InvokeProcess.Arguments>
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </ui:InvokeProcess>
+                            <ui:SetTransactionStatus ContinueOnError="{x:Null}" Reason="{x:Null}" ServiceBaseAddress="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Set Transaction Status" ErrorType="Business" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="SetTransactionStatus_3" Status="Successful" TransactionItem="[item]">
+                              <ui:SetTransactionStatus.Analytics>
+                                <scg:Dictionary x:TypeArguments="x:String, InArgument" />
+                              </ui:SetTransactionStatus.Analytics>
+                              <ui:SetTransactionStatus.Output>
+                                <scg:Dictionary x:TypeArguments="x:String, InArgument" />
+                              </ui:SetTransactionStatus.Output>
+                            </ui:SetTransactionStatus>
+                          </Sequence>
+                        </ActivityAction>
+                      </ParallelForEach>
+                    </FlowStep>
                   </FlowStep.Next>
                 </FlowStep>
+                <FlowStep>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <av:Point x:Key="ShapeLocation">200,343.666666666667</av:Point>
+                      <av:Size x:Key="ShapeSize">200,52.6666666666667</av:Size>
+                      <av:PointCollection x:Key="ConnectorLocation">300,396.333333333333 300,433.666666666667</av:PointCollection>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:InvokeProcess ContinueOnError="{x:Null}" DisplayName="Invoke Compiler" sap:VirtualizedContainerService.HintSize="200,52.6666666666667" sap2010:WorkflowViewState.IdRef="InvokeProcess_1" ProcessName="SportsDataCompiler">
+                    <ui:InvokeProcess.Arguments>
+                      <InArgument x:TypeArguments="x:String" x:Key="in_SpecificTeam">
+                        <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="specificTeam" />
+                      </InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="in_League">
+                        <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="league" />
+                      </InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="in_SpecificCoach">
+                        <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="specificCoach" />
+                      </InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="in_Sheet">
+                        <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="sheet" />
+                      </InArgument>
+                      <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_RecordsData">
+                        <mva:VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="tempData" />
+                      </OutArgument>
+                    </ui:InvokeProcess.Arguments>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:InvokeProcess>
+                  <FlowStep.Next>
+                    <FlowStep x:Name="__ReferenceID0">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <av:Point x:Key="ShapeLocation">200,433.666666666667</av:Point>
+                          <av:Size x:Key="ShapeSize">200,52.6666666666667</av:Size>
+                          <av:PointCollection x:Key="ConnectorLocation">300,486.333333333333 300,536.333333333333</av:PointCollection>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ui:InvokeProcess ContinueOnError="{x:Null}" DisplayName="Invoke Calculations" sap:VirtualizedContainerService.HintSize="200,52.6666666666667" sap2010:WorkflowViewState.IdRef="InvokeProcess_2" ProcessName="SportsCalculations">
+                        <ui:InvokeProcess.Arguments>
+                          <InArgument x:TypeArguments="sd:DataTable" x:Key="in_SportsData">
+                            <mva:VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="tempData" />
+                          </InArgument>
+                          <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_SportsRecords">
+                            <mva:VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="fullRecordsDT" />
+                          </OutArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_League">
+                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="league" />
+                          </InArgument>
+                        </ui:InvokeProcess.Arguments>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </ui:InvokeProcess>
+                    </FlowStep>
+                  </FlowStep.Next>
+                </FlowStep>
+                <x:Reference>__ReferenceID0</x:Reference>
                 <x:Reference>__ReferenceID1</x:Reference>
-                <x:Reference>__ReferenceID2</x:Reference>
+                <FlowStep>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <av:Point x:Key="ShapeLocation">200,283.666666666667</av:Point>
+                      <av:Size x:Key="ShapeSize">200,52.6666666666667</av:Size>
+                      <av:PointCollection x:Key="ConnectorLocation">300,336.333333333333 300,343.666666666667</av:PointCollection>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="200,52.6666666666667" sap2010:WorkflowViewState.IdRef="CommentOut_3">
+                    <ui:CommentOut.Body>
+                      <Sequence DisplayName="Ignored Activities" sap2010:WorkflowViewState.IdRef="Sequence_39">
+                        <Sequence sap2010:Annotation.AnnotationText="Sets team and coach values. Will be used in sequence to determine what data to take after switch." DisplayName="Checks for team and coach" sap:VirtualizedContainerService.HintSize="200,148" sap2010:WorkflowViewState.IdRef="Sequence_38">
+                          <Sequence.Variables>
+                            <Variable x:TypeArguments="x:String" Name="coach" />
+                          </Sequence.Variables>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <If sap2010:Annotation.AnnotationText="Sets team value. Will be used in sequence to determine what data to take after switch." Condition="[team is nothing]" DisplayName="If team was specified" sap:VirtualizedContainerService.HintSize="537.333333333333,247.333333333333" sap2010:WorkflowViewState.IdRef="If_14">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <If.Then>
+                              <WriteLine DisplayName="write no team" sap:VirtualizedContainerService.HintSize="229.333333333333,62.6666666666667" sap2010:WorkflowViewState.IdRef="WriteLine_31" Text="no team input" />
+                            </If.Then>
+                            <If.Else>
+                              <Assign DisplayName="Assign team to user choice" sap:VirtualizedContainerService.HintSize="262,62" sap2010:WorkflowViewState.IdRef="Assign_21">
+                                <Assign.To>
+                                  <OutArgument x:TypeArguments="x:String">[team]</OutArgument>
+                                </Assign.To>
+                                <Assign.Value>
+                                  <InArgument x:TypeArguments="x:String">[team]</InArgument>
+                                </Assign.Value>
+                              </Assign>
+                            </If.Else>
+                          </If>
+                          <If sap2010:Annotation.AnnotationText="Sets coach value. Will be used in sequence to determine what data to take after switch." Condition="[coach is Nothing]" DisplayName="If coach was specified" sap:VirtualizedContainerService.HintSize="537.333333333333,247.333333333333" sap2010:WorkflowViewState.IdRef="If_15">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <If.Then>
+                              <WriteLine DisplayName="Write no coach" sap:VirtualizedContainerService.HintSize="229.333333333333,62.6666666666667" sap2010:WorkflowViewState.IdRef="WriteLine_32" Text="no coach selected" />
+                            </If.Then>
+                            <If.Else>
+                              <Assign DisplayName="Assign coach to user choice" sap:VirtualizedContainerService.HintSize="262,62" sap2010:WorkflowViewState.IdRef="Assign_22">
+                                <Assign.To>
+                                  <OutArgument x:TypeArguments="x:String">[coach]</OutArgument>
+                                </Assign.To>
+                                <Assign.Value>
+                                  <InArgument x:TypeArguments="x:String">[coach]</InArgument>
+                                </Assign.Value>
+                              </Assign>
+                            </If.Else>
+                          </If>
+                        </Sequence>
+                      </Sequence>
+                    </ui:CommentOut.Body>
+                  </ui:CommentOut>
+                </FlowStep>
               </Flowchart>
               <FlowStep.Next>
-                <x:Reference>__ReferenceID4</x:Reference>
+                <x:Reference>__ReferenceID3</x:Reference>
               </FlowStep.Next>
             </FlowStep>
           </FlowDecision.True>
           <FlowDecision.False>
-            <FlowStep x:Name="__ReferenceID5" sap2010:WorkflowViewState.IdRef="FlowStep_3">
+            <FlowStep x:Name="__ReferenceID4" sap2010:WorkflowViewState.IdRef="FlowStep_3">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <av:Point x:Key="ShapeLocation">500,455.333333333333</av:Point>
@@ -565,8 +688,8 @@
         </FlowDecision>
       </FlowStep.Next>
     </FlowStep>
+    <x:Reference>__ReferenceID3</x:Reference>
     <x:Reference>__ReferenceID4</x:Reference>
     <x:Reference>__ReferenceID5</x:Reference>
-    <x:Reference>__ReferenceID6</x:Reference>
   </Flowchart>
 </Activity>

@@ -1,0 +1,163 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="GetTransactionData" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="out_NHLData" Type="InArgument(sd:DataTable)" />
+  </x:Members>
+  <this:GetTransactionData.out_NHLData>
+    <InArgument x:TypeArguments="sd:DataTable" />
+  </this:GetTransactionData.out_NHLData>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>592,997.333333333333</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>GetTransactionData_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="58">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="22">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="GetTransactionData" sap:VirtualizedContainerService.HintSize="602,892.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: NHL Teams &amp; Other Hockey Teams | Hockey-Reference.com" sap:VirtualizedContainerService.HintSize="434,1126.66666666667" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="Simulate" Version="V1">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,908.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_3">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:Boolean" Name="oldTeams" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:LogMessage DisplayName="Log Entry point" sap:VirtualizedContainerService.HintSize="334,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;getting table&quot;]" />
+            <ui:TextExists FormattedText="{x:Null}" DisplayName="option to hide partial rows" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TextExists_1" Occurrence="1" Result="[oldTeams]" Text="Hide Partial Rows">
+              <ui:TextExists.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="8f91c226-a128-4882-97d4-168a0af4000e" InformativeScreenshot="db8d87742ebe12dd75fa65cc972d24ce" Selector="&lt;webctrl id='active_franchises_toggle_partial_table' tag='BUTTON' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:TextExists.Target>
+            </ui:TextExists>
+            <If Condition="[oldTeams]" DisplayName="If option exists" sap:VirtualizedContainerService.HintSize="334,52.6666666666667" sap2010:WorkflowViewState.IdRef="If_1">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <If.Then>
+                <uix:NClick ClickType="Single" DisplayName="Click option to ignore old names" sap:VirtualizedContainerService.HintSize="334,168" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left">
+                  <uix:NClick.Target>
+                    <uix:TargetAnchorable BrowserURL="https://www.hockey-reference.com/teams/" DesignTimeRectangle="585, 496, 167, 21" ElementType="Button" FriendlyName="'Hide Partial Rows'" FullSelectorArgument="&lt;webctrl id='active_franchises_toggle_partial_table' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl id='active_franchises_toggle_partial_table' tag='BUTTON' type='button' aaname='Hide Partial Rows' check:text='Hide Partial Rows' /&gt;" ImageBase64="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" InformativeScreenshot="1619b45ce7719869ccecf20adb937eb7.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='NHL Teams &amp;amp; Other Hockey Teams | Hockey-Reference.com' /&gt;" SearchSteps="FuzzySelector, Image" Text="Hide Partial Rows" TextMethod="AttributeText" TextSelector="&lt;webctrl tag='BUTTON' type='button' /&gt;">
+                      <uix:TargetAnchorable.Anchors>
+                        <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                          <uix:Target DesignTimeRectangle="30, 402, 1203, 44" FriendlyName="'NHL Teams'" FullSelectorArgument="&lt;webctrl tag='H1' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='H1' type='' aaname='NHL Teams &amp;amp; Other Hockey Teams' check:text='NHL Teams &amp;amp; Other Hockey Teams' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAABLcAAAAwCAYAAADjAph9AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAABUqSURBVHhe7d2xaxtJ2Mdx/xnbGlK8hhTnziotSHGGFCdI8RquMOItgrgiiBSHSBNMCmNSBFdBuDiQiwO5OFCKA6UJ6IoDpQgoRUApUqhIsUWKLVI876y9tle7z6xmVivH9n0/MEXiteTVzu76+Xlmdk0AAAAAAACAW4pwCwAAAAAAALcW4RYAAAAAAABuLcItAAAAAAAA3FqEWwAAAAAAALi1CLcAAAAAAABwaxFuAQAAAAAA4NYi3AIAAAAAAMCtRbgFAAAAAACAW4twCwAAAAAAALdWJtyaSe/RmqytzbfGH9Pk6wv8s5//3pNZ8sW0kexntltb2zf/62b0PPu9a7L/T/LFDJ9tq6Pt3zKtIb0vyUvjRgs/DaT7tCn17Q0JLo/futQeNKV9PJBpmGx4jcKPQ+m96kjrUV1q99L9KpCN7bo0HnekezqWWZR8QxnhRHpPjmSc/DNrdtJIve95068Nd9n1Xfdug7u2P8vjvgEAAACU5RRurQW70nf5JZlwK0GR8t8zlcGTeirQsrSgLu2/HMPiJYXvjqS5Heg/h9rWpfG8LxOvAC6UyUlb6kH8/fZzmHArRriVRriVxX0DAAAAKMst3DIteDqUhQM7CLcSFCn/LaEMfltXjputrUvrzSqHcIUyfOYQtNlasCOH/y7++cIPPWnPhWeEW8UIt9IIt7K4bwAAAABlOYdba2ub0nm3IN4i3EpQpPyXRG87/kFS0JHhMtMArabS3/MJ2mytJq3CEWZ+5zDhVoxwK41wK4v7BgAAAFCWR7hl2tahdU2dM4RbTrRCf+25697jphk9yxxL04JfuzL+mmwQzWSgjKRq/111uhXJ+EVt7j0uW1CX5quBTNILa32PZPZxKF3rdMqa7P9r+xkJt/wRbqURbvnhvgEAAADY+YVbpu28LhjNQbjlhCLlLtHOmbp0PyVfvjSWw5/mt6s83Hl/KLXU61+04OGhjBfMMgw/dGX3bN2sTLMG2oRb/gi30gi3/HDfAAAAAOy8w63CxeUJt5wsW6RcPpFv62r6WXC/LvW9tnTfTCT8nmzoYjaW/nFbmg+yT9Jbk/Utl9dUjuXlvoQyfXN09pS+jYvg5F5NGo+PZKh0i/BDX/b38tsOPjmuT/V1IoNj7amAyb48aknneCCTixFVlYhk+HT+veKnEOb72FR6v8xvV224Yzl3t8x59S3ZZIHInL9aONY8TX3+yjlubak+XRxuXfSTmqwnX4v7c/NpV4ZfPEa3fZ/J6ORwvr+dPamyIa2DnowWvdaXnjSS95//GUMZH7dk536yvlhBHy7248Kt8NNQegctaaSf4hlsSD15imeZcyL6Msq/psfn7bo/0d9tdWRhzfQv6zuU7QvvD2Uz8z5rD7rm7F3AnBfZn3HzoHCcs7elw62ZcrxMX46vi4cnI7+npXLfAAAAwA3jH26ZFjwemF8/FYRbTkoXKd+n0nd5It+9hhwtXBA8lNGLncWvddHuNaX7Uat+9CIl+tiT1lbm/+daek2nRU8aDGTn5bjggQaRjF81LoORxW1dGq/Geh8uITxt5t8jEyqFbzuZonlTDt8nX6zCp67U514/boHn1MfInC+bmdcw7edUcV91uPV1KJ3CJzqeH6tFexH+eySNTGGab4HUn/Rlaiu41XBrYj4Ty1TPvb5nH/oB4dZsKIePXNZgW5ed5wOZuQTjrtehBZ+30/587qkjCoNfe9bAabm+kB9hqY/EnDd6nu3DFZ/fRvlwK3S7PsZPcj1dFONx36jqvgEAAIBqlQq3rIvLE245KVWkfDNF18OiECDbihYEj0MMS8Fe1IJd6X1OXuKScizjv3YrBWm+1UwBOJXery77FZj90cuK8csS+2Ja4cgPH9FQOtYCPJLJcTNfQD3qmbOtOtPX9fnXj9tPC9bI06ghWaq4rzLcerYvzYUhRNzsxz42/auljjiztbNpmtpoNiXcqv9sK+QD6bz17T3XG25F7w9lx+k8vGrB9nwom/PN7ENhGJlvtiBq4f7E76UFHQWjEavoC+OX+YC3XjQdPz6u2c+5zLm3QLlwayqD33yuj0WBEPeNuFV23wAAAEClHMKtlrSfKr9EmgJjnP0Nj3DLiX+REsrgsV9Bed4aSlFhaFNvHFuQ+zm1Y7miphWMn7qyk9mu9ltPxuk5NlEok9OOUjjFRVKyzZJmf+6qIcj6PWXUzL2m9LXjUlrcPzLvYVrwokx5rY1cWbsqECsMt7yaLSywrDO2qG0+UwpUJdyytlLhxfVd92wjnlxa8IttGl7Z65C+VmPx/ljCi6JptlX1BS3gTY9ezFKup8VhWDllwq1yAY7lj1fcN5JW3X0DAAAA1XEIt0wx8XUgLaVQyhUsS4Vby7W7HG5Fbzv54CTYkf23U4mSaTXx+jdd5S/0+SmkWhASyM6LoUxTRWP0dSw97S/+ufVn7Mdy/dHh1ZpJ8RMDfy8otLZa0nsfnheZ30MZvdRGzOSnB+VHLHWsYUF42pKN7Ya0nh1J781YpqFSwJU2k77DSIJguyPDytduGedHjphWNNrJzjUo8wtq7OHWujQOUn3P9JOhOu1Jm+Y1le7P2e2SIvVrcmxNX5q82VdGMCkFqke4VW49peu67llG4MbXjHgdpItu/20qo2N9pFPtZX7/1OuQ+RxbJ+Or17RdN4KWDDL93n5ttowQUkcAXaiyL2ivtWOdmjg+yI70sm+7DO9wSwlw8sdrIgPtfMs9SIL7xmruGwAAAKiKW7hlvjL9QytOG9JLLy5PuOXEr0gJpb+X2dZaPGmjHTLHKBaFMvs4kn6yiO7Gr5Ypcl/70px7rbhlAwzLsdRGOkRDaWvbqiPMTIH5IL9t9tjlj29T+j9i4V9TWI2Pm7Ix97Ok23mI47SmkTf9GJTt59o5k++f2nv6h1uNP7QRLno4kwvrlJEkwdNhfkSWoS2WnxtNYg23Atl9PfZ7UIPqmq572gibgmBIf5BA9jzSrkO2KV960DT3YALDdm2enmijIGvmawWhQsV9YXq8M/f1uOn3MmWkY8VTji/4hlv50M22Bp8WJioPxeC+AQAAgBvMOdyyFSxzI4MIt5x4FSnhQFrZbW0L+sfMMcgWhrt/li21XAIM/VhmC9lzemgR/K4XodqxyxbT2vo48YL6+yejuREFqxR+6DqsHbWgOF/GrC+7ynuW7edquJUr2F36xhW1zwf27bU1xLLXkvyxL1rEW+l75v3nRqdYwi1bSOLvOq57kQx/z48g1M/HC/qDBOY+b+06VDA1c3aymxrtMpLJLBldk6Ke38+1oC2Q3RMtBL1SeV/QAhottFJCteLPujy/cEsJ3Yqm0ip9v9y05hj3DQAAAFw/j3DLlED/6oXH5V+DCbeceBUpymdauJ6LVqAX/HVfE80mMowfo/8w/Yj/i+ZSpNieLqYXKbbpc+MX+SI915+UMC/d1rfiArsr/X9S07EqND1RFou3tWBX+ulRdFFUTWhiCWVufLhVENJq288fe60vtWVY8IHm9yszqlH9HJURLKVdx3VPm6LaksGivEUb7ZU+PubanzvPnvldV7LUfqa1hwXrXZ1ZQV9QR6rlR8HmQ5LVjQDyum9ofbkwpFX6pucINO4bAAAA+JG8wq2zv/A/U/7iebG4/FLhlr0wzvIJrHy2vS4+RYq6rW8rKlK+RzJ9P5Deq7Y0H9QcghqXIiVfBJ7TixTb8VgccMTc1ro6b4Fs/G9bum9nlYRK+vSpNQm2zXscd5Qg2Hwt9eS40fP45zY/09kIF1NIvTWFVPI1P3poUrafq6FDrn/6ncNehbmx+Njr++zb5j4jNdzalb715PF1Ddc9bR9+0Z9WOEeb+pUa6RP+1Zr/mmn6lFJ3aj9T26IFvFfQFwxtn+dHFilT4IpG1S7J6xxS7sX+raBvct8AAADADeMZbhnfTBGkLF59tgAx4ZYTnyJF3da3aeFWOJH+813ZUI5lcXMpUmyL866iSDG+T6X/pF74l/hsiwOo3sclShX1IQvnj9G/KG5t4dfZo+SjoXSy3+85UuKKvqB8uemocdGXf61VLChfFI4sPvYrCDTUcMv9urTYNVz3tH1w6lfFP5vzuejBPdwyrXAfVtAXYlrgt9e/Cq+Upyrqa1pVQ70XXHe4xX1jufsGAAAAVsY/3DJmf2pFe0N6f3Qy/2crgK6hyEsQbpmWLQw/961rRAX369J8mjwV6tvQ4Tj5HMsVFSmJ8NNAjh7vuBdehU9fK6at2bL5bJT5y77lqW9rgdS38/9ffq0eSyBlK3wLmeOpfH75KUB+57DvsVy8vfb+/m2u7xFuzX9f6mfzPX4uvMItc87Yg6MV9IUz2vplV1M8c+vCBZ3CqZDLUu8F1xlucd84b0vcNwAAALA6pcKteDqG9stmEDisdXHmGoq8xF0Mt5YrKrVjHD/SfSCTi0fmX3I5TjenSLkSSfhxeD5lZms99xrpZluUuJjp/79kX8vnCZZaW26tHm0B9sIFpG20tZfUtXD8zmHfY7l4++WuISotGHqwaL0nH9dw3dP2YUXTEjfj0bpLsIZbWy3pnx7mp/VqT9I7s4K+kIjednJ/yDkPevMPWCl3LXHnc99Qw61SYfcF7hvptupjDQAAAH8lwy3DFMHamkLZpv9SeQ1FXuK2h1vyLj8abqmiUgkv8iOOLtzWIiUjCmX6vi9He9ooKvd+d8Wz/34z229lt59vZ9N6l6GGUoF10WVdJMOnShCnBjx+n4HvsVy8vRYwOiycXqT0qCdXnv0mw+1ado0LyhctUB4/XfF+XRqPO3J0MpDRx1luYW413LocFaP1RVt/XkFfuKQ8dTD+XD51ZSf9f+ZnW/V9xeu+8Vnpy8usB8Z9I9Pcz1sAAABcj/Lhlvm1dvxC+6VvvhFu5XkVKbO+7Ga3fXAkk+TLvrx+8dcKpNtYpFwaSSfzeuWKlBIBwmdT7NsCrv/pyHDpx8/nR5KcNY8pNNG7jhKQVXMO+x5Ll+21p6K13iwxnuJOhFtxKJTfrnjKazx9Nj/Ndu574rAq8/WiaXjaiKdsSKrtz9zxywVIpv1kPi/lPSvvCynjg+xn05bu60z/LDNK0pPXfcN2jSp5neG+Mf965e4bAAAAWKUlwi3Dsrh8ulVRGGf9p8ItNbQIZPdEm6ATF7YbUnvQlPZB/PS9sUwzwyW09w7UERiWJ2PesCIlCmcy+Sd+aldHWo/qsrFdUGRqU69KFSmhDB5nX2dNdl4XTP6aDWX/oX16Yu23nkyWDLiif/f10ZRbHRksqO3Cv/WnO14+CTXnx4dbaoBift6R9jl+6kpjwUiiuxFuWT6XgpAz+kfpN0FLBnPTZEPp72W2MU1/KEB8fuT7enbE6eL90da8MufZcf49K+8LaeqoyPm2ebDqaEs/J+z3Df2zO3uYRbJF2vR1I3lqa7xu1kgms3BuO+4b869X7r4BAACAVVou3DLitVhyRUWqEW7l+RUpts94XZqvRjK7qC6+TWX4YkfZbnPuMfra2jlnYdnrsYTfz7eJPg/l8JFtzZHsE61+YJHytS/NzNfjtv7oUAamYI2S/YkLrtC2TyWn6ujHJL8GTTSbyOCg4fCofNPuNeTwXemJQ4ZtAfu4rUvjoC/jz6mi9Xsks48DOfo/2xPDaubY5MvXc8p0LdPXOm+Tn9/0x/HHq31xKTjT3LY3P4MyGi7Y7kj/8r3NsX/f00fNpZ98F7sj4Zbtc1kLdmT/zeQqyDHHaHTcUkNNLaiNQ7B8yBP3q6FML0Ik85qDZ1p/yq9J57Q/2jEJ2spIx4r7wpypdB8o33PZ5q+xq+J734hDufyxDaT+rG+uUck2USjjE70PpEfucd/IbL/MFE8AAACsxNLhlu0Xz4t2E8Mt/9aQ3pfkBSvgXaTEa8oUfMZFLcj+Em75xd69ZT+LH1ikGOOXi6fG2lttiaLUdaF43xZI7cC2lo2LqfT3bAWmT1uX5p8FI9HMsdSe0DjXUiM73MKqK67b26ZSLm7Ksb8z4Zb5XGyj+Bxa8KttAXp9RJZLq70Y5/q02/7oUya1Neoq7QsZ0+Md5fuSVulDB+z87xu2UVQObSszkon7Rqotc98AAADAqlQQbhna2ihJI9zK8y9SjKI1m2zNMi3H/Rf7dWk+aWUKxuzCyT+2SCkfMtmmdnpwWChebzVpvTrSj6dtKpWXUIbq6BnHFtSl8/ficQmFBX/cUsGQa1h1wX37yPRnbcRiUbMc+zsUbsXCd/tSXzBtPNuCh4cyLup/38ZyWDC9Vmu2sMx5f9RgRbsmV9gXsgrucdo0yVUodd8ocbxsU1i5b8StgvsGAAAAVqKacMuw/eJLuJVXqkiJhWM5sk77SLdA6k+K1nByCD8upsgp643Mry/zo4uUWCgj16l/cQvq0j6tqED5NpHeE/cgKZ76MrzYhe9T6ae/12Pxdxfhh560f/YZxbUuO09Nv3GdbxOZwnm7oEBMLbLtfizP+W4/PW27BTlFUz/vWLh1ZlY0VSzd4umFo/lRnjbZfmtt8XWoL9PLaV7zfPZHu79smmumNsKxkr6Qo1+7tOmWq1L6vuF8vM6vT6O5tdbSuG9Udt8AAABA5SoLtyQyv6zm1uAh3NKULlIS4ceBdJ+1pLG9kSo01qX2oCGtg56MvrhNags/9OXwcUNq91Kv8aglhycjmV0WpMr0s7k1b25CkZKIZjI+7Up7ry71rfmCPrhv/m+vLd3TcWrfKvR1IoPj88WJrz7PuF0dl+EnvZCOj8P+ox3zOZSfjFgk+jKWfvKz1e+nw6hANrbPF9Y++1zKvP33mYxO9qWZ7ov3aslnPbkMS3yPpfexj5njPzo5Ojv+6WNweezj9aaKjv1dDLcS0ZeR9A7MNeNB7aqYDzakHj984jheJy7Z0MPla5a8Dnntz9eBtHKBVUGwtGxfUISnzdR7J63S/lFs2fvG2fF61ZZmug8k14Dm064MUmvkFeG+AQAAgJsoE24BAIAsLdxaGLgCAAAAuBaEWwAAFFHX16t2RC8AAACA8gi3AABIiVLrFcbT+Y60xcf3+m5rlAEAAABYOcItAAAu2RaPT7fNla2RBwAAAMAf4RYAAJeUxdAzLXg8YNQWAAAAcIMQbgEAkFL0lN3g4aGMU9MWAQAAAPx4hFsAAKRM/2hK/X5qna17NanvtaX7diZMRgQAAABuHsItAAAAAAAA3FqEWwAAAAAAALi1CLcAAAAAAABwaxFuAQAAAAAA4NYi3AIAAAAAAMAtJfL/WMj4HaAfe6EAAAAASUVORK5CYII=" SearchSteps="FuzzySelector, Image" Text="NHL Teams &amp; Other Hockey Teams" TextMethod="AttributeText" TextSelector="&lt;webctrl tag='H1' type='' /&gt;" />
+                        </scg:List>
+                      </uix:TargetAnchorable.Anchors>
+                    </uix:TargetAnchorable>
+                  </uix:NClick.Target>
+                </uix:NClick>
+              </If.Then>
+            </If>
+            <uix:NExtractData ContinueOnError="True" DataTable="[out_NHLData]" DisplayName="Extract Table Data of all teams" ExtractMetadata="&lt;extract-table get_columns_name='1' get_empty_columns='1' columns_name_source='Longest' /&gt;" sap:VirtualizedContainerService.HintSize="334,168.666666666667" sap2010:WorkflowViewState.IdRef="NExtractData_1" MaximumResults="0">
+              <uix:NExtractData.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="30, 533, 1086, 1159" FriendlyName="'NHL Franchises'" FullSelectorArgument="&lt;webctrl id='active_franchises' tag='TABLE' /&gt;" InformativeScreenshot="cb30385a13d77446962527f398d2f3af.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='NHL Teams &amp;amp; Other Hockey Teams | Hockey-Reference.com' /&gt;" SearchSteps="Selector" Text="NHL Franchises Table&#xA;    &#xA;   &#xA;         &#xA;      &#xA;         Franchise&#xA;         Lg&#xA;         From&#xA;       " TextMethod="AttributeText" TextSelector="&lt;webctrl tag='TABLE' type='' /&gt;" />
+              </uix:NExtractData.Target>
+            </uix:NExtractData>
+            <Sequence DisplayName="Remove columns" sap:VirtualizedContainerService.HintSize="334,69.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_2">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:RemoveDataColumn Column="{x:Null}" ColumnName="{x:Null}" ColumnIndex="16" DataTable="[out_NHLData]" DisplayName="Remove St Cup" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="RemoveDataColumn_1" />
+              <ui:RemoveDataColumn Column="{x:Null}" ColumnName="{x:Null}" ColumnIndex="15" DataTable="[out_NHLData]" DisplayName="Remove Champ" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="RemoveDataColumn_2" />
+              <ui:RemoveDataColumn Column="{x:Null}" ColumnName="{x:Null}" ColumnIndex="14" DataTable="[out_NHLData]" DisplayName="Remove Conf" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="RemoveDataColumn_3" />
+              <ui:RemoveDataColumn Column="{x:Null}" ColumnName="{x:Null}" ColumnIndex="13" DataTable="[out_NHLData]" DisplayName="Remove Div" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="RemoveDataColumn_4" />
+              <ui:RemoveDataColumn Column="{x:Null}" ColumnName="{x:Null}" ColumnIndex="12" DataTable="[out_NHLData]" DisplayName="Remove Yrs Plyf" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="RemoveDataColumn_5" />
+              <ui:RemoveDataColumn Column="{x:Null}" ColumnName="{x:Null}" ColumnIndex="11" DataTable="[out_NHLData]" DisplayName="Remove PTS%" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="RemoveDataColumn_6" />
+              <ui:RemoveDataColumn Column="{x:Null}" ColumnName="{x:Null}" ColumnIndex="10" DataTable="[out_NHLData]" DisplayName="Remove PTS" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="RemoveDataColumn_7" />
+              <ui:RemoveDataColumn Column="{x:Null}" ColumnName="{x:Null}" ColumnIndex="3" DataTable="[out_NHLData]" DisplayName="Remove To" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="RemoveDataColumn_8" />
+              <ui:RemoveDataColumn Column="{x:Null}" ColumnName="{x:Null}" ColumnIndex="2" DataTable="[out_NHLData]" DisplayName="Remove From" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="RemoveDataColumn_9" />
+              <ui:RemoveDataColumn Column="{x:Null}" ColumnName="{x:Null}" ColumnIndex="1" DataTable="[out_NHLData]" DisplayName="Remove Lg" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="RemoveDataColumn_10" />
+            </Sequence>
+            <ui:LogMessage DisplayName="Log Exit" sap:VirtualizedContainerService.HintSize="334,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Done getting transaction data&quot;]" />
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp BrowserType="Chrome" IconBase64="iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAARaSURBVGhD7Zd7TFN3FMdPW2cBp3PWOiQCxvnIfDBM2MO5RYmKJlvG/pgZ+se2uGSJWaL7Z9OkPtZsLi5qFmP20FJKobwqDiKIBBirGiaJLsPY9t7bdy3YAra8toJS250floRtl6e0vU3uJ/mm6b2/tOf8fufxO8DDw8PDMxmBYAhCoZDQNxRI0Fr6EndecSR+/UeXREX3pISXxJbHTwyEBteA+IubnqXvN9zbmFPryH3lknX/ugqzfL3WrEgppktWlZmalxUzumeVRt3iQqotXcOYwz8RXUYNVjM9SXuaXGu2XLbnoaHfpZcwV5eoaWaB0uhLzDcOz7lgCArP60OCn/UhYNNPqGhBDAbYDAqjb9679c6szErLoeUlTOPCAqpDrDAEiKGsRk6mSHPd/TcxXrBP15H2VrVt/4pSU9N8pdErOm8Isho0XUWKMksv6H1Doo9/a8/AGP4GY5aZe8EQYDXiaTTbXHH2g8c/LPpE15GZedFyTlJIuXG32f98NjRbtHb6R0Llo+b2lWsrzCdwx++LZhrX09FnN+6vuunxC2oc/WFTpofW2gfwXh2QGN9UZZNL1bR11uJ7KtqgtdzGenv4YIs7lVSKSmLQJJB1P+i9YMAYxx1f/eov1mMSFaV/Bsse659EUqvLTC2YXCFpIW3Eoz+1vdax69NrHWnoSBIaKiLGEoVrt6Da3p9woMW9Yutley7W7vxFKsoRE8NH9UaV7VtsGCNfSC1OyjcOolG2NA1zDZ0rx+73PZ7QmYyLljNYApWpGqYJ49uZoDA8HLfBRFNv1zm3YGv2sb5ECdAp4tiEHTGWOnvXK8Hd/p31ZTwIdtcD1usjcyJZqyOpd646AS9UWc+rqG7WBVxXEdMDzoFH4pfKzRWcjPHJRErkyjIT4JCwA5O5j3URl0U4+Wc31DkHErBsauPuFAjkFDCRASehzZgLnawLuapRSs29xBFh1iXrV9iZH7Mu5qLG8mFzO3zZ6lmEs2bNjCekaGssJJRer7LC7oZ765LVdFtc5MN/OYe3zKVFNOQ1urLx08Z5J9i41eUHyK6GvU2ubejEXU47MR7Y3ADO3oEPGl0bXiw11eOVmZuJPREkJ7bV2OFQq2cxltljWGI9QrYfiaWmQrGpF+z9j4S59c6s9VqzBh3xRWXenYqmw48GL/za/pcYL3+vbay0nF6ClQoHIH9MnZkJbQ8GSXgJPm9xS3NqHTk4rR3Haa0muYimFxZQ3kSc6sQKQxCv6EEy7REHRweisQPSVDVhEXlaSJ4QtXb65x6/1ZmMQ/7Lu/BiuKnKlofD/oE3q21H1pSbZVjNZJJCSiZFpRTTMmyWsuUlEysdhRtzFD91494OuAzZmAytBeS3u6Q4l8ufK6C6/3ca8YCK7oGuwWERDl/ZqRpG96+SHi8EgyF4QU3DQcw7PBX5fKXxyWnEG6fvPCBFRIj9aTsOYrrw4/hiKBAcyY9Tbd2S8CMeHh6emADwD9lyTWdOqhwoAAAAAElFTkSuQmCC" InformativeScreenshot="0e7c4d84ce46c4025b9da1087ad817ee.png" Selector="&lt;html app='chrome.exe' title='NHL Teams &amp;amp; Other Hockey Teams | Hockey-Reference.com'/&gt;" Url="https://www.hockey-reference.com/teams/" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>
