@@ -3,7 +3,7 @@ Have you ever heard an announcer say “He was their winningest coach” and won
 This automation measure winningest in a few different ways including: wins per year, wins per game, postseason wins per postseason games, divisional championships, and national championships.
 
 
-This automation uses UiPath. It has implemented Studio, Orchestrator, and Assistant. This automation consists of 3 different workflow projects each using a different template. SportsRecords uses a Transactional Process template to implement SportsRecordsCalculations which uses the Background Process template and SportsRecordsCompiler which uses a REF template.
+This automation uses UiPath. It has implemented Studio, Orchestrator, and Assistant. This automation uses the REFramework template UiPath provides. It uses Ui interactions, excel automation, and email automation. It also uses form activity along with JSON parsing and many switch statements to provide the ability to get these calculations for multiple sports, multiple sheets, and sorted however the user wants.
 
 ## Worksheets
 There are 3 worksheets that may be contained in the workbook you receive via the email attachment. Each sheet contains the columns:
@@ -30,4 +30,4 @@ The individual worksheets contain more columns on top of the ones listed above. 
     - If applicable can have multiple rows with different teams as coaches change jobs.
 
 ## Flowchart
-![Flowchart](https://github.com/nfh2019/Sports-Records-Bot/blob/master/SportsRecordsFlowchart.png)
+![Flowchart](https://github.com/nfh2019/Sports-Records-Bot/blob/master/SportsRecordsFlowchart.png.png)
