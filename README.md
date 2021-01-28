@@ -30,4 +30,4 @@ The individual worksheets contain more columns on top of the ones listed above. 
     - If applicable can have multiple rows with different teams as coaches change jobs.
 
 ## Flowchart
-![Flowchart](https://github.com/nfh2019/Sports-Records-Bot/blob/master/SportsRecordsFlowchart.png.png)
+![Flowchart](https://github.com/nfh2019/Sports-Records-Bot/blob/master/SportsRecords.png)

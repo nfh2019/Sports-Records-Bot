@@ -6,7 +6,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>2194.66666666667,4732</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1392.66666666667,3901.33333333333</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>AddCoachAndRecords_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -86,10 +86,9 @@
       <AssemblyReference>System.ServiceModel</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
       <AssemblyReference>UiPath.Mail</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Takes in_Team which is different for each entry point&#xA;&#xA;Gathers team data by coach including regular season wins, losses, and games. Also adds bowl wins, losses, and games." DisplayName="Compiles team data by coach" sap:VirtualizedContainerService.HintSize="2204.66666666667,4627.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_26">
+  <Sequence sap2010:Annotation.AnnotationText="Takes in_Team which is different for each entry point&#xA;&#xA;Gathers team data by coach including regular season wins, losses, and games. Also adds bowl wins, losses, and games." DisplayName="Compiles team data by coach" sap:VirtualizedContainerService.HintSize="1402.66666666667,3836.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_26">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="cfbDataCoaches" />
       <Variable x:TypeArguments="sd:DataTable" Name="nationalChamps" />
@@ -100,22 +99,22 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard sap2010:Annotation.AnnotationText="cfbDataCoaches" AttachMode="ByInstance" DisplayName="Gets team page datatable" sap:VirtualizedContainerService.HintSize="2162.66666666667,1241.33333333333" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="Simulate" Version="V1">
+    <uix:NApplicationCard sap2010:Annotation.AnnotationText="cfbDataCoaches" AttachMode="ByInstance" DisplayName="Gets team page datatable" sap:VirtualizedContainerService.HintSize="1360.66666666667,1241.33333333333" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="Simulate" Version="V1">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Navigates to and scrapes team page" sap:VirtualizedContainerService.HintSize="376,992.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_6">
+          <Sequence DisplayName="Navigates to and scrapes team page" sap:VirtualizedContainerService.HintSize="478.666666666667,992.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_6">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:LogMessage DisplayName="Log Entry" sap:VirtualizedContainerService.HintSize="334,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;adding coach to datatable with wins and bowls&quot;]" />
-            <ui:BuildDataTable DataTable="[out_SportsWithCoach]" DisplayName="Build Data Table for input" sap:VirtualizedContainerService.HintSize="334,58.6666666666667" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Team&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Head_x0020_Coach&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Division&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Years&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;W&quot; msdata:Caption=&quot;&quot; type=&quot;xs:double&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;L&quot; msdata:Caption=&quot;&quot; type=&quot;xs:double&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Games&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Bowl_x0020_Wins&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Bowl_x0020_Losses&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Bowl_x0020_Games&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;National_x0020_Champs&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
-            <Sequence sap2010:Annotation.AnnotationText="Checks team name for special characters and fixes them before clicking on team name" DisplayName="Fixes team name if necessary" sap:VirtualizedContainerService.HintSize="334,332.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_5">
+            <ui:LogMessage DisplayName="Log Entry" sap:VirtualizedContainerService.HintSize="436.666666666667,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;adding coach to datatable with wins and bowls&quot;]" />
+            <ui:BuildDataTable DataTable="[out_SportsWithCoach]" DisplayName="Build Data Table for input" sap:VirtualizedContainerService.HintSize="436.666666666667,58.6666666666667" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Team&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Head_x0020_Coach&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Division&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Years&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;W&quot; msdata:Caption=&quot;&quot; type=&quot;xs:double&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;L&quot; msdata:Caption=&quot;&quot; type=&quot;xs:double&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Games&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Bowl_x0020_Wins&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Bowl_x0020_Losses&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Bowl_x0020_Games&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;National_x0020_Champs&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
+            <Sequence sap2010:Annotation.AnnotationText="Checks team name for special characters and fixes them before clicking on team name" DisplayName="Fixes team name if necessary" sap:VirtualizedContainerService.HintSize="436.666666666667,332.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_5">
               <Sequence.Variables>
                 <Variable x:TypeArguments="x:Boolean" Name="special" />
                 <Variable x:TypeArguments="x:Boolean" Name="special2" />
@@ -257,12 +256,12 @@
                 </If.Else>
               </If>
             </Sequence>
-            <uix:NExtractData ContinueOnError="True" DataTable="[cfbDataCoaches]" DisplayName="Get team table from sportsrecords" ExtractMetadata="&lt;extract-table get_columns_name='1' get_empty_columns='1' columns_name_source='Longest' /&gt;" sap:VirtualizedContainerService.HintSize="334,168.666666666667" sap2010:WorkflowViewState.IdRef="NExtractData_1" MaximumResults="0">
+            <uix:NExtractData ContinueOnError="True" DataTable="[cfbDataCoaches]" DisplayName="Get team table from sportsrecords" ExtractMetadata="&lt;extract-table get_columns_name='1' get_empty_columns='1' columns_name_source='Longest' /&gt;" sap:VirtualizedContainerService.HintSize="436.666666666667,168.666666666667" sap2010:WorkflowViewState.IdRef="NExtractData_1" MaximumResults="0">
               <uix:NExtractData.Target>
                 <uix:TargetAnchorable DesignTimeRectangle="30, 232, 1162, 2316" FriendlyName="'64 Years'" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;" InformativeScreenshot="4558f32deeacacc3ab74a750aeb316a1.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Air Force Falcons Football Record By Year | College Football at Sports-Reference.com' /&gt;" SearchSteps="Selector" Text="64 Years Table&#xA;   &#xA;         &#xA;      &#xA;         Rk&#xA;         Year&#xA;         Conf&#xA;         W&#xA;         L&#xA; " TextMethod="AttributeText" TextSelector="&lt;webctrl tag='TABLE' type='' /&gt;" />
               </uix:NExtractData.Target>
             </uix:NExtractData>
-            <uix:NNavigateBrowser DisplayName="Go back to league page" sap:VirtualizedContainerService.HintSize="334,83.3333333333333" sap2010:WorkflowViewState.IdRef="NNavigateBrowser_1" />
+            <uix:NNavigateBrowser DisplayName="Go back to league page" sap:VirtualizedContainerService.HintSize="436.666666666667,83.3333333333333" sap2010:WorkflowViewState.IdRef="NNavigateBrowser_1" />
           </Sequence>
         </ActivityAction>
       </uix:NApplicationCard.Body>
@@ -277,7 +276,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </uix:NApplicationCard>
-    <Sequence DisplayName="Compiles data from extracted table" sap:VirtualizedContainerService.HintSize="2162.66666666667,3057.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_25">
+    <Sequence DisplayName="Compiles data from extracted table" sap:VirtualizedContainerService.HintSize="1360.66666666667,2266.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_25">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:Double" Name="coachWins" />
         <Variable x:TypeArguments="x:String" Name="headCoach" />
@@ -297,7 +296,7 @@
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Sequence DisplayName="first coaching pair" sap:VirtualizedContainerService.HintSize="2120.66666666667,256" sap2010:WorkflowViewState.IdRef="Sequence_7">
+      <Sequence DisplayName="first coaching pair" sap:VirtualizedContainerService.HintSize="1318.66666666667,256" sap2010:WorkflowViewState.IdRef="Sequence_7">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -321,13 +320,13 @@
           </Assign.Value>
         </Assign>
       </Sequence>
-      <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[cfbDataCoaches]" DisplayName="For Each Row on team page" sap:VirtualizedContainerService.HintSize="2120.66666666667,2607.33333333333" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+      <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[cfbDataCoaches]" DisplayName="For Each Row on team page" sap:VirtualizedContainerService.HintSize="1318.66666666667,1816.66666666667" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
         <ui:ForEachRow.Body>
           <ActivityAction x:TypeArguments="sd:DataRow">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
             </ActivityAction.Argument>
-            <If sap2010:Annotation.AnnotationText="Adds wins and losses up as long as conference and coach are the same between rows. After adding rows then finds which conference and coach row has." Condition="[row.Item(12).ToString.split(&quot;(&quot;c)(0).Trim.Equals(headCoach)]" DisplayName="If row has same coach and division as row before" sap:VirtualizedContainerService.HintSize="2070,2454.66666666667" sap2010:WorkflowViewState.IdRef="If_13">
+            <If sap2010:Annotation.AnnotationText="Adds wins and losses up as long as conference and coach are the same between rows. After adding rows then finds which conference and coach row has." Condition="[row.Item(12).ToString.split(&quot;(&quot;c)(0).Trim.Equals(headCoach)]" DisplayName="If row has same coach and division as row before" sap:VirtualizedContainerService.HintSize="1268,1664" sap2010:WorkflowViewState.IdRef="If_13">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -336,7 +335,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
               <If.Then>
-                <If Condition="[row(2).ToString.Equals(division)]" DisplayName="If same coach" sap:VirtualizedContainerService.HintSize="1414,2270" sap2010:WorkflowViewState.IdRef="If_7">
+                <If Condition="[row(2).ToString.Equals(division)]" DisplayName="If same coach" sap:VirtualizedContainerService.HintSize="696,1479.33333333333" sap2010:WorkflowViewState.IdRef="If_7">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -344,14 +343,14 @@
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                   <If.Then>
-                    <Sequence DisplayName="SequenceAdd to current coach division pair" sap:VirtualizedContainerService.HintSize="526,723.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                    <Sequence DisplayName="SequenceAdd to current coach division pair" sap:VirtualizedContainerService.HintSize="304,552.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_10">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <Assign DisplayName="Add coach wins" sap:VirtualizedContainerService.HintSize="484,62" sap2010:WorkflowViewState.IdRef="Assign_8">
+                      <Assign DisplayName="Add coach wins" sap:VirtualizedContainerService.HintSize="262,62" sap2010:WorkflowViewState.IdRef="Assign_8">
                         <Assign.To>
                           <OutArgument x:TypeArguments="x:Double">[coachWins]</OutArgument>
                         </Assign.To>
@@ -359,7 +358,7 @@
                           <InArgument x:TypeArguments="x:Double">[coachWins+cint(row(3))]</InArgument>
                         </Assign.Value>
                       </Assign>
-                      <Assign DisplayName="Add coach losses" sap:VirtualizedContainerService.HintSize="484,62" sap2010:WorkflowViewState.IdRef="Assign_9">
+                      <Assign DisplayName="Add coach losses" sap:VirtualizedContainerService.HintSize="262,62" sap2010:WorkflowViewState.IdRef="Assign_9">
                         <Assign.To>
                           <OutArgument x:TypeArguments="x:Double">[coachLoss]</OutArgument>
                         </Assign.To>
@@ -367,7 +366,7 @@
                           <InArgument x:TypeArguments="x:Double">[coachLoss+cint(row(4))]</InArgument>
                         </Assign.Value>
                       </Assign>
-                      <Assign DisplayName="Add coach games" sap:VirtualizedContainerService.HintSize="484,62" sap2010:WorkflowViewState.IdRef="Assign_10">
+                      <Assign DisplayName="Add coach games" sap:VirtualizedContainerService.HintSize="262,62" sap2010:WorkflowViewState.IdRef="Assign_10">
                         <Assign.To>
                           <OutArgument x:TypeArguments="x:Double">[games]</OutArgument>
                         </Assign.To>
@@ -375,7 +374,7 @@
                           <InArgument x:TypeArguments="x:Double">[games+cint(row(3))+cint(row(4))+cint(row(5))]</InArgument>
                         </Assign.Value>
                       </Assign>
-                      <Assign DisplayName="Add year to coach" sap:VirtualizedContainerService.HintSize="484,62" sap2010:WorkflowViewState.IdRef="Assign_11">
+                      <Assign DisplayName="Add year to coach" sap:VirtualizedContainerService.HintSize="262,62" sap2010:WorkflowViewState.IdRef="Assign_11">
                         <Assign.To>
                           <OutArgument x:TypeArguments="x:Int32">[years]</OutArgument>
                         </Assign.To>
@@ -383,10 +382,10 @@
                           <InArgument x:TypeArguments="x:Int32">[years+1]</InArgument>
                         </Assign.Value>
                       </Assign>
-                      <If Condition="[row(13).ToString=&quot;&quot;]" DisplayName="If bowl game was played" sap:VirtualizedContainerService.HintSize="484,223.333333333333" sap2010:WorkflowViewState.IdRef="If_4">
+                      <If Condition="[row(13).ToString=&quot;&quot;]" DisplayName="If bowl game was played" sap:VirtualizedContainerService.HintSize="262,52.6666666666667" sap2010:WorkflowViewState.IdRef="If_4">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                             <x:Boolean x:Key="IsPinned">False</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
@@ -453,14 +452,14 @@
                     </Sequence>
                   </If.Then>
                   <If.Else>
-                    <Sequence DisplayName="New division" sap:VirtualizedContainerService.HintSize="842,2116" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                    <Sequence DisplayName="New division" sap:VirtualizedContainerService.HintSize="346,1325.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_15">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <Sequence DisplayName="Add data row as new coach and division" sap:VirtualizedContainerService.HintSize="800,114" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                      <Sequence DisplayName="Add data row as new coach and division" sap:VirtualizedContainerService.HintSize="304,114" sap2010:WorkflowViewState.IdRef="Sequence_11">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -469,7 +468,7 @@
                         </sap:WorkflowViewStateService.ViewState>
                         <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{team,headCoach,division,years,coachWins,coachLoss,games,bowlWins,bowlLosses,bowlGames}]" DataTable="[out_SportsWithCoach]" DisplayName="Adds data row with new division" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="AddDataRow_1" />
                       </Sequence>
-                      <Sequence DisplayName="First values for next coach division pair" sap:VirtualizedContainerService.HintSize="800,970" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                      <Sequence DisplayName="First values for next coach division pair" sap:VirtualizedContainerService.HintSize="304,970" sap2010:WorkflowViewState.IdRef="Sequence_12">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -549,10 +548,10 @@
                           </Assign.Value>
                         </Assign>
                       </Sequence>
-                      <Sequence DisplayName="Add bowl games" sap:VirtualizedContainerService.HintSize="800,860" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                      <Sequence DisplayName="Add bowl games" sap:VirtualizedContainerService.HintSize="304,69.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_14">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                             <x:Boolean x:Key="IsPinned">False</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
@@ -629,17 +628,17 @@
                 </If>
               </If.Then>
               <If.Else>
-                <Sequence DisplayName="New coach" sap:VirtualizedContainerService.HintSize="610,1510" sap2010:WorkflowViewState.IdRef="Sequence_24">
+                <Sequence DisplayName="New coach" sap:VirtualizedContainerService.HintSize="526,1434.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_24">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <If Condition="[out_SportsWithCoach.Rows.Count.equals(0)]" DisplayName="If first coach" sap:VirtualizedContainerService.HintSize="568,52.6666666666667" sap2010:WorkflowViewState.IdRef="If_10">
+                  <If Condition="[out_SportsWithCoach.Rows.Count.equals(0)]" DisplayName="If first coach" sap:VirtualizedContainerService.HintSize="484,223.333333333333" sap2010:WorkflowViewState.IdRef="If_10">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
@@ -813,14 +812,14 @@
                       </Sequence>
                     </If.Else>
                   </If>
-                  <Sequence DisplayName="First values for next coach division pair" sap:VirtualizedContainerService.HintSize="568,1325.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_23">
+                  <Sequence DisplayName="First values for next coach division pair" sap:VirtualizedContainerService.HintSize="484,1079.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_23">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <Assign sap:VirtualizedContainerService.HintSize="526,62" sap2010:WorkflowViewState.IdRef="Assign_45">
+                    <Assign sap:VirtualizedContainerService.HintSize="262,62" sap2010:WorkflowViewState.IdRef="Assign_45">
                       <Assign.To>
                         <OutArgument x:TypeArguments="x:Int32">[years]</OutArgument>
                       </Assign.To>
@@ -828,7 +827,7 @@
                         <InArgument x:TypeArguments="x:Int32">1</InArgument>
                       </Assign.Value>
                     </Assign>
-                    <Assign sap:VirtualizedContainerService.HintSize="526,62" sap2010:WorkflowViewState.IdRef="Assign_46">
+                    <Assign sap:VirtualizedContainerService.HintSize="262,62" sap2010:WorkflowViewState.IdRef="Assign_46">
                       <Assign.To>
                         <OutArgument x:TypeArguments="x:String">[headCoach]</OutArgument>
                       </Assign.To>
@@ -836,7 +835,7 @@
                         <InArgument x:TypeArguments="x:String">[row.Item(12).ToString.split("("c)(0).Trim]</InArgument>
                       </Assign.Value>
                     </Assign>
-                    <Assign sap:VirtualizedContainerService.HintSize="526,62" sap2010:WorkflowViewState.IdRef="Assign_47">
+                    <Assign sap:VirtualizedContainerService.HintSize="262,62" sap2010:WorkflowViewState.IdRef="Assign_47">
                       <Assign.To>
                         <OutArgument x:TypeArguments="x:String">[division]</OutArgument>
                       </Assign.To>
@@ -844,7 +843,7 @@
                         <InArgument x:TypeArguments="x:String">[row(2).ToString]</InArgument>
                       </Assign.Value>
                     </Assign>
-                    <Assign sap:VirtualizedContainerService.HintSize="526,62" sap2010:WorkflowViewState.IdRef="Assign_48">
+                    <Assign sap:VirtualizedContainerService.HintSize="262,62" sap2010:WorkflowViewState.IdRef="Assign_48">
                       <Assign.To>
                         <OutArgument x:TypeArguments="x:Double">[coachWins]</OutArgument>
                       </Assign.To>
@@ -852,7 +851,7 @@
                         <InArgument x:TypeArguments="x:Double">[CInt(row(3))]</InArgument>
                       </Assign.Value>
                     </Assign>
-                    <Assign sap:VirtualizedContainerService.HintSize="526,62" sap2010:WorkflowViewState.IdRef="Assign_49">
+                    <Assign sap:VirtualizedContainerService.HintSize="262,62" sap2010:WorkflowViewState.IdRef="Assign_49">
                       <Assign.To>
                         <OutArgument x:TypeArguments="x:Double">[coachLoss]</OutArgument>
                       </Assign.To>
@@ -860,7 +859,7 @@
                         <InArgument x:TypeArguments="x:Double">[CInt(row(4))]</InArgument>
                       </Assign.Value>
                     </Assign>
-                    <Assign sap:VirtualizedContainerService.HintSize="526,62" sap2010:WorkflowViewState.IdRef="Assign_50">
+                    <Assign sap:VirtualizedContainerService.HintSize="262,62" sap2010:WorkflowViewState.IdRef="Assign_50">
                       <Assign.To>
                         <OutArgument x:TypeArguments="x:Double">[games]</OutArgument>
                       </Assign.To>
@@ -868,7 +867,7 @@
                         <InArgument x:TypeArguments="x:Double">[cint(row(3))+cint(row(4))+cint(row(5))]</InArgument>
                       </Assign.Value>
                     </Assign>
-                    <Assign sap:VirtualizedContainerService.HintSize="526,62" sap2010:WorkflowViewState.IdRef="Assign_51">
+                    <Assign sap:VirtualizedContainerService.HintSize="262,62" sap2010:WorkflowViewState.IdRef="Assign_51">
                       <Assign.To>
                         <OutArgument x:TypeArguments="x:Int32">[bowlWins]</OutArgument>
                       </Assign.To>
@@ -876,7 +875,7 @@
                         <InArgument x:TypeArguments="x:Int32">0</InArgument>
                       </Assign.Value>
                     </Assign>
-                    <Assign sap:VirtualizedContainerService.HintSize="526,62" sap2010:WorkflowViewState.IdRef="Assign_52">
+                    <Assign sap:VirtualizedContainerService.HintSize="262,62" sap2010:WorkflowViewState.IdRef="Assign_52">
                       <Assign.To>
                         <OutArgument x:TypeArguments="x:Int32">[bowlLosses]</OutArgument>
                       </Assign.To>
@@ -884,7 +883,7 @@
                         <InArgument x:TypeArguments="x:Int32">0</InArgument>
                       </Assign.Value>
                     </Assign>
-                    <Assign sap:VirtualizedContainerService.HintSize="526,62" sap2010:WorkflowViewState.IdRef="Assign_53">
+                    <Assign sap:VirtualizedContainerService.HintSize="262,62" sap2010:WorkflowViewState.IdRef="Assign_53">
                       <Assign.To>
                         <OutArgument x:TypeArguments="x:Int32">[bowlGames]</OutArgument>
                       </Assign.To>
@@ -892,10 +891,10 @@
                         <InArgument x:TypeArguments="x:Int32">0</InArgument>
                       </Assign.Value>
                     </Assign>
-                    <Sequence DisplayName="Add bowl games" sap:VirtualizedContainerService.HintSize="526,315.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_22">
+                    <Sequence DisplayName="Add bowl games" sap:VirtualizedContainerService.HintSize="262,69.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_22">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
@@ -974,8 +973,8 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:ForEachRow>
-      <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{team,headCoach,division,years,coachWins,coachLoss,games,bowlWins,bowlLosses,bowlGames}]" DataTable="[out_SportsWithCoach]" DisplayName="Adds last row of data with first year" sap:VirtualizedContainerService.HintSize="1634.66666666667,22" sap2010:WorkflowViewState.IdRef="AddDataRow_4" />
+      <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{team,headCoach,division,years,coachWins,coachLoss,games,bowlWins,bowlLosses,bowlGames}]" DataTable="[out_SportsWithCoach]" DisplayName="Adds last row of data with first year" sap:VirtualizedContainerService.HintSize="1138.66666666667,22" sap2010:WorkflowViewState.IdRef="AddDataRow_4" />
     </Sequence>
-    <ui:LogMessage DisplayName="Log Exit point" sap:VirtualizedContainerService.HintSize="1468.66666666667,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;Done adding coaches&quot;]" />
+    <ui:LogMessage DisplayName="Log Exit point" sap:VirtualizedContainerService.HintSize="1180.66666666667,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;Done adding coaches&quot;]" />
   </Sequence>
 </Activity>
