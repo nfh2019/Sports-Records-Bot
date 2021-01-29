@@ -3,7 +3,9 @@ Have you ever heard an announcer say “He was their winningest coach” and won
 This automation measure winningest in a few different ways including: wins per year, wins per game, postseason wins per postseason games, divisional championships, and national championships.
 
 
-This automation uses UiPath. It has implemented Studio, Orchestrator, and Assistant. This automation uses the REFramework template UiPath provides. It uses Ui interactions, excel automation, and email automation. It also uses form activity along with JSON parsing and many switch statements to provide the ability to get these calculations for multiple sports, multiple sheets, and sorted however the user wants.
+This automation uses UiPath. It has implemented Studio, Orchestrator, and Assistant. This automation uses the REFramework template UiPath provides. It incorporates Ui interactions, excel automation, and email automation. It also uses form activity along with JSON parsing and many switch statements to provide the ability to get these calculations for multiple sports, multiple sheets, and sorted however the user wants.
+
+Sports this automation supports include: college football (NCAAF CFB) and NHL. Support for MLB and NFL are waiting to be added soon. This automation can be expanded upon in future iterations as some of the same workflow files are used by all sports and switch statements can have more cases added to.
 
 ## Worksheets
 There are 3 worksheets that may be contained in the workbook you receive via the email attachment. Each sheet contains the columns:

@@ -5,7 +5,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>680.666666666667,976</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>680.666666666667,936</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Main2_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="54">
@@ -199,9 +199,9 @@
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <Transition.To>
-            <State x:Name="__ReferenceID2" sap2010:Annotation.AnnotationText="Process a single transaction. &#xA;The result of the processing can be: 1) Success, 2) Business Exception, 3) System Exception. &#xA;In the case of a system exception, the transaction can be automatically retried.&#xA;&#xA;Gets together historical records and championships before doing calculations. After calculations this step sorts the data however the user wants before writing to Excel." DisplayName="Process Transaction" sap:VirtualizedContainerService.HintSize="231.333333333333,298.666666666667" sap2010:WorkflowViewState.IdRef="State_3">
+            <State x:Name="__ReferenceID2" sap2010:Annotation.AnnotationText="Process a single transaction. &#xA;The result of the processing can be: 1) Success, 2) Business Exception, 3) System Exception. &#xA;In the case of a system exception, the transaction can be automatically retried.&#xA;&#xA;Gets together historical records and championships before doing calculations. After calculations this step sorts the data however the user wants before writing to Excel." DisplayName="Process Transaction" sap:VirtualizedContainerService.HintSize="524,1188.66666666667" sap2010:WorkflowViewState.IdRef="State_3">
               <State.Entry>
-                <TryCatch DisplayName="Try to process transaction" sap:VirtualizedContainerService.HintSize="438.666666666667,569.333333333333" sap2010:WorkflowViewState.IdRef="TryCatch_9">
+                <TryCatch DisplayName="Try to process transaction" sap:VirtualizedContainerService.HintSize="477.333333333333,648.666666666667" sap2010:WorkflowViewState.IdRef="TryCatch_9">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -233,7 +233,7 @@
                     </Sequence>
                   </TryCatch.Try>
                   <TryCatch.Catches>
-                    <Catch x:TypeArguments="ui:BusinessRuleException" sap:VirtualizedContainerService.HintSize="404.666666666667,22" sap2010:WorkflowViewState.IdRef="Catch`1_9">
+                    <Catch x:TypeArguments="ui:BusinessRuleException" sap:VirtualizedContainerService.HintSize="443.333333333333,22" sap2010:WorkflowViewState.IdRef="Catch`1_9">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -254,7 +254,7 @@
                         </Assign>
                       </ActivityAction>
                     </Catch>
-                    <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404.666666666667,22" sap2010:WorkflowViewState.IdRef="Catch`1_10">
+                    <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="443.333333333333,22" sap2010:WorkflowViewState.IdRef="Catch`1_10">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -277,7 +277,7 @@
                     </Catch>
                   </TryCatch.Catches>
                   <TryCatch.Finally>
-                    <TryCatch DisplayName="Set the transaction status and move to process the next transaction" sap:VirtualizedContainerService.HintSize="438.666666666667,352" sap2010:WorkflowViewState.IdRef="TryCatch_8">
+                    <TryCatch DisplayName="Set the transaction status and move to process the next transaction" sap:VirtualizedContainerService.HintSize="438.666666666667,387.333333333333" sap2010:WorkflowViewState.IdRef="TryCatch_8">
                       <TryCatch.Try>
                         <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke SetTransactionStatus workflow" sap:VirtualizedContainerService.HintSize="334,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_25" UnSafe="False" WorkflowFileName="Framework\SetTransactionStatus.xaml">
                           <ui:InvokeWorkflowFile.Arguments>
@@ -306,6 +306,17 @@
                           </ActivityAction>
                         </Catch>
                       </TryCatch.Catches>
+                      <TryCatch.Finally>
+                        <ui:SendOutlookMail Bcc="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" TimeoutMS="{x:Null}" Account="nfh.22.2019@gmail.com" Body="Howdy, Here is the workbook with the data and calculations you input." DisplayName="Send Outlook Mail Message" sap:VirtualizedContainerService.HintSize="334,149.333333333333" sap2010:WorkflowViewState.IdRef="SendOutlookMail_4" IsBodyHtml="False" IsDraft="False" Subject="Sports Records/Calculations" To="[TransactionItem.SpecificContent.Item(&quot;Email&quot;).ToString]">
+                          <ui:SendOutlookMail.Files>
+                            <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4">
+                              <InArgument x:TypeArguments="x:String">
+                                <Literal x:TypeArguments="x:String">C:\Users\nfh22\OneDrive\Desktop\Sports Records Bot\Calculations.xlsx</Literal>
+                              </InArgument>
+                            </scg:List>
+                          </ui:SendOutlookMail.Files>
+                        </ui:SendOutlookMail>
+                      </TryCatch.Finally>
                     </TryCatch>
                   </TryCatch.Finally>
                 </TryCatch>
@@ -517,18 +528,9 @@
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                           <Transition.To>
-                            <State x:Name="__ReferenceID1" sap2010:Annotation.AnnotationText="End process and close all applications used." DisplayName="End Process" sap:VirtualizedContainerService.HintSize="485.333333333333,533.333333333333" sap2010:WorkflowViewState.IdRef="State_1" IsFinal="True">
+                            <State x:Name="__ReferenceID1" sap2010:Annotation.AnnotationText="End process and close all applications used." DisplayName="End Process" sap:VirtualizedContainerService.HintSize="144,124" sap2010:WorkflowViewState.IdRef="State_1" IsFinal="True">
                               <State.Entry>
-                                <TryCatch DisplayName="Try to close all aplications" sap:VirtualizedContainerService.HintSize="438.666666666667,387.333333333333" sap2010:WorkflowViewState.IdRef="TryCatch_4">
-                                  <TryCatch.Try>
-                                    <ui:SendOutlookMail Bcc="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" TimeoutMS="{x:Null}" Account="nfh.22.2019@gmail.com" Body="Howdy, Here is the workbook with the data and calculations you input." DisplayName="Send Outlook Mail Message" sap:VirtualizedContainerService.HintSize="334,149.333333333333" sap2010:WorkflowViewState.IdRef="SendOutlookMail_2" IsBodyHtml="False" IsDraft="False" Subject="Sports Records/Calculations" To="[TransactionItem.SpecificContent.Item(&quot;Email&quot;).ToString]">
-                                      <ui:SendOutlookMail.Files>
-                                        <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4">
-                                          <InArgument x:TypeArguments="x:String">C:\Users\nfh22\OneDrive\Desktop\Sports Records Bot\Data.xlsx</InArgument>
-                                        </scg:List>
-                                      </ui:SendOutlookMail.Files>
-                                    </ui:SendOutlookMail>
-                                  </TryCatch.Try>
+                                <TryCatch DisplayName="Try to close all aplications" sap:VirtualizedContainerService.HintSize="438.666666666667,298" sap2010:WorkflowViewState.IdRef="TryCatch_4">
                                   <TryCatch.Catches>
                                     <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404.666666666667,22" sap2010:WorkflowViewState.IdRef="Catch`1_5">
                                       <sap:WorkflowViewStateService.ViewState>
