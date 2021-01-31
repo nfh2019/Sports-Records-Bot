@@ -9,7 +9,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>610.666666666667,1111.33333333333</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>528.666666666667,518</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>SortAndWriteExcelSheet_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -75,23 +75,22 @@
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
       <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
       <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="SortAndWriteExcelSheet" sap:VirtualizedContainerService.HintSize="620.666666666667,1006.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="SortAndWriteExcelSheet" sap:VirtualizedContainerService.HintSize="538.666666666667,413.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Switch x:TypeArguments="x:String" DisplayName="league" Expression="[in_TransactionItem.SpecificContent.Item(&quot;League&quot;).ToString]" sap:VirtualizedContainerService.HintSize="578.666666666667,914.666666666667" sap2010:WorkflowViewState.IdRef="Switch`1_2">
-      <Sequence x:Key="ncaafCfb" DisplayName="Sorts and writes to excel sheet correctly named" sap:VirtualizedContainerService.HintSize="538.666666666667,723.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Switch x:TypeArguments="x:String" DisplayName="league" Expression="[in_TransactionItem.SpecificContent.Item(&quot;League&quot;).ToString]" sap:VirtualizedContainerService.HintSize="496.666666666667,321.333333333333" sap2010:WorkflowViewState.IdRef="Switch`1_2">
+      <Sequence x:Key="ncaafCfb" DisplayName="Sorts and writes to excel sheet correctly named" sap:VirtualizedContainerService.HintSize="538.666666666667,710.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_2">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <Switch x:TypeArguments="x:String" DisplayName="sorting" Expression="[in_TransactionItem.SpecificContent.Item(&quot;Sorting Method&quot;).ToString]" sap:VirtualizedContainerService.HintSize="496.666666666667,238.666666666667" sap2010:WorkflowViewState.IdRef="Switch`1_1">
+        <Switch x:TypeArguments="x:String" DisplayName="sorting" Expression="[in_TransactionItem.SpecificContent.Item(&quot;Sorting Method&quot;).ToString]" sap:VirtualizedContainerService.HintSize="496.666666666667,228.666666666667" sap2010:WorkflowViewState.IdRef="Switch`1_1">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -113,6 +112,9 @@
           <ui:WriteRange x:Key="team" AddHeaders="True" DataTable="[in_FullRecordsDT]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="334,114.666666666667" sap2010:WorkflowViewState.IdRef="WriteRange_7" SheetName="[in_TransactionItem.SpecificContent.Item(&quot;Specific Team&quot;).ToString]" StartingCell="A1" WorkbookPath="C:\Users\nfh22\OneDrive\Desktop\Sports Records Bot\Calculations.xlsx" />
         </Switch>
       </Sequence>
+      <x:Null x:Key="nhl" />
+      <x:Null x:Key="mlb" />
+      <x:Null x:Key="nfl" />
     </Switch>
   </Sequence>
 </Activity>

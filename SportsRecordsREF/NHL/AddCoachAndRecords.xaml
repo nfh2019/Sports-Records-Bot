@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="AddCoachAndRecords" this:AddCoachAndRecords.in_Team="Dallas Stars" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="AddCoachAndRecords" this:AddCoachAndRecords.in_Team="Dallas Stars" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_Team" Type="InArgument(x:String)" />
     <x:Property Name="out_SportWithCoach" Type="OutArgument(sd:DataTable)" />
@@ -6,7 +6,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>2940.66666666667,3936.66666666667</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>854.666666666667,2773.33333333333</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>AddCoachAndRecords_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="62">
@@ -43,6 +43,12 @@
       <x:String>UiPath.UIAutomationNext.Contracts</x:String>
       <x:String>UiPath.Excel</x:String>
       <x:String>UiPath.Excel.Activities</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>UiPath.CV</x:String>
+      <x:String>UiPath.Shared.ObjectLibrary</x:String>
+      <x:String>UiPath.CV.Activities</x:String>
+      <x:String>UiPath.CV.Activities.Interfaces</x:String>
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -77,40 +83,23 @@
       <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
       <AssemblyReference>System.ServiceModel</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.CV</AssemblyReference>
+      <AssemblyReference>UiPath.CV.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Takes in_Team which is different for each entry point&#xA;&#xA;Gathers team data by coach including regular season wins, losses, and games. Also adds number of playoffs reached." DisplayName="AddCoachAndRecords" sap:VirtualizedContainerService.HintSize="2950.66666666667,3872" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Takes in_Team which is different for each entry point&#xA;&#xA;Gathers team data by coach including regular season wins, losses, and games. Also adds number of playoffs reached." DisplayName="AddCoachAndRecords" sap:VirtualizedContainerService.HintSize="864.666666666667,2708.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="fromWebsite" />
       <Variable x:TypeArguments="x:String" Name="coach" />
       <Variable x:TypeArguments="x:String" Name="conference" />
       <Variable x:TypeArguments="x:String" Name="division" />
-      <Variable x:TypeArguments="x:Int32" Name="coachWins">
-        <Variable.Default>
-          <Literal x:TypeArguments="x:Int32" />
-        </Variable.Default>
-      </Variable>
-      <Variable x:TypeArguments="x:Int32" Name="coachLoss">
-        <Variable.Default>
-          <Literal x:TypeArguments="x:Int32" />
-        </Variable.Default>
-      </Variable>
-      <Variable x:TypeArguments="x:Int32" Name="coachGames">
-        <Variable.Default>
-          <Literal x:TypeArguments="x:Int32" />
-        </Variable.Default>
-      </Variable>
-      <Variable x:TypeArguments="x:Int32" Name="coachSeasons">
-        <Variable.Default>
-          <Literal x:TypeArguments="x:Int32" />
-        </Variable.Default>
-      </Variable>
-      <Variable x:TypeArguments="x:Int32" Name="playoffReached">
-        <Variable.Default>
-          <Literal x:TypeArguments="x:Int32" />
-        </Variable.Default>
-      </Variable>
+      <Variable x:TypeArguments="x:Int32" Default="0" Name="coachWins" />
+      <Variable x:TypeArguments="x:Int32" Default="0" Name="coachLoss" />
+      <Variable x:TypeArguments="x:Int32" Default="0" Name="coachGames" />
+      <Variable x:TypeArguments="x:Int32" Default="0" Name="coachSeasons" />
+      <Variable x:TypeArguments="x:Int32" Default="0" Name="playoffReached" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -118,40 +107,64 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Gets team page datatable" sap:VirtualizedContainerService.HintSize="2908.66666666667,1046" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="Simulate" Version="V1">
+    <ui:LogMessage DisplayName="Log Entry" sap:VirtualizedContainerService.HintSize="822.666666666667,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;adding coach to datatable with wins and bowls&quot;]" />
+    <ui:BuildDataTable DataTable="[out_SportWithCoach]" DisplayName="Build Data Table for input" sap:VirtualizedContainerService.HintSize="822.666666666667,58.6666666666667" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xD;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xD;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xD;&#xA;      &lt;xs:complexType&gt;&#xD;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xD;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xD;&#xA;            &lt;xs:complexType&gt;&#xD;&#xA;              &lt;xs:sequence&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Team&quot; msdata:Caption=&quot;&quot;&gt;&#xD;&#xA;                  &lt;xs:simpleType&gt;&#xD;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xD;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xD;&#xA;                    &lt;/xs:restriction&gt;&#xD;&#xA;                  &lt;/xs:simpleType&gt;&#xD;&#xA;                &lt;/xs:element&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Coach&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Division&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Conference&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Seasons&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Wins&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Losses&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Games&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Playoffs_x0020_Reached&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;              &lt;/xs:sequence&gt;&#xD;&#xA;            &lt;/xs:complexType&gt;&#xD;&#xA;          &lt;/xs:element&gt;&#xD;&#xA;        &lt;/xs:choice&gt;&#xD;&#xA;      &lt;/xs:complexType&gt;&#xD;&#xA;    &lt;/xs:element&gt;&#xD;&#xA;  &lt;/xs:schema&gt;&#xD;&#xA;&lt;/NewDataSet&gt;" />
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Edge: NHL Teams &amp; Other Hockey Teams | Hockey-Reference.com" sap:VirtualizedContainerService.HintSize="822.666666666667,1156.66666666667" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" InteractionMode="Simulate" Version="V1">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Navigate to and scrape team page" sap:VirtualizedContainerService.HintSize="376,828" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Navigate to team page" sap:VirtualizedContainerService.HintSize="476,938.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_18">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:LogMessage DisplayName="Log Entry" sap:VirtualizedContainerService.HintSize="334,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;adding coach to datatable with wins and bowls&quot;]" />
-            <ui:BuildDataTable DataTable="[out_SportWithCoach]" DisplayName="Build Data Table for input" sap:VirtualizedContainerService.HintSize="334,58.6666666666667" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Team&quot; msdata:Caption=&quot;&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Coach&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Division&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Conference&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Seasons&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Wins&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Losses&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Games&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Playoffs_x0020_Reached&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Stanley_x0020_Cups&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
-            <uix:NClick ClickType="Single" DisplayName="Click in_Team name" sap:VirtualizedContainerService.HintSize="334,168" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left">
+            <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="434,305.333333333333" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+              <TryCatch.Try>
+                <uix:NClick ClickType="Single" DisplayName="Click 'Hide Partial Rows'" sap:VirtualizedContainerService.HintSize="334,168" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left">
+                  <uix:NClick.Target>
+                    <uix:TargetAnchorable BrowserURL="https://www.hockey-reference.com/teams/" DesignTimeRectangle="586, 496, 167, 21" ElementType="Button" FriendlyName="'Hide Partial Rows'" FullSelectorArgument="&lt;webctrl id='active_franchises_toggle_partial_table' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl id='active_franchises_toggle_partial_table' tag='BUTTON' type='button' aaname='Hide Partial Rows' check:text='Hide Partial Rows' /&gt;" ImageBase64="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" InformativeScreenshot="a7a4bd80d9caddf327f47de4ef4136b9.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='NHL Teams &amp;amp; Other Hockey Teams | Hockey-Reference.com' /&gt;" SearchSteps="FuzzySelector, Image" Text="Hide Partial Rows" TextMethod="AttributeText" TextSelector="&lt;webctrl tag='BUTTON' type='button' /&gt;" />
+                  </uix:NClick.Target>
+                </uix:NClick>
+              </TryCatch.Try>
+              <TryCatch.Catches>
+                <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,133.333333333333" sap2010:WorkflowViewState.IdRef="Catch`1_2">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ActivityAction x:TypeArguments="s:Exception">
+                    <ActivityAction.Argument>
+                      <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                    </ActivityAction.Argument>
+                    <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="229.333333333333,62.6666666666667" sap2010:WorkflowViewState.IdRef="WriteLine_2" Text="Partial rows already hidden" />
+                  </ActivityAction>
+                </Catch>
+              </TryCatch.Catches>
+            </TryCatch>
+            <uix:NClick ClickType="Single" DisplayName="Click team name" sap:VirtualizedContainerService.HintSize="434,168" sap2010:WorkflowViewState.IdRef="NClick_5" KeyModifiers="None" MouseButton="Left">
               <uix:NClick.Target>
-                <uix:TargetAnchorable BrowserURL="https://www.hockey-reference.com/teams/" DesignTimeRectangle="35, 121, 99, 20" ElementType="Text" FriendlyName="'Anaheim Ducks'" FullSelectorArgument="&lt;webctrl aaname='Anaheim Ducks' parentid='active_franchises' tag='A' /&gt;" FuzzyAccuracy="0.71" FuzzySelectorArgument="[String.Format(&quot;&lt;webctrl aaname='{0}' parentid='active_franchises' tag='A' type='' check:text='{0}' /&gt;&quot;, in_Team)]" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAIQAAAAYCAYAAAA74FWfAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAK4SURBVGhD7ZY7cuMwDIb3cD7KtrmHWzdRk96le02O4Ma30C0YUQApPCkmE2m9Cf4ZzMQ0Qbw+0vmTQiGiACLEFECEmAKIEFMAEWIKIEJMTwXEdBvS+TSkccKFUKemNL6c0/nywM9fVwOIR7qe5iDZviFQj74diGlMw0H5Q+7YL2HXO27aTUcAcb/OxQxpyIFO1xmP/fX/A2HkvvRx7x4eAMTjMgd4GdOEBe1P+Q5AHKh27uW13QuKvYHAmzXccnVYjBFsgWYpkvy8ZMsg4R6Q+L6YOHNtKhZY9zqNrLfP2cfqAFXQy+tRrOQsz1S12NqEGc9dc4Ge0NxA3nCNHtbcHB/rdVI945fdBEIWtw6eC9bldxZAeU36630QN59HG4vFisFAbD4ANRQPiByDnkfhMNb10LQ2gSj11vPhcxcQCibQ41Li+T7WGgVA5m0AYQzAaYwHCgTR61Jyn9vUpRA9aP0zJiDzgBBwZX12XWobCOxrrbcXCH1xtISPCxCNT3QfG0CYwzcgmdUGQjcH9kvrBWIFQIJExQb4E4Bw4aciPg4MWZBjux4FRHUyjRcMA+4AAouSe+Vg3aYKICBuw54SCLzp9axOIETttgpsxfw8rPnSHAQQjefJa24HEO19nwdC+rl6JiDUzd3hhVji07/xa1crSOV8DkSTxuK8DqIPCPQzmvpVIPpuzaynAcLqgXf5cG9db1zS+tvv+IjZPG5GHaJHDAhvwFViEH1A6M9ZsMb9u4GYBbENKPJecbv+KRCYu9Un3b9y6WajAOAZ7DVZ1ko8CUSWhkLH03mvQGDzTBKrOK1WgKw2AGC5OFhb/beaag6fnAlG/A8HouTAzX/JCACL5dyt4c4q8yG2nrvtA3tlvGx8fuqfytDvVgXi/fVdkBP2m+zt79vCQbwQIaYAIsQUQISIUvoADq23SRFAtssAAAAASUVORK5CYII=" InformativeScreenshot="d486efb7829105fd9d47d63d770acd15.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='NHL Teams &amp;amp; Other Hockey Teams | Hockey-Reference.com' /&gt;" SearchSteps="FuzzySelector" Text="Anaheim Ducks" TextMethod="AttributeText" TextSelector="&lt;webctrl tag='A' type='' /&gt;" />
+                <uix:TargetAnchorable BrowserURL="https://www.hockey-reference.com/teams/" DesignTimeRectangle="36, 545, 99, 20" ElementType="Text" FriendlyName="'Buffalo Sabres'" FullSelectorArgument="&lt;webctrl aaname='Buffalo Sabres' parentid='active_franchises' tag='A' /&gt;" FuzzySelectorArgument="[String.Format(&quot;&lt;webctrl aaname='{0}' parentid='active_franchises' tag='A' type='' check:text='{0}' /&gt;&quot;, in_Team)]" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAH0AAAAYCAYAAADXufLMAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAK4SURBVGhD7ZZLTiMxEIbnTlxhjsGaxUhkw0FQLjLhINnkAIhNUFhkxwE8fpTtcj3adqNGZOxfqgXu7nLV/5VNfpmp4TShD6gJfUBN6ANqQh9QE/qA+kboV/P8+9XcQewOn2H542J2aP35GJbrgnz7K/z9M3U9vNm+3szLByz8ABHoJZgyzuYEb/VLAQTA0wB0aSvoigePF/ukX7cDnRn5aV4eXfMrwR/PYuPBkLXDtAF0X6eQM91G/bXeMPRYfM/1i3QT0GGwF070aT8kdFx8eJdfzWAe5IjDUsbZ/N3TNRve8HirSM+wtFphHUXboPYOEd/HB/k++0b7IgOE/9XFG4fkY15KA4q/haD9N0KX1sNaDbpX10l339N3IWfRpFCT9BsBTKj/bshQ2oeE1s5ryqDKnk5+6NH3+Act8z/WVu7HckCvuP48dLBg1fFDjhq3FXRFLAc1WBqMIKlxWUr/DIIu2pO6Nx1QaWCjFP/oN2wIoo6X4tvm6z1NYjJ1W+jhmWsCxxJ0rR4r4QTUFAwkIfgivtcCnda/AN3vIV3lxOvkmfhuVjt0q7KBraBDDfT92klfOilLzxoV4abBiYeA1E970qETn9Qa4T2/lxLI6wQeBc25AnpsfBvoqkk16Go9VitOOhOBol2ltCe1n46h1U96TXlgcO9fPun83a9B18ysQ4d9V/9Pt/mUvr2Kwant1QAdINObQ4LeVr/17iAMhpC3HTo0jZ9xQHmy1kIvzQXFvRehW0GDfG/lBigE+WywG0HoXQIR1lwOCp3mhL3w0CxAz77KHsZvpAMj1SlDV4KZgSH7cMlhbS10pwQZwuViObQB5T3wujXRfmLw2p0y5BDOfNpTNH1H89K6F6EH0f1CYP+k+rm/BPrUCErQH57eyYTM+J/i/s8ZSM+TPqQm9AE1oQ8nY/4B7WpEXk/VqWYAAAAASUVORK5CYII=" InformativeScreenshot="ed40fc76941abd0f62a03bcf17407afa.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='NHL Teams &amp;amp; Other Hockey Teams | Hockey-Reference.com' /&gt;" SearchSteps="FuzzySelector" Text="Buffalo Sabres" TextMethod="AttributeText" TextSelector="&lt;webctrl tag='A' type='' /&gt;" />
               </uix:NClick.Target>
             </uix:NClick>
-            <uix:NExtractData ContinueOnError="True" DataTable="[fromWebsite]" DisplayName="Get team table" ExtractMetadata="&lt;extract-table get_columns_name='1' get_empty_columns='1' columns_name_source='Longest' /&gt;" sap:VirtualizedContainerService.HintSize="334,168.666666666667" sap2010:WorkflowViewState.IdRef="NExtractData_1" MaximumResults="0">
+            <uix:NExtractData ContinueOnError="True" DataTable="[fromWebsite]" DisplayName="Extract records table" ExtractMetadata="&lt;extract-table get_columns_name='1' get_empty_columns='1' columns_name_source='Longest' /&gt;" sap:VirtualizedContainerService.HintSize="434,168.666666666667" sap2010:WorkflowViewState.IdRef="NExtractData_2" MaximumResults="0">
               <uix:NExtractData.Target>
-                <uix:TargetAnchorable DesignTimeRectangle="29, 551, 1873, 1942" FriendlyName="'53 Seasons'" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;" InformativeScreenshot="619ed779160822173fe2c1d56afd21d5.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Dallas Stars Franchise History | Hockey-Reference.com' /&gt;" SearchSteps="Selector" Text="53 Seasons Table&#xA;    &#xA;   &#xA;         &#xA;      &#xA;         Season&#xA;         Lg&#xA;         Team&#xA;         GP&#xA;  " TextMethod="AttributeText" TextSelector="&lt;webctrl tag='TABLE' type='' /&gt;" />
+                <uix:TargetAnchorable DesignTimeRectangle="30, 708, 1873, 1907" FriendlyName="'53 Seasons'" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;" InformativeScreenshot="533d57ba2291bdfdc247c31c6130207a.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Dallas Stars Franchise History | Hockey-Reference.com' /&gt;" SearchSteps="Selector" Text="53 Seasons Table&#xA;    &#xA;   &#xA;         &#xA;      &#xA;         Season&#xA;         Lg&#xA;         Team&#xA;         GP&#xA;  " TextMethod="AttributeText" TextSelector="&lt;webctrl tag='TABLE' type='' /&gt;" />
               </uix:NExtractData.Target>
             </uix:NExtractData>
-            <uix:NNavigateBrowser DisplayName="Go back to league page" sap:VirtualizedContainerService.HintSize="334,83.3333333333333" sap2010:WorkflowViewState.IdRef="NNavigateBrowser_1" />
+            <uix:NNavigateBrowser DisplayName="back to league page" sap:VirtualizedContainerService.HintSize="434,83.3333333333333" sap2010:WorkflowViewState.IdRef="NNavigateBrowser_2" />
           </Sequence>
         </ActivityAction>
       </uix:NApplicationCard.Body>
       <uix:NApplicationCard.TargetApp>
-        <uix:TargetApp BrowserType="Chrome" IconBase64="iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAARaSURBVGhD7Zd7TFN3FMdPW2cBp3PWOiQCxvnIfDBM2MO5RYmKJlvG/pgZ+se2uGSJWaL7Z9OkPtZsLi5qFmP20FJKobwqDiKIBBirGiaJLsPY9t7bdy3YAra8toJS250floRtl6e0vU3uJ/mm6b2/tOf8fufxO8DDw8PDMxmBYAhCoZDQNxRI0Fr6EndecSR+/UeXREX3pISXxJbHTwyEBteA+IubnqXvN9zbmFPryH3lknX/ugqzfL3WrEgppktWlZmalxUzumeVRt3iQqotXcOYwz8RXUYNVjM9SXuaXGu2XLbnoaHfpZcwV5eoaWaB0uhLzDcOz7lgCArP60OCn/UhYNNPqGhBDAbYDAqjb9679c6szErLoeUlTOPCAqpDrDAEiKGsRk6mSHPd/TcxXrBP15H2VrVt/4pSU9N8pdErOm8Isho0XUWKMksv6H1Doo9/a8/AGP4GY5aZe8EQYDXiaTTbXHH2g8c/LPpE15GZedFyTlJIuXG32f98NjRbtHb6R0Llo+b2lWsrzCdwx++LZhrX09FnN+6vuunxC2oc/WFTpofW2gfwXh2QGN9UZZNL1bR11uJ7KtqgtdzGenv4YIs7lVSKSmLQJJB1P+i9YMAYxx1f/eov1mMSFaV/Bsse659EUqvLTC2YXCFpIW3Eoz+1vdax69NrHWnoSBIaKiLGEoVrt6Da3p9woMW9Yutley7W7vxFKsoRE8NH9UaV7VtsGCNfSC1OyjcOolG2NA1zDZ0rx+73PZ7QmYyLljNYApWpGqYJ49uZoDA8HLfBRFNv1zm3YGv2sb5ECdAp4tiEHTGWOnvXK8Hd/p31ZTwIdtcD1usjcyJZqyOpd646AS9UWc+rqG7WBVxXEdMDzoFH4pfKzRWcjPHJRErkyjIT4JCwA5O5j3URl0U4+Wc31DkHErBsauPuFAjkFDCRASehzZgLnawLuapRSs29xBFh1iXrV9iZH7Mu5qLG8mFzO3zZ6lmEs2bNjCekaGssJJRer7LC7oZ765LVdFtc5MN/OYe3zKVFNOQ1urLx08Z5J9i41eUHyK6GvU2ubejEXU47MR7Y3ADO3oEPGl0bXiw11eOVmZuJPREkJ7bV2OFQq2cxltljWGI9QrYfiaWmQrGpF+z9j4S59c6s9VqzBh3xRWXenYqmw48GL/za/pcYL3+vbay0nF6ClQoHIH9MnZkJbQ8GSXgJPm9xS3NqHTk4rR3Haa0muYimFxZQ3kSc6sQKQxCv6EEy7REHRweisQPSVDVhEXlaSJ4QtXb65x6/1ZmMQ/7Lu/BiuKnKlofD/oE3q21H1pSbZVjNZJJCSiZFpRTTMmyWsuUlEysdhRtzFD91494OuAzZmAytBeS3u6Q4l8ufK6C6/3ca8YCK7oGuwWERDl/ZqRpG96+SHi8EgyF4QU3DQcw7PBX5fKXxyWnEG6fvPCBFRIj9aTsOYrrw4/hiKBAcyY9Tbd2S8CMeHh6emADwD9lyTWdOqhwoAAAAAElFTkSuQmCC" InformativeScreenshot="1a04a750e586066c8bfdf00374fcf290.png" Selector="&lt;html app='chrome.exe' title='NHL Teams &amp;amp; Other Hockey Teams | Hockey-Reference.com'/&gt;" Url="https://www.hockey-reference.com/teams/" />
+        <uix:TargetApp BrowserType="Edge" IconBase64="iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAARaSURBVGhD7Zd7TFN3FMdPW2cBp3PWOiQCxvnIfDBM2MO5RYmKJlvG/pgZ+se2uGSJWaL7Z9OkPtZsLi5qFmP20FJKobwqDiKIBBirGiaJLsPY9t7bdy3YAra8toJS250floRtl6e0vU3uJ/mm6b2/tOf8fufxO8DDw8PDMxmBYAhCoZDQNxRI0Fr6EndecSR+/UeXREX3pISXxJbHTwyEBteA+IubnqXvN9zbmFPryH3lknX/ugqzfL3WrEgppktWlZmalxUzumeVRt3iQqotXcOYwz8RXUYNVjM9SXuaXGu2XLbnoaHfpZcwV5eoaWaB0uhLzDcOz7lgCArP60OCn/UhYNNPqGhBDAbYDAqjb9679c6szErLoeUlTOPCAqpDrDAEiKGsRk6mSHPd/TcxXrBP15H2VrVt/4pSU9N8pdErOm8Isho0XUWKMksv6H1Doo9/a8/AGP4GY5aZe8EQYDXiaTTbXHH2g8c/LPpE15GZedFyTlJIuXG32f98NjRbtHb6R0Llo+b2lWsrzCdwx++LZhrX09FnN+6vuunxC2oc/WFTpofW2gfwXh2QGN9UZZNL1bR11uJ7KtqgtdzGenv4YIs7lVSKSmLQJJB1P+i9YMAYxx1f/eov1mMSFaV/Bsse659EUqvLTC2YXCFpIW3Eoz+1vdax69NrHWnoSBIaKiLGEoVrt6Da3p9woMW9Yutley7W7vxFKsoRE8NH9UaV7VtsGCNfSC1OyjcOolG2NA1zDZ0rx+73PZ7QmYyLljNYApWpGqYJ49uZoDA8HLfBRFNv1zm3YGv2sb5ECdAp4tiEHTGWOnvXK8Hd/p31ZTwIdtcD1usjcyJZqyOpd646AS9UWc+rqG7WBVxXEdMDzoFH4pfKzRWcjPHJRErkyjIT4JCwA5O5j3URl0U4+Wc31DkHErBsauPuFAjkFDCRASehzZgLnawLuapRSs29xBFh1iXrV9iZH7Mu5qLG8mFzO3zZ6lmEs2bNjCekaGssJJRer7LC7oZ765LVdFtc5MN/OYe3zKVFNOQ1urLx08Z5J9i41eUHyK6GvU2ubejEXU47MR7Y3ADO3oEPGl0bXiw11eOVmZuJPREkJ7bV2OFQq2cxltljWGI9QrYfiaWmQrGpF+z9j4S59c6s9VqzBh3xRWXenYqmw48GL/za/pcYL3+vbay0nF6ClQoHIH9MnZkJbQ8GSXgJPm9xS3NqHTk4rR3Haa0muYimFxZQ3kSc6sQKQxCv6EEy7REHRweisQPSVDVhEXlaSJ4QtXb65x6/1ZmMQ/7Lu/BiuKnKlofD/oE3q21H1pSbZVjNZJJCSiZFpRTTMmyWsuUlEysdhRtzFD91494OuAzZmAytBeS3u6Q4l8ufK6C6/3ca8YCK7oGuwWERDl/ZqRpG96+SHi8EgyF4QU3DQcw7PBX5fKXxyWnEG6fvPCBFRIj9aTsOYrrw4/hiKBAcyY9Tbd2S8CMeHh6emADwD9lyTWdOqhwoAAAAAElFTkSuQmCC" InformativeScreenshot="8ab3dad77ba320ce4083986133d49dca.png" Selector="&lt;html app='msedge.exe' title='NHL Teams &amp;amp; Other Hockey Teams | Hockey-Reference.com'/&gt;" Url="https://www.hockey-reference.com/teams/" />
       </uix:NApplicationCard.TargetApp>
     </uix:NApplicationCard>
-    <Sequence DisplayName="first coaching trio" sap:VirtualizedContainerService.HintSize="2016.66666666667,358" sap2010:WorkflowViewState.IdRef="Sequence_3">
+    <Sequence DisplayName="first coaching trio" sap:VirtualizedContainerService.HintSize="822.666666666667,358" sap2010:WorkflowViewState.IdRef="Sequence_3">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -183,17 +196,23 @@
         </Assign.Value>
       </Assign>
     </Sequence>
-    <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[fromWebsite]" DisplayName="For Each Row on team page" sap:VirtualizedContainerService.HintSize="2908.66666666667,1882.66666666667" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+    <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[fromWebsite]" DisplayName="For Each Row on team page" sap:VirtualizedContainerService.HintSize="822.666666666667,530" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
       <ui:ForEachRow.Body>
         <ActivityAction x:TypeArguments="sd:DataRow">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
           </ActivityAction.Argument>
-          <If Condition="[row.Item(14).ToString.Split(&quot;(&quot;c)(0).trim.Equals(coach)]" DisplayName="If row has same coach" sap:VirtualizedContainerService.HintSize="2858,1730" sap2010:WorkflowViewState.IdRef="If_7">
+          <If Condition="[row.Item(14).ToString.Split(&quot;(&quot;c)(0).trim.Equals(coach)]" DisplayName="If row has same coach" sap:VirtualizedContainerService.HintSize="772,377.333333333333" sap2010:WorkflowViewState.IdRef="If_7">
             <If.Then>
-              <If Condition="[row.Item(16).ToString.equals(conference)]" DisplayName="If row has same conference" sap:VirtualizedContainerService.HintSize="2158,1576" sap2010:WorkflowViewState.IdRef="If_5">
+              <If Condition="[row.Item(16).ToString.equals(conference)]" DisplayName="If row has same conference" sap:VirtualizedContainerService.HintSize="484,223.333333333333" sap2010:WorkflowViewState.IdRef="If_5">
                 <If.Then>
-                  <If Condition="[row.item(15).ToString.Equals(division)]" DisplayName="If row has same division" sap:VirtualizedContainerService.HintSize="1458,1422" sap2010:WorkflowViewState.IdRef="If_3">
+                  <If Condition="[row.item(15).ToString.Equals(division)]" DisplayName="If row has same division" sap:VirtualizedContainerService.HintSize="200,52.6666666666667" sap2010:WorkflowViewState.IdRef="If_3">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
                     <If.Then>
                       <If Condition="[row(3).Equals(&quot;&quot;)]" DisplayName="If first row is empty" sap:VirtualizedContainerService.HintSize="758,870" sap2010:WorkflowViewState.IdRef="If_8">
                         <sap:WorkflowViewStateService.ViewState>
@@ -387,10 +406,11 @@
                   </If>
                 </If.Then>
                 <If.Else>
-                  <Sequence DisplayName="New conference" sap:VirtualizedContainerService.HintSize="654,1268" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                  <Sequence DisplayName="New conference" sap:VirtualizedContainerService.HintSize="200,69.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_10">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                     <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{in_Team,coach,division,conference,coachSeasons,coachWins,coachLoss,coachGames,playoffReached}]" DataTable="[out_SportWithCoach]" DisplayName="Add Data Row from last trio" sap:VirtualizedContainerService.HintSize="612,22" sap2010:WorkflowViewState.IdRef="AddDataRow_2" />
@@ -499,17 +519,17 @@
               </If>
             </If.Then>
             <If.Else>
-              <Sequence DisplayName="New coach" sap:VirtualizedContainerService.HintSize="654,1268" sap2010:WorkflowViewState.IdRef="Sequence_13">
+              <Sequence DisplayName="New coach" sap:VirtualizedContainerService.HintSize="242,223.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_13">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{in_Team,coach,division,conference,coachSeasons,coachWins,coachLoss,coachGames,playoffReached}]" DataTable="[out_SportWithCoach]" DisplayName="Add Data Row from last trio" sap:VirtualizedContainerService.HintSize="612,22" sap2010:WorkflowViewState.IdRef="AddDataRow_3" />
-                <Sequence DisplayName="Reset values for new trio" sap:VirtualizedContainerService.HintSize="612,1114" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{in_Team,coach,division,conference,coachSeasons,coachWins,coachLoss,coachGames,playoffReached}]" DataTable="[out_SportWithCoach]" DisplayName="Add Data Row from last trio" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="AddDataRow_3" />
+                <Sequence DisplayName="Reset values for new trio" sap:VirtualizedContainerService.HintSize="200,69.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_12">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
@@ -612,8 +632,7 @@
         </ActivityAction>
       </ui:ForEachRow.Body>
     </ui:ForEachRow>
-    <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{in_Team,coach,division,conference,coachSeasons,coachWins,coachLoss,coachGames,playoffReached}]" DataTable="[out_SportWithCoach]" DisplayName="Add Last Data Row" sap:VirtualizedContainerService.HintSize="2908.66666666667,22" sap2010:WorkflowViewState.IdRef="AddDataRow_4" />
-    <ui:WriteRange AddHeaders="True" DataTable="[out_SportWithCoach]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="2908.66666666667,114.666666666667" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="Sheet1" StartingCell="A1" WorkbookPath="C:\Users\nfh22\OneDrive\Desktop\Sports Records Bot\Data.xlsx" />
-    <ui:LogMessage DisplayName="Log Exit point" sap:VirtualizedContainerService.HintSize="2908.66666666667,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Done adding coaches&quot;]" />
+    <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{in_Team,coach,division,conference,coachSeasons,coachWins,coachLoss,coachGames,playoffReached}]" DataTable="[out_SportWithCoach]" DisplayName="Add Last Data Row" sap:VirtualizedContainerService.HintSize="822.666666666667,22" sap2010:WorkflowViewState.IdRef="AddDataRow_4" />
+    <ui:LogMessage DisplayName="Log Exit point" sap:VirtualizedContainerService.HintSize="822.666666666667,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Done adding coaches&quot;]" />
   </Sequence>
 </Activity>
