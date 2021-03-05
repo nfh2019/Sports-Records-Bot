@@ -9,7 +9,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>610.666666666667,1203.33333333333</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>714,1258</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>SortAndWriteExcelSheet_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -78,68 +78,68 @@
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="SortAndWriteExcelSheet" sap:VirtualizedContainerService.HintSize="620.666666666667,998.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="SortAndWriteExcelSheet" sap:VirtualizedContainerService.HintSize="620.666666666667,1053.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Switch x:TypeArguments="x:String" DisplayName="league" Expression="[in_TransactionItem.SpecificContent.Item(&quot;League&quot;).ToString]" sap:VirtualizedContainerService.HintSize="578.666666666667,906.666666666667" sap2010:WorkflowViewState.IdRef="Switch`1_2">
-      <Sequence x:Key="ncaafCfb" DisplayName="Sorts and writes to excel sheet correctly named" sap:VirtualizedContainerService.HintSize="538.666666666667,668.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Switch x:TypeArguments="x:String" DisplayName="league" Expression="[in_TransactionItem.SpecificContent.Item(&quot;league&quot;).ToString]" sap:VirtualizedContainerService.HintSize="578.666666666667,961.333333333333" sap2010:WorkflowViewState.IdRef="Switch`1_2">
+      <Sequence x:Key="CFB" DisplayName="Sorts and writes to excel sheet correctly named" sap:VirtualizedContainerService.HintSize="538.666666666667,829.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_2">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <Switch x:TypeArguments="x:String" DisplayName="sorting" Expression="[in_TransactionItem.SpecificContent.Item(&quot;Sorting Method&quot;).ToString]" sap:VirtualizedContainerService.HintSize="496.666666666667,344.666666666667" sap2010:WorkflowViewState.IdRef="Switch`1_1">
+        <Switch x:TypeArguments="x:String" DisplayName="sorting" Expression="[in_TransactionItem.SpecificContent.Item(&quot;sortingMethod&quot;).ToString]" sap:VirtualizedContainerService.HintSize="496.666666666667,344.666666666667" sap2010:WorkflowViewState.IdRef="Switch`1_1">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:SortDataTable ColumnName="{x:Null}" DataColumn="{x:Null}" x:Key="winsPerYear" ColumnIndex="[12]" DataTable="[in_FullRecordsDT]" DisplayName="Sort Data Table by wins per year" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="SortDataTable_1" Order="Decending" OutputDataTable="[in_FullRecordsDT]" SortOrder="Descending" />
-          <ui:SortDataTable ColumnName="{x:Null}" DataColumn="{x:Null}" x:Key="winsPerGame" ColumnIndex="[11]" DataTable="[in_FullRecordsDT]" DisplayName="Sort Data Table wins/game" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="SortDataTable_2" Order="Decending" OutputDataTable="[in_FullRecordsDT]" SortOrder="Descending" />
-          <ui:SortDataTable ColumnName="{x:Null}" DataColumn="{x:Null}" x:Key="postseasonAppearancesPerYear" ColumnIndex="[14]" DataTable="[in_FullRecordsDT]" DisplayName="Sort Data Table by bowl wins/year" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="SortDataTable_3" Order="Decending" OutputDataTable="[in_FullRecordsDT]" SortOrder="Descending" />
-          <ui:SortDataTable ColumnName="{x:Null}" DataColumn="{x:Null}" x:Key="postSeasonWinsPerPostseasonGame" ColumnIndex="[13]" DataTable="[in_FullRecordsDT]" DisplayName="Sort Data Table bowl wins/bowl games" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="SortDataTable_4" Order="Decending" OutputDataTable="[in_FullRecordsDT]" SortOrder="Descending" />
-          <ui:SortDataTable ColumnName="{x:Null}" DataColumn="{x:Null}" x:Key="nationalChampionships" ColumnIndex="[10]" DataTable="[in_FullRecordsDT]" DisplayName="Sort by national championships" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="SortDataTable_5" Order="Decending" OutputDataTable="[in_FullRecordsDT]" SortOrder="Descending" />
+          <ui:SortDataTable ColumnName="{x:Null}" DataColumn="{x:Null}" x:Key="Wins per Year" ColumnIndex="[12]" DataTable="[in_FullRecordsDT]" DisplayName="Sort Data Table by wins per year" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="SortDataTable_1" Order="Decending" OutputDataTable="[in_FullRecordsDT]" SortOrder="Descending" />
+          <ui:SortDataTable ColumnName="{x:Null}" DataColumn="{x:Null}" x:Key="Wins per Games" ColumnIndex="[11]" DataTable="[in_FullRecordsDT]" DisplayName="Sort Data Table wins/game" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="SortDataTable_2" Order="Decending" OutputDataTable="[in_FullRecordsDT]" SortOrder="Descending" />
+          <ui:SortDataTable ColumnName="{x:Null}" DataColumn="{x:Null}" x:Key="Postseason appearances per Year" ColumnIndex="[14]" DataTable="[in_FullRecordsDT]" DisplayName="Sort Data Table by bowl wins/year" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="SortDataTable_3" Order="Decending" OutputDataTable="[in_FullRecordsDT]" SortOrder="Descending" />
+          <ui:SortDataTable ColumnName="{x:Null}" DataColumn="{x:Null}" x:Key="Postseason Wins per Postseason Games" ColumnIndex="[13]" DataTable="[in_FullRecordsDT]" DisplayName="Sort Data Table bowl wins/bowl games" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="SortDataTable_4" Order="Decending" OutputDataTable="[in_FullRecordsDT]" SortOrder="Descending" />
+          <ui:SortDataTable ColumnName="{x:Null}" DataColumn="{x:Null}" x:Key="National Championships" ColumnIndex="[10]" DataTable="[in_FullRecordsDT]" DisplayName="Sort by national championships" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="SortDataTable_5" Order="Decending" OutputDataTable="[in_FullRecordsDT]" SortOrder="Descending" />
         </Switch>
-        <Switch x:TypeArguments="x:String" DisplayName="Writing" Expression="[in_TransactionItem.SpecificContent.Item(&quot;Sheet&quot;).ToString]" sap:VirtualizedContainerService.HintSize="496.666666666667,192" sap2010:WorkflowViewState.IdRef="Switch`1_3">
+        <Switch x:TypeArguments="x:String" DisplayName="Writing" Expression="[in_TransactionItem.SpecificContent.Item(&quot;sheet&quot;).ToString]" sap:VirtualizedContainerService.HintSize="496.666666666667,352.666666666667" sap2010:WorkflowViewState.IdRef="Switch`1_3">
           <Switch.Default>
             <ui:WriteRange AddHeaders="True" DataTable="[in_FullRecordsDT]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="334,114.666666666667" sap2010:WorkflowViewState.IdRef="WriteRange_8" SheetName="Sheet1" StartingCell="A1" WorkbookPath="C:\Users\nfh22\OneDrive\Desktop\Sports Records Bot\Calculations.xlsx" />
           </Switch.Default>
-          <ui:WriteRange x:Key="league" AddHeaders="True" DataTable="[in_FullRecordsDT]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="334,114.666666666667" sap2010:WorkflowViewState.IdRef="WriteRange_5" SheetName="[in_TransactionItem.SpecificContent.Item(&quot;League&quot;).ToString]" StartingCell="A1" WorkbookPath="C:\Users\nfh22\OneDrive\Desktop\Sports Records Bot\Calculations.xlsx" />
-          <ui:WriteRange x:Key="coach" AddHeaders="True" DataTable="[in_FullRecordsDT]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="334,114.666666666667" sap2010:WorkflowViewState.IdRef="WriteRange_6" SheetName="[in_TransactionItem.SpecificContent.Item(&quot;Specific Coach&quot;).ToString]" StartingCell="A1" WorkbookPath="C:\Users\nfh22\OneDrive\Desktop\Sports Records Bot\Calculations.xlsx" />
-          <ui:WriteRange x:Key="team" AddHeaders="True" DataTable="[in_FullRecordsDT]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="334,114.666666666667" sap2010:WorkflowViewState.IdRef="WriteRange_7" SheetName="[in_TransactionItem.SpecificContent.Item(&quot;Specific Team&quot;).ToString]" StartingCell="A1" WorkbookPath="C:\Users\nfh22\OneDrive\Desktop\Sports Records Bot\Calculations.xlsx" />
+          <ui:WriteRange x:Key="League" AddHeaders="True" DataTable="[in_FullRecordsDT]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="334,114.666666666667" sap2010:WorkflowViewState.IdRef="WriteRange_5" SheetName="[in_TransactionItem.SpecificContent.Item(&quot;league&quot;).ToString]" StartingCell="A1" WorkbookPath="C:\Users\nfh22\OneDrive\Desktop\Sports Records Bot\Calculations.xlsx" />
+          <ui:WriteRange x:Key="Coach" AddHeaders="True" DataTable="[in_FullRecordsDT]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="334,114.666666666667" sap2010:WorkflowViewState.IdRef="WriteRange_6" SheetName="[in_TransactionItem.SpecificContent.Item(&quot;coach&quot;).ToString]" StartingCell="A1" WorkbookPath="C:\Users\nfh22\OneDrive\Desktop\Sports Records Bot\Calculations.xlsx" />
+          <ui:WriteRange x:Key="Team" AddHeaders="True" DataTable="[in_FullRecordsDT]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="334,114.666666666667" sap2010:WorkflowViewState.IdRef="WriteRange_7" SheetName="[in_TransactionItem.SpecificContent.Item(&quot;team&quot;).ToString]" StartingCell="A1" WorkbookPath="C:\Users\nfh22\OneDrive\Desktop\Sports Records Bot\Calculations.xlsx" />
         </Switch>
       </Sequence>
-      <x:Null x:Key="nhl" />
-      <x:Null x:Key="mlb" />
-      <Sequence x:Key="nfl" DisplayName="Sorts and writes to excel sheet correctly named" sap:VirtualizedContainerService.HintSize="538.666666666667,645.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_3">
+      <x:Null x:Key="NHL" />
+      <x:Null x:Key="MLB" />
+      <Sequence x:Key="NFL" DisplayName="Sorts and writes to excel sheet correctly named" sap:VirtualizedContainerService.HintSize="538.666666666667,700" sap2010:WorkflowViewState.IdRef="Sequence_3">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <Switch x:TypeArguments="x:String" DisplayName="sorting" Expression="[in_TransactionItem.SpecificContent.Item(&quot;Sorting Method&quot;).ToString]" sap:VirtualizedContainerService.HintSize="496.666666666667,321.333333333333" sap2010:WorkflowViewState.IdRef="Switch`1_4">
+        <Switch x:TypeArguments="x:String" DisplayName="sorting" Expression="[in_TransactionItem.SpecificContent.Item(&quot;sortingMethod&quot;).ToString]" sap:VirtualizedContainerService.HintSize="496.666666666667,215.333333333333" sap2010:WorkflowViewState.IdRef="Switch`1_4">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:SortDataTable ColumnName="{x:Null}" DataColumn="{x:Null}" x:Key="winsPerYear" ColumnIndex="[10]" DataTable="[in_FullRecordsDT]" DisplayName="Sort Data Table by wins per year" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="SortDataTable_6" Order="Decending" OutputDataTable="[in_FullRecordsDT]" SortOrder="Descending" />
-          <ui:SortDataTable ColumnName="{x:Null}" DataColumn="{x:Null}" x:Key="winsPerGame" ColumnIndex="[9]" DataTable="[in_FullRecordsDT]" DisplayName="Sort Data Table wins/game" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="SortDataTable_7" Order="Decending" OutputDataTable="[in_FullRecordsDT]" SortOrder="Descending" />
-          <ui:SortDataTable ColumnName="{x:Null}" DataColumn="{x:Null}" x:Key="superbowls" ColumnIndex="[8]" DataTable="[in_FullRecordsDT]" DisplayName="Sort by national championships" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="SortDataTable_10" Order="Decending" OutputDataTable="[in_FullRecordsDT]" SortOrder="Descending" />
-          <ui:SortDataTable ColumnName="{x:Null}" DataColumn="{x:Null}" x:Key="playoffsReachedPerYear" ColumnIndex="[8]" DataTable="[in_FullRecordsDT]" DisplayName="Sort by national championships" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="SortDataTable_11" Order="Decending" OutputDataTable="[in_FullRecordsDT]" SortOrder="Descending" />
+          <ui:SortDataTable ColumnName="{x:Null}" DataColumn="{x:Null}" x:Key="Wins per Year" ColumnIndex="[10]" DataTable="[in_FullRecordsDT]" DisplayName="Sort Data Table by wins per year" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="SortDataTable_6" Order="Decending" OutputDataTable="[in_FullRecordsDT]" SortOrder="Descending" />
+          <ui:SortDataTable ColumnName="{x:Null}" DataColumn="{x:Null}" x:Key="Wins per Games" ColumnIndex="[9]" DataTable="[in_FullRecordsDT]" DisplayName="Sort Data Table wins/game" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="SortDataTable_7" Order="Decending" OutputDataTable="[in_FullRecordsDT]" SortOrder="Descending" />
+          <ui:SortDataTable ColumnName="{x:Null}" DataColumn="{x:Null}" x:Key="National Championships" ColumnIndex="[8]" DataTable="[in_FullRecordsDT]" DisplayName="Sort by national championships" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="SortDataTable_10" Order="Decending" OutputDataTable="[in_FullRecordsDT]" SortOrder="Descending" />
+          <ui:SortDataTable ColumnName="{x:Null}" DataColumn="{x:Null}" x:Key="Postseason appearances per Year" ColumnIndex="[8]" DataTable="[in_FullRecordsDT]" DisplayName="Sort by national championships" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="SortDataTable_11" Order="Decending" OutputDataTable="[in_FullRecordsDT]" SortOrder="Descending" />
         </Switch>
-        <Switch x:TypeArguments="x:String" DisplayName="Writing" Expression="[in_TransactionItem.SpecificContent.Item(&quot;Sheet&quot;).ToString]" sap:VirtualizedContainerService.HintSize="496.666666666667,192" sap2010:WorkflowViewState.IdRef="Switch`1_5">
+        <Switch x:TypeArguments="x:String" DisplayName="Writing" Expression="[in_TransactionItem.SpecificContent.Item(&quot;sheet&quot;).ToString]" sap:VirtualizedContainerService.HintSize="496.666666666667,352.666666666667" sap2010:WorkflowViewState.IdRef="Switch`1_5">
           <Switch.Default>
             <ui:WriteRange AddHeaders="True" DataTable="[in_FullRecordsDT]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="334,114.666666666667" sap2010:WorkflowViewState.IdRef="WriteRange_12" SheetName="Sheet1" StartingCell="A1" WorkbookPath="C:\Users\nfh22\OneDrive\Desktop\Sports Records Bot\Calculations.xlsx" />
           </Switch.Default>
-          <ui:WriteRange x:Key="league" AddHeaders="True" DataTable="[in_FullRecordsDT]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="334,114.666666666667" sap2010:WorkflowViewState.IdRef="WriteRange_9" SheetName="[in_TransactionItem.SpecificContent.Item(&quot;League&quot;).ToString]" StartingCell="A1" WorkbookPath="C:\Users\nfh22\OneDrive\Desktop\Sports Records Bot\Calculations.xlsx" />
-          <ui:WriteRange x:Key="coach" AddHeaders="True" DataTable="[in_FullRecordsDT]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="334,114.666666666667" sap2010:WorkflowViewState.IdRef="WriteRange_10" SheetName="[in_TransactionItem.SpecificContent.Item(&quot;Specific Coach&quot;).ToString]" StartingCell="A1" WorkbookPath="C:\Users\nfh22\OneDrive\Desktop\Sports Records Bot\Calculations.xlsx" />
-          <ui:WriteRange x:Key="team" AddHeaders="True" DataTable="[in_FullRecordsDT]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="334,114.666666666667" sap2010:WorkflowViewState.IdRef="WriteRange_11" SheetName="[in_TransactionItem.SpecificContent.Item(&quot;Specific Team&quot;).ToString]" StartingCell="A1" WorkbookPath="C:\Users\nfh22\OneDrive\Desktop\Sports Records Bot\Calculations.xlsx" />
+          <ui:WriteRange x:Key="League" AddHeaders="True" DataTable="[in_FullRecordsDT]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="334,114.666666666667" sap2010:WorkflowViewState.IdRef="WriteRange_9" SheetName="[in_TransactionItem.SpecificContent.Item(&quot;league&quot;).ToString]" StartingCell="A1" WorkbookPath="C:\Users\nfh22\OneDrive\Desktop\Sports Records Bot\Calculations.xlsx" />
+          <ui:WriteRange x:Key="Coach" AddHeaders="True" DataTable="[in_FullRecordsDT]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="334,114.666666666667" sap2010:WorkflowViewState.IdRef="WriteRange_10" SheetName="[in_TransactionItem.SpecificContent.Item(&quot;coach&quot;).ToString]" StartingCell="A1" WorkbookPath="C:\Users\nfh22\OneDrive\Desktop\Sports Records Bot\Calculations.xlsx" />
+          <ui:WriteRange x:Key="Team" AddHeaders="True" DataTable="[in_FullRecordsDT]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="334,114.666666666667" sap2010:WorkflowViewState.IdRef="WriteRange_11" SheetName="[in_TransactionItem.SpecificContent.Item(&quot;team&quot;).ToString]" StartingCell="A1" WorkbookPath="C:\Users\nfh22\OneDrive\Desktop\Sports Records Bot\Calculations.xlsx" />
         </Switch>
       </Sequence>
     </Switch>

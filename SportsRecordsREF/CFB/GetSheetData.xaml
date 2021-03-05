@@ -13,7 +13,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>781.333333333333,735.333333333333</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>781.333333333333,875.333333333333</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>GetSheetData_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -79,7 +79,6 @@
       <AssemblyReference>UiPath.Mail</AssemblyReference>
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
   <Flowchart DisplayName="CFB_GetRelevantData" sap:VirtualizedContainerService.HintSize="761.333333333333,670.666666666667" sap2010:WorkflowViewState.IdRef="Flowchart_1">
@@ -199,7 +198,7 @@
         <ui:LogMessage DisplayName="Log Exit point" sap:VirtualizedContainerService.HintSize="468.666666666667,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Info" Message="[&quot;Finished sheet going back to process&quot;]" />
       </Sequence>
     </FlowStep>
-    <FlowStep x:Name="__ReferenceID2">
+    <FlowStep x:Name="__ReferenceID1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <av:Point x:Key="ShapeLocation">250,565.333333333333</av:Point>
@@ -353,14 +352,14 @@
         <ui:LogMessage DisplayName="Log Exit point" sap:VirtualizedContainerService.HintSize="613.333333333333,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_12" Level="Info" Message="[&quot;Finished sheet going back to process&quot;]" />
       </Sequence>
     </FlowStep>
-    <FlowStep x:Name="__ReferenceID1">
+    <FlowStep x:Name="__ReferenceID2">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <av:Point x:Key="ShapeLocation">470,545.333333333333</av:Point>
           <av:Size x:Key="ShapeSize">200,69.3333333333333</av:Size>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Sequence DisplayName="Get coach data" sap:VirtualizedContainerService.HintSize="669.333333333333,2232.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_9">
+      <Sequence DisplayName="Get coach data" sap:VirtualizedContainerService.HintSize="200,69.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_9">
         <Sequence.Variables>
           <Variable x:TypeArguments="x:Int32" Default="0" Name="count" />
         </Sequence.Variables>
@@ -404,12 +403,8 @@
                 </sap:WorkflowViewStateService.ViewState>
                 <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke AddCoachAndRecords workflow" sap:VirtualizedContainerService.HintSize="534.666666666667,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="CFB\AddCoachAndRecords.xaml">
                   <ui:InvokeWorkflowFile.Arguments>
-                    <InArgument x:TypeArguments="x:String" x:Key="in_Team">
-                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="item(0).ToString" />
-                    </InArgument>
-                    <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_SportsWithCoach">
-                      <mva:VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="CFBDataWithCoaches" />
-                    </OutArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_Team">[item(0).ToString]</InArgument>
+                    <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_SportsWithCoach">[CFBDataWithCoaches]</OutArgument>
                   </ui:InvokeWorkflowFile.Arguments>
                 </ui:InvokeWorkflowFile>
                 <TryCatch DisplayName="National championship table?" sap:VirtualizedContainerService.HintSize="534.666666666667,574.666666666667" sap2010:WorkflowViewState.IdRef="TryCatch_1">
@@ -531,62 +526,13 @@
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <av:Point x:Key="ShapeLocation">105,176.666666666667</av:Point>
           <av:Size x:Key="ShapeSize">90,86.6666666666667</av:Size>
-          <av:PointCollection x:Key="leagueConnector">127.5,263.333333333333 127.5,293.333333333333 120,293.333333333333 120,545.333333333333</av:PointCollection>
-          <av:PointCollection x:Key="teamConnector">150,263.333333333333 150,330 200,330</av:PointCollection>
-          <av:PointCollection x:Key="coachConnector">172.5,263.333333333333 172.5,293.333333333333 450,293.333333333333 450,210 480,210</av:PointCollection>
+          <av:PointCollection x:Key="LeagueConnector">127.5,263.333333333333 127.5,293.333333333333 120,293.333333333333 120,545.333333333333</av:PointCollection>
+          <av:PointCollection x:Key="TeamConnector">150,263.333333333333 150,330 200,330</av:PointCollection>
+          <av:PointCollection x:Key="CoachConnector">172.5,263.333333333333 172.5,293.333333333333 450,293.333333333333 450,210 480,210</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <x:Reference>__ReferenceID0<x:Key>league</x:Key></x:Reference>
-      <FlowStep x:Key="coach" x:Name="__ReferenceID9">
-        <sap:WorkflowViewStateService.ViewState>
-          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <av:Point x:Key="ShapeLocation">480,183.666666666667</av:Point>
-            <av:Size x:Key="ShapeSize">200,52.6666666666667</av:Size>
-            <av:PointCollection x:Key="ConnectorLocation">580,236.333333333333 580,346.666666666667</av:PointCollection>
-          </scg:Dictionary>
-        </sap:WorkflowViewStateService.ViewState>
-        <ui:LogMessage DisplayName="Log Input Check" sap:VirtualizedContainerService.HintSize="200,52.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;Making sure user input is ok for sheet choice&quot;]">
-          <sap:WorkflowViewStateService.ViewState>
-            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-            </scg:Dictionary>
-          </sap:WorkflowViewStateService.ViewState>
-        </ui:LogMessage>
-        <FlowStep.Next>
-          <FlowDecision x:Name="__ReferenceID3" Condition="[in_SpecificCoach is nothing]" DisplayName="Coach not given" sap:VirtualizedContainerService.HintSize="92,86.6666666666667" sap2010:WorkflowViewState.IdRef="FlowDecision_1">
-            <sap:WorkflowViewStateService.ViewState>
-              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                <av:Point x:Key="ShapeLocation">534,346.666666666667</av:Point>
-                <av:Size x:Key="ShapeSize">92,86.6666666666667</av:Size>
-                <av:PointCollection x:Key="TrueConnector">534,390 504,390 504,449 560,449 560,479</av:PointCollection>
-                <av:PointCollection x:Key="FalseConnector">626,390 700,390 700,580 670,580</av:PointCollection>
-              </scg:Dictionary>
-            </sap:WorkflowViewStateService.ViewState>
-            <FlowDecision.True>
-              <FlowStep x:Name="__ReferenceID4">
-                <sap:WorkflowViewStateService.ViewState>
-                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <av:Point x:Key="ShapeLocation">460,479</av:Point>
-                    <av:Size x:Key="ShapeSize">200,22</av:Size>
-                  </scg:Dictionary>
-                </sap:WorkflowViewStateService.ViewState>
-                <Throw DisplayName="Throw no coach given" Exception="[new UiPath.Core.BusinessRuleException(&quot;No coach was given so you cannot get this page&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_1">
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                </Throw>
-              </FlowStep>
-            </FlowDecision.True>
-            <FlowDecision.False>
-              <x:Reference>__ReferenceID1</x:Reference>
-            </FlowDecision.False>
-          </FlowDecision>
-        </FlowStep.Next>
-      </FlowStep>
-      <FlowStep x:Key="team" x:Name="__ReferenceID8">
+      <x:Reference>__ReferenceID0<x:Key>League</x:Key></x:Reference>
+      <FlowStep x:Key="Team" x:Name="__ReferenceID8">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <av:Point x:Key="ShapeLocation">200,303.666666666667</av:Point>
@@ -621,6 +567,55 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
                 <Throw DisplayName="Throw team not given" Exception="[new System.Exception(&quot;team not given cannot get this page&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_2">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </Throw>
+              </FlowStep>
+            </FlowDecision.True>
+            <FlowDecision.False>
+              <x:Reference>__ReferenceID1</x:Reference>
+            </FlowDecision.False>
+          </FlowDecision>
+        </FlowStep.Next>
+      </FlowStep>
+      <FlowStep x:Key="Coach" x:Name="__ReferenceID9">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <av:Point x:Key="ShapeLocation">480,183.666666666667</av:Point>
+            <av:Size x:Key="ShapeSize">200,52.6666666666667</av:Size>
+            <av:PointCollection x:Key="ConnectorLocation">580,236.333333333333 580,346.666666666667</av:PointCollection>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <ui:LogMessage DisplayName="Log Input Check" sap:VirtualizedContainerService.HintSize="200,52.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;Making sure user input is ok for sheet choice&quot;]">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </ui:LogMessage>
+        <FlowStep.Next>
+          <FlowDecision x:Name="__ReferenceID3" Condition="[in_SpecificCoach is nothing]" DisplayName="Coach not given" sap:VirtualizedContainerService.HintSize="92,86.6666666666667" sap2010:WorkflowViewState.IdRef="FlowDecision_1">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <av:Point x:Key="ShapeLocation">534,346.666666666667</av:Point>
+                <av:Size x:Key="ShapeSize">92,86.6666666666667</av:Size>
+                <av:PointCollection x:Key="TrueConnector">534,390 504,390 504,449 560,449 560,479</av:PointCollection>
+                <av:PointCollection x:Key="FalseConnector">626,390 700,390 700,580 670,580</av:PointCollection>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <FlowDecision.True>
+              <FlowStep x:Name="__ReferenceID4">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <av:Point x:Key="ShapeLocation">460,479</av:Point>
+                    <av:Size x:Key="ShapeSize">200,22</av:Size>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <Throw DisplayName="Throw no coach given" Exception="[new UiPath.Core.BusinessRuleException(&quot;No coach was given so you cannot get this page&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_1">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>

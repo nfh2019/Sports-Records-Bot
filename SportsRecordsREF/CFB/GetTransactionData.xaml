@@ -1,11 +1,11 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="GetTransactionData" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="GetTransactionData" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
-    <x:Property Name="out_CFBData" Type="OutArgument(sd:DataTable)" />
+    <x:Property Name="out_Teams" Type="OutArgument(sd:DataTable)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>781.333333333333,1056.66666666667</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>390,722.666666666667</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>GetTransactionData_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="62">
@@ -44,6 +44,8 @@
       <x:String>UiPath.Excel.Activities</x:String>
       <x:String>System.Reflection</x:String>
       <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>UiPath.CSV</x:String>
+      <x:String>UiPath.CSV.Activities</x:String>
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -81,65 +83,19 @@
       <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
       <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="BreakDataDown" sap:VirtualizedContainerService.HintSize="476,952" sap2010:WorkflowViewState.IdRef="Sequence_5">
+  <Sequence DisplayName="BreakDataDown" sap:VirtualizedContainerService.HintSize="376,518" sap2010:WorkflowViewState.IdRef="Sequence_5">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: School Index | College Football at Sports-Reference.com" sap:VirtualizedContainerService.HintSize="434,725.333333333333" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="Simulate" Version="V1">
-      <uix:NApplicationCard.Body>
-        <ActivityAction x:TypeArguments="x:Object">
-          <ActivityAction.Argument>
-            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
-          </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,507.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_4">
-            <sap:WorkflowViewStateService.ViewState>
-              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                <x:Boolean x:Key="IsPinned">False</x:Boolean>
-              </scg:Dictionary>
-            </sap:WorkflowViewStateService.ViewState>
-            <ui:LogMessage DisplayName="Log Entry point" sap:VirtualizedContainerService.HintSize="334,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;getting table&quot;]" />
-            <uix:NExtractData ContinueOnError="True" DataTable="[out_CFBData]" DisplayName="Extract Table Data of all teams" ExtractMetadata="&lt;extract-table get_columns_name='1' get_empty_columns='1' columns_name_source='Longest' /&gt;" sap:VirtualizedContainerService.HintSize="334,168.666666666667" sap2010:WorkflowViewState.IdRef="NExtractData_1" MaximumResults="0">
-              <uix:NExtractData.Target>
-                <uix:TargetAnchorable DesignTimeRectangle="31, 609, 1407, 11181" FriendlyName="'298 Schools'" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;" InformativeScreenshot="13a433d19ed9159e15b32620e5858d42.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='School Index | College Football at Sports-Reference.com' /&gt;" SearchSteps="Selector" Text="298 Schools Table&#xA;   &#xA;   &#xA;      &#xA;      &#xA;         &#xA;         Overall&#xA;         Bowls&#xA;         SRS&#xA;    " TextMethod="AttributeText" TextSelector="&lt;webctrl tag='TABLE' type='' /&gt;" />
-              </uix:NExtractData.Target>
-            </uix:NExtractData>
-            <Sequence DisplayName="Remove Columns" sap:VirtualizedContainerService.HintSize="334,69.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_3">
-              <sap:WorkflowViewStateService.ViewState>
-                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                </scg:Dictionary>
-              </sap:WorkflowViewStateService.ViewState>
-              <ui:RemoveDataColumn Column="{x:Null}" ColumnName="{x:Null}" ColumnIndex="0" DataTable="[out_CFBData]" DisplayName="Remove Rk" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="RemoveDataColumn_1" />
-              <ui:RemoveDataColumn Column="{x:Null}" ColumnIndex="{x:Null}" ColumnName="From" DataTable="[out_CFBData]" DisplayName="Remove From Year" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="RemoveDataColumn_2" />
-              <ui:RemoveDataColumn Column="{x:Null}" ColumnIndex="{x:Null}" ColumnName="To" DataTable="[out_CFBData]" DisplayName="Remove To Year" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="RemoveDataColumn_3" />
-              <ui:RemoveDataColumn Column="{x:Null}" ColumnIndex="{x:Null}" ColumnName="Overall T" DataTable="[out_CFBData]" DisplayName="Remove Overall Ties" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="RemoveDataColumn_4" />
-              <ui:RemoveDataColumn Column="{x:Null}" ColumnIndex="{x:Null}" ColumnName="Overall Pct" DataTable="[out_CFBData]" DisplayName="Remove Overall Pct" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="RemoveDataColumn_5" />
-              <ui:RemoveDataColumn Column="{x:Null}" ColumnIndex="{x:Null}" ColumnName="Bowls T" DataTable="[out_CFBData]" DisplayName="Remove Bowls T" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="RemoveDataColumn_6" />
-              <ui:RemoveDataColumn Column="{x:Null}" ColumnIndex="{x:Null}" ColumnName="Bowls Pct" DataTable="[out_CFBData]" DisplayName="Remove Bowls Pct" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="RemoveDataColumn_7" />
-              <ui:RemoveDataColumn Column="{x:Null}" ColumnIndex="{x:Null}" ColumnName="SRS SRS" DataTable="[out_CFBData]" DisplayName="Remove SRS SRS" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="RemoveDataColumn_8" />
-              <ui:RemoveDataColumn Column="{x:Null}" ColumnIndex="{x:Null}" ColumnName="SRS SOS" DataTable="[out_CFBData]" DisplayName="Remove SRS SOS" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="RemoveDataColumn_9" />
-              <ui:RemoveDataColumn Column="{x:Null}" ColumnIndex="{x:Null}" ColumnName="AP" DataTable="[out_CFBData]" DisplayName="Remove AP" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="RemoveDataColumn_10" />
-              <ui:RemoveDataColumn Column="{x:Null}" ColumnIndex="{x:Null}" ColumnName="CC" DataTable="[out_CFBData]" DisplayName="Remove CC" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="RemoveDataColumn_11" />
-              <ui:RemoveDataColumn Column="{x:Null}" ColumnIndex="{x:Null}" ColumnName="Notes" DataTable="[out_CFBData]" DisplayName="Remove Notes" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="RemoveDataColumn_12" />
-            </Sequence>
-          </Sequence>
-        </ActivityAction>
-      </uix:NApplicationCard.Body>
-      <uix:NApplicationCard.TargetApp>
-        <uix:TargetApp BrowserType="Chrome" IconBase64="iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAARISURBVGhD7VlraFxFFJ5stNmkGGuSrWlDozZtita0jcRGWlFCrBR8FMFH1B9Fi0gR1B9SxdRqRAvFFsH6z0pB6qNBVIhYwSJbikG02H3v3rw3dpPGuhuDSUtiup/fnTuXTenGJjbJ3gv3g4/ZbObe+c6cM+fMYYUDBw4cOLgSkJ4UAFyYTLqR+qwQPQ8X4uzeUiQPL1dTcgsgrQsU+NtbgMSuZeh9vBZdW7dBq9+J6NoWRG//CKGKTxGp/hGhFV74i70ILvUhfHOnesXCArhoCE4dKULfU2vQ2dBEkfso6BiCN2oIXJ+Cv+gf+K5N43Q+cNpF5pF8TI7mZwH1yvmHFFzFMXl4MUOgDrENryJ8yw8I3JCAzz1pCM0Iu1Ts9FSvnz9g9KQuPg/9z1Wi456diFQdR6A4Cd813F1dxMyETke1zNwDw60CFyL5iD+zDtGadxD0aPAVcKf1ha9O9FSq5eYOGPlWYGKQwndsQKz2IIJlg9xtLjZ3oqdSLXv1wNgvRqjEt69i5niXOz4wn8JNCvz+wmqM/ZyHkTYlZXbA8FGBrzn272CMb2pheus24nt+hZsUiK07Be3O13Dm5RUyUzAErgQ579yHjPGoHuPV0DbuQaAsBN+iBRNuUrA4/MTDBe5chLn4PXRt2Yr+5ysx/GURhTK3cY6kzN15+OsrN41dydy9jfMPIVDaZ+TrhRVuUqBj814K4B+6AOr1F12gqB6EbzqByJovyPfpoQP01AFEVn2McOVxGhuHv3DcKDC5EW5SoPuhe1maUxkh+jhVlC5SLzLTVcTckrF8sJS73W4lUbOhwDc8lLHa3UbKyz7JymQIPSDQ21THO8k5O3qBl6tPBMbjBYjedjQT4/Yht5yMVAvev7fAf92I3bxgFKahfSxg37mZMlvt5gXDAN0LsVqehUc3I1AyZCcvSAN0IPW5bogLWt1brMwXs022IpV8A4g/KzDweglbuza7hJKSbkCGknYXQ+mxtQiW+7I9YDUq6RmwMguEKgT6nmxAaHlPtoesRCX7UmC0XaCVY9/TjTQiaOVwUpIvByb6BU5x7H2iBuGq73nX58G2XnZScrNDnomuRoHErjLE7mDTUnLW8IZ1DFFS/xuybZwYcKHnkTpEa47w3pTK9Lu5NUZJnBnwxwes2McKePmrp0f2y0zlX3w+c5M1DVo4o5S02QHnf6NCtpeJVzy8Q93Pbu1NnpM2BJfF6J2k7Op87rRsNWW3pxtoNkQ6zQZppswuXqeS9P8hz4nO0fZFGNxTjvj29fJi2LGpCVr9i+i4ezeitzYzmzUj6CGX8nNFM4vlDFn1BkevcTu43LNKhjUhNya2XmDwbQ+0jS0ILGHPYiMDTODPQ0wiiXx0P9iAcCW9kUnpaor1IX9DCJYLnHnJQ6+0wF8svaH+bR/I3mXsVxc6G+9DZLVXfW0vID1unI+h/aXqKwcOHDjICYT4FyBH/j0KZe/QAAAAAElFTkSuQmCC" InformativeScreenshot="0845600c4a2f5cae41a7cff33bbea4d6.png" Selector="&lt;html app='chrome.exe' htmlwindowname='/leaders/pts' title='School Index | College Football at Sports-Reference.com' /&gt;" Url="https://www.sports-reference.com/cfb/schools/" />
-      </uix:NApplicationCard.TargetApp>
-      <sap:WorkflowViewStateService.ViewState>
-        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-        </scg:Dictionary>
-      </sap:WorkflowViewStateService.ViewState>
-    </uix:NApplicationCard>
-    <ui:LogMessage DisplayName="Log Exit" sap:VirtualizedContainerService.HintSize="434,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Done getting transaction data&quot;]" />
+    <ui:LogMessage DisplayName="Log entry" sap:VirtualizedContainerService.HintSize="334,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Trace" Message="[&quot;Getting list of CFB teams currently playing or played 5 years mininum&quot;]" />
+    <ui:ReadCsvFile Encoding="{x:Null}" DataTable="[out_Teams]" Delimitator="Comma" DisplayName="Read NFL teams CSV" FilePath="C:\Users\nfh22\OneDrive\Desktop\Sports Records Bot\CFBTeams.csv" sap:VirtualizedContainerService.HintSize="334,156.666666666667" sap2010:WorkflowViewState.IdRef="ReadCsvFile_1" IncludeColumnNames="False" />
+    <ui:LogMessage DisplayName="Log Exit" sap:VirtualizedContainerService.HintSize="334,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Done getting transaction data&quot;]" />
   </Sequence>
 </Activity>

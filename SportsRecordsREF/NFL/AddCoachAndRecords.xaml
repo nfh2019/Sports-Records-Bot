@@ -6,7 +6,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>745.333333333333,1254.66666666667</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>602,2296</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>AddCoachAndRecords_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="36">
@@ -140,7 +140,7 @@
             </uix:NClick>
             <uix:NExtractData ContinueOnError="True" DataTable="[records]" DisplayName="Extract team data" ExtractMetadata="&lt;extract-table get_columns_name='1' get_empty_columns='1' columns_name_source='Longest' /&gt;" sap:VirtualizedContainerService.HintSize="438.666666666667,168.666666666667" sap2010:WorkflowViewState.IdRef="NExtractData_1" MaximumResults="0">
               <uix:NExtractData.Target>
-                <uix:TargetAnchorable DesignTimeRectangle="32, 248, 1908, 2283" FriendlyName="'Team Records,'" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;" InformativeScreenshot="be7e11ebaaf0baa3d749f3f1e48e2e7e.png" ScopeSelectorArgument="&lt;html app='msedge.exe' htmlwindowname='/leaders/safety_md' title='Dallas Cowboys Team Encyclopedia | Pro-Football-Reference.com' /&gt;" SearchSteps="Selector" Text="Team Records, Leaders, and League Ranks Table&#xA;    &#xA;   &#xA;   &#xA;      &#xA;      &#xA;         &#xA;         Points&#xA;" TextMethod="AttributeText" TextSelector="&lt;webctrl tag='TABLE' type='' /&gt;" />
+                <uix:TargetAnchorable DesignTimeRectangle="27, 254, 1908, 2283" FriendlyName="'Team Records,'" FullSelectorArgument="&lt;webctrl id='team_index' tag='TABLE' /&gt;" InformativeScreenshot="eb671796c97f49f71ce45127cb307090.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='* | Pro-Football-Reference.com' /&gt;" SearchSteps="Selector" Text="Team Records, Leaders, and League Ranks Table&#xA;    &#xA;   &#xA;   &#xA;      &#xA;      &#xA;         &#xA;         Points&#xA;" TextMethod="AttributeText" TextSelector="&lt;webctrl tag='TABLE' type='' /&gt;" />
               </uix:NExtractData.Target>
             </uix:NExtractData>
             <uix:NGoToUrl DisplayName="Go back to league page" sap:VirtualizedContainerService.HintSize="438.666666666667,83.3333333333333" sap2010:WorkflowViewState.IdRef="NGoToUrl_1" Url="https://www.pro-football-reference.com/teams/" />
